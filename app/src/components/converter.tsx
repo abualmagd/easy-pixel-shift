@@ -1,4 +1,8 @@
+"use client";
+
 import { FileInput, Label } from "flowbite-react";
+import { useState } from "react";
+import MyConverter from "./myConverter";
 
 export default function Converter(props: {
   title: string;
@@ -6,41 +10,57 @@ export default function Converter(props: {
   from: string;
   to: string;
 }) {
+  const [selectedFile, updateSelectedFile] = useState<File>();
+
+  const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files![0] ? Array.from(e.target.files!)[0] : null;
+    updateSelectedFile(file!);
+  };
   return (
     <div className=" flex flex-col gap-3 w-full items-center">
       <h1 className=" font-extrabold text-4xl leading-15">{props.title}</h1>
       <p className=" text-xl">{props.slogan}</p>
 
       <div className="h-5"></div>
-      <div className="flex w-full items-center justify-center">
-        <Label
-          htmlFor="dropzone-file"
-          className="flex h-64 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-500 dark:hover:bg-gray-600"
-        >
-          <div className="flex flex-col items-center justify-center pb-6 pt-5">
-            <svg
-              className="mb-4 h-8 w-8 text-gray-500 dark:text-gray-400"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 20 16"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
-              />
-            </svg>
-            <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-              <span className="font-semibold">Click to upload</span> or drag and
-              drop
-            </p>
-          </div>
-          <FileInput id="dropzone-file" className="hidden" />
-        </Label>
-      </div>
+
+      {!selectedFile ? (
+        <div className="flex w-full items-center justify-center">
+          <Label
+            htmlFor="dropzone-file"
+            className="flex h-64 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 bg-gray-50 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-700 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+          >
+            <div className="flex flex-col items-center justify-center pb-6 pt-5">
+              <svg
+                className="mb-4 h-8 w-8 text-gray-500 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 16"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+                />
+              </svg>
+              <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                <span className="font-semibold">Click to upload</span>
+              </p>
+            </div>
+            <FileInput
+              onChange={(e) => handleFile(e)}
+              id="dropzone-file"
+              className="hidden"
+            />
+          </Label>
+        </div>
+      ) : (
+        <div className=" w-full">
+          <MyConverter file={selectedFile} />
+        </div>
+      )}
     </div>
   );
 }

@@ -11,7 +11,7 @@ export default function MyFooter() {
   return (
     <Footer
       container
-      className=" bg-blend-saturation bg-[#1e2e47] flex flex-col "
+      className="my-footer bg-blend-saturation bg-[#1e2e47] flex flex-col "
     >
       <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
         <div>
@@ -66,7 +66,11 @@ export default function MyFooter() {
             <FooterLink href="#">Contact</FooterLink>
           </FooterLinkGroup>
         </div>
-        <FooterCopyright href="#" by="EasyPixelShift" year={2025} />
+        <FooterCopyright
+          href="/"
+          by="EasyPixelShift"
+          year={new Date().getFullYear()}
+        />
       </div>
     </Footer>
   );
