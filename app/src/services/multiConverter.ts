@@ -1,5 +1,5 @@
 import { convertTxtToHtml } from "./html";
-import { convertTxtToPdf } from "./pdf";
+import { convertTxtToPdf, htmlToPdf } from "./pdf";
 import { fileTypeFinder } from "./utils";
 
 export async function multiFileConvert(file: File, to: string) {
@@ -11,6 +11,15 @@ export async function multiFileConvert(file: File, to: string) {
       case "html":
         return convertTxtToHtml(file);
       case "word":
+        return undefined;
+    }
+  }
+
+  if (from === "html") {
+    switch (to) {
+      case "pdf":
+        return await htmlToPdf(file);
+      default:
         return undefined;
     }
   }

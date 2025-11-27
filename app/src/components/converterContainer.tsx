@@ -10,8 +10,11 @@ export default function Converter(props: {
   from: string;
   to: string;
 }) {
-  const [selectedFile, updateSelectedFile] = useState<File>();
+  const [selectedFile, updateSelectedFile] = useState<File | null>();
 
+  const removeSelectedFile = () => {
+    updateSelectedFile(null);
+  };
   const handleFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files![0] ? Array.from(e.target.files!)[0] : null;
     updateSelectedFile(file!);
@@ -58,7 +61,7 @@ export default function Converter(props: {
         </div>
       ) : (
         <div className=" w-full">
-          <MyConverter file={selectedFile} />
+          <MyConverter file={selectedFile} removeFile={removeSelectedFile} />
         </div>
       )}
     </div>

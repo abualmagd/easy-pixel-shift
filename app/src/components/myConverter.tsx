@@ -5,13 +5,21 @@ import { IoMdCloseCircleOutline } from "react-icons/io";
 import { downloadFile, notify } from "../services/utils";
 import { multiFileConvert } from "../services/multiConverter";
 
-export default function MyConverter(props: { file: File }) {
+export default function MyConverter(props: {
+  file: File;
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+  removeFile: Function;
+}) {
   const [state, setState] = useState("waiting");
   const [output, setOutput] = useState<Blob>();
   const [to, setTo] = useState("pdf");
 
   const handleToChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setTo(e.target.value);
+  };
+
+  const remove = () => {
+    return props.removeFile();
   };
   const convert = async () => {
     try {
@@ -30,6 +38,7 @@ export default function MyConverter(props: { file: File }) {
     try {
       downloadFile(output!, props.file.name + "easy-pixel-shift", to);
     } catch (error) {
+      console.log("error in downloadin");
       notify(String(error), true);
     }
   };
@@ -52,7 +61,7 @@ export default function MyConverter(props: { file: File }) {
               <option value="docs">Docs</option>
             </select>
           </div>
-          <button className=" cursor-pointer">
+          <button onClick={remove} className=" cursor-pointer">
             <IoMdCloseCircleOutline size={30} />
           </button>
         </div>
