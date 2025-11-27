@@ -1,18 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { convertTxtToPdf, readFileAsText } from "../services/pdf";
 import { downloadFile, notify } from "../services/utils";
+import { multiFileConvert } from "../services/multiConverter";
 
 export default function MyConverter(props: { file: File }) {
   const [state, setState] = useState("waiting");
   const [output, setOutput] = useState<Blob>();
+  const [to, setTo] = useState("pdf");
+
+  const handleToChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setTo(e.target.value);
+  };
   const convert = async () => {
     try {
       setState("loading");
-      const textContent = await readFileAsText(props.file);
-      const out = convertTxtToPdf(textContent);
+      const out = await multiFileConvert(props.file, to);
       setOutput(out);
       notify("converted well", false);
       setState("download");
@@ -24,7 +28,7 @@ export default function MyConverter(props: { file: File }) {
 
   const dowloadIt = () => {
     try {
-      downloadFile(output!, props.file.name + "easy-pixel-shift", "pdf");
+      downloadFile(output!, props.file.name + "easy-pixel-shift", to);
     } catch (error) {
       notify(String(error), true);
     }
@@ -38,13 +42,14 @@ export default function MyConverter(props: { file: File }) {
             <span>Output:</span>
 
             <select
+              onChange={(e) => handleToChange(e)}
               id="output"
               className="block w-full px-3 py-2 rounded  border border-rounded text-heading text-sm focus:ring-brand  focus:rounded shadow-xs placeholder:text-body"
             >
-              <option value="US">Pdf</option>
-              <option value="CA">Html</option>
-              <option value="FR">Txt</option>
-              <option value="DE">Docs</option>
+              <option value="pdf">Pdf</option>
+              <option value="html">Html</option>
+              <option value="txt">Txt</option>
+              <option value="docs">Docs</option>
             </select>
           </div>
           <button className=" cursor-pointer">
