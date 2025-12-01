@@ -2,7 +2,7 @@
 
 import { ChangeEvent, useState } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { downloadFile, notify } from "../services/utils";
+import { downloadFile, fileNameFinder, notify } from "../services/utils";
 import { multiFileConvert } from "../services/multiConverter";
 
 export default function MyConverter(props: {
@@ -36,7 +36,8 @@ export default function MyConverter(props: {
 
   const dowloadIt = () => {
     try {
-      downloadFile(output!, props.file.name + "easy-pixel-shift", to);
+      const name = fileNameFinder(props.file);
+      downloadFile(output!, name + "-easy-pixel-shift", to);
     } catch (error) {
       console.log("error in downloadin");
       notify(String(error), true);
@@ -58,7 +59,7 @@ export default function MyConverter(props: {
               <option value="pdf">Pdf</option>
               <option value="html">Html</option>
               <option value="txt">Txt</option>
-              <option value="docs">Docs</option>
+              <option value="docx">Docx</option>
             </select>
           </div>
           <button onClick={remove} className=" cursor-pointer">

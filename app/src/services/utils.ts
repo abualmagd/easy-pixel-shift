@@ -33,3 +33,18 @@ export const fileTypeFinder = (file: File) => {
   }
   return extension;
 };
+
+export const fileNameFinder = (file: File) => {
+  const lastDotIndex = file.name.lastIndexOf(".");
+  let name = "N/A";
+
+  if (lastDotIndex > 0 && lastDotIndex < file.name.length - 1) {
+    // Extract the substring after the last dot
+    name = file.name.split(".")[0].toLowerCase();
+  } else if (file.name.length > 0 && lastDotIndex === -1) {
+    name = "file";
+  } else if (lastDotIndex === file.name.length - 1) {
+    name = "file";
+  }
+  return name;
+};
