@@ -94,23 +94,6 @@ export async function convertWordToTxt(file: File): Promise<Blob> {
   return blob;
 }
 
-//read file as buffer
-function readFileAsArrayBuffer(file: File): Promise<ArrayBuffer> {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-
-    reader.onload = (event) => {
-      resolve(event.target?.result as ArrayBuffer);
-    };
-
-    reader.onerror = (error) => {
-      reject(new Error(`Failed to read file: ${error}`));
-    };
-
-    reader.readAsArrayBuffer(file);
-  });
-}
-
 // docx-to-pdf-converter.ts
 
 export async function convertWordToPdf(file: File): Promise<Blob> {
@@ -159,6 +142,23 @@ export async function convertWordToHtml(file: File): Promise<Blob> {
   return blob;
 }
 
+//read file as buffer
+export function readFileAsArrayBuffer(file: File): Promise<ArrayBuffer> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+
+    reader.onload = (event) => {
+      resolve(event.target?.result as ArrayBuffer);
+    };
+
+    reader.onerror = (error) => {
+      reject(new Error(`Failed to read file: ${error}`));
+    };
+
+    reader.readAsArrayBuffer(file);
+  });
+}
+
 /**
  * Extract text from DOCX file
  */
@@ -171,7 +171,7 @@ async function extractTextFromDocx(file: File): Promise<string> {
 /**
  * Create a complete HTML document with proper structure
  */
-function createCompleteHtmlDocument(
+export function createCompleteHtmlDocument(
   content: string,
   originalFileName: string
 ): string {
@@ -369,7 +369,7 @@ function createCompleteHtmlDocument(
         </div>
         
         <div class="conversion-info">
-            <p>Document converted using DOCX to HTML <a href="${siteLink}">${ttle}</a> converter • ${new Date().toLocaleDateString()}</p>
+            <p>Document converted by <a href="${siteLink}">${ttle}</a> converter • ${new Date().toLocaleDateString()}</p>
         
             </div>
     </div>
@@ -380,7 +380,7 @@ function createCompleteHtmlDocument(
 /**
  * Escape HTML special characters
  */
-function escapeHtml(text: string): string {
+export function escapeHtml(text: string): string {
   const div = document.createElement("div");
   div.textContent = text;
   return div.innerHTML;

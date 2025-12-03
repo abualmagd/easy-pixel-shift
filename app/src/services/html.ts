@@ -10,6 +10,8 @@ import {
   TableCell,
 } from "docx";
 
+import {} from "./docx";
+
 export async function convertTxtToHtml(file: File) {
   const text = await readFileAsText(file);
   const html = String(text)
@@ -37,6 +39,42 @@ export async function convertHtmlToText(file: File): Promise<Blob> {
   });
 
   console.log(`Text document extracted successfully from HTML`);
+
+  return blob;
+}
+
+// html-to-docx
+export async function convertHtmlToWord(file: File): Promise<Blob> {
+  // Parse HTML and convert to DOCX paragraphs
+
+  const htmlContent = await readFileAsText(file);
+  const paragraphs = await parseHtmlToDocx(String(htmlContent));
+
+  // Create the document
+  const doc = new Document({
+    creator: "EasyPixelShift.com",
+    title: "Document",
+    description: "Generated from HTML",
+    sections: [
+      {
+        properties: {
+          page: {
+            margin: {
+              top: 1440, // 1 inch in twips
+              right: 1440,
+              bottom: 1440,
+              left: 1440,
+            },
+          },
+        },
+        children: paragraphs,
+      },
+    ],
+  });
+
+  // Generate the Word document as a blob
+  const blob = await Packer.toBlob(doc);
+  console.log(`Word document generated successfully from HTML`);
 
   return blob;
 }
@@ -110,42 +148,6 @@ function cleanTextContent(text: string): string {
       // Trim the entire content
       .trim()
   );
-}
-
-// html-to-docx
-export async function convertHtmlToWord(file: File): Promise<Blob> {
-  // Parse HTML and convert to DOCX paragraphs
-
-  const htmlContent = await readFileAsText(file);
-  const paragraphs = await parseHtmlToDocx(String(htmlContent));
-
-  // Create the document
-  const doc = new Document({
-    creator: "EasyPixelShift.com",
-    title: "Document",
-    description: "Generated from HTML",
-    sections: [
-      {
-        properties: {
-          page: {
-            margin: {
-              top: 1440, // 1 inch in twips
-              right: 1440,
-              bottom: 1440,
-              left: 1440,
-            },
-          },
-        },
-        children: paragraphs,
-      },
-    ],
-  });
-
-  // Generate the Word document as a blob
-  const blob = await Packer.toBlob(doc);
-  console.log(`Word document generated successfully from HTML`);
-
-  return blob;
 }
 
 /**

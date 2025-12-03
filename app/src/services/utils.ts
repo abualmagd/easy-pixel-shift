@@ -48,3 +48,61 @@ export const fileNameFinder = (file: File) => {
   }
   return name;
 };
+
+export const downloadPNGFile = (
+  pngBlob: Blob,
+  fileName: string
+): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    // Ensure it's a PNG blob
+    if (!pngBlob || !(pngBlob instanceof Blob)) {
+      reject(new Error("Invalid PNG blob"));
+      return;
+    }
+
+    // Ensure blob has PNG MIME type
+    let finalBlob = pngBlob;
+    if (!pngBlob.type.includes("png")) {
+      console.log("Converting blob to PNG type");
+      finalBlob = new Blob([pngBlob], { type: "image/png" });
+    }
+
+    // Create filename
+    const baseName = fileName.replace(/\.[^/.]+$/, "");
+    const fullFileName = `${baseName}.png`;
+
+    // Create object URL
+    let objectUrl: string;
+    try {
+      objectUrl = URL.createObjectURL(finalBlob);
+    } catch (error) {
+      reject(
+        new Error(
+          `Failed to create download URL: ${
+            error instanceof Error ? error.message : "Unknown error"
+          }`
+        )
+      );
+      return;
+    }
+
+    // Create and configure link
+    const link = document.createElement("a");
+    link.href = objectUrl;
+    link.download = fullFileName;
+    link.style.display = "none";
+
+    // Append to body
+    document.body.appendChild(link);
+
+    // Trigger download
+    link.click();
+
+    // Cleanup
+    setTimeout(() => {
+      document.body.removeChild(link);
+      URL.revokeObjectURL(objectUrl);
+      resolve();
+    }, 100);
+  });
+};

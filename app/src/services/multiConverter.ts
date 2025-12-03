@@ -1,3 +1,5 @@
+"use client ";
+
 import {
   convertTextToWord,
   convertWordToHtml,
@@ -5,7 +7,12 @@ import {
   convertWordToTxt,
 } from "./docx";
 import { convertHtmlToText, convertHtmlToWord, convertTxtToHtml } from "./html";
-import { convertTxtToPdf, htmlToPdf } from "./pdf";
+import {
+  convertPdfToDocxSimple,
+  convertPdfToHtml,
+  convertTxtToPdf,
+  htmlToPdf,
+} from "./pdf";
 import { fileTypeFinder } from "./utils";
 
 export async function multiFileConvert(file: File, to: string) {
@@ -23,9 +30,7 @@ export async function multiFileConvert(file: File, to: string) {
       default:
         return undefined;
     }
-  }
-
-  if (from === "html") {
+  } else if (from === "html") {
     switch (to) {
       case "pdf":
         return await htmlToPdf(file);
@@ -38,9 +43,7 @@ export async function multiFileConvert(file: File, to: string) {
       default:
         return undefined;
     }
-  }
-
-  if (from === "docx" || from === "doc") {
+  } else if (from === "docx" || from === "doc") {
     switch (to) {
       case "pdf":
         return await convertWordToPdf(file);
@@ -53,5 +56,20 @@ export async function multiFileConvert(file: File, to: string) {
       default:
         return undefined;
     }
+  } else if (from === "pdf") {
+    switch (to) {
+      case "pdf":
+        throw Error("its the same file extension");
+      case "txt":
+        return convertHtmlToText(file);
+      case "docx":
+        return convertPdfToDocxSimple(file); //here
+      case "html":
+        return convertPdfToHtml(file);
+      default:
+        return undefined;
+    }
+  } else {
+    throw Error("file isnot supported!");
   }
 }

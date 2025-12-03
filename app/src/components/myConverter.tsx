@@ -30,6 +30,7 @@ export default function MyConverter(props: {
       setState("download");
     } catch (error) {
       setState("waiting");
+      console.log("err ", error);
       notify(String(error), true);
     }
   };
