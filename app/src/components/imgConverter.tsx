@@ -53,6 +53,7 @@ export default function ImgConverter(props: {
             <span>Output:</span>
 
             <select
+              defaultValue={to}
               onChange={(e) => handleToChange(e)}
               id="output"
               className="block w-full px-3 py-2 rounded  border border-rounded text-heading text-sm focus:ring-brand  focus:rounded shadow-xs placeholder:text-body"

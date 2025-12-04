@@ -22,7 +22,9 @@ export default function ImageConverterContainer(props: {
   return (
     <div className=" flex flex-col gap-3 w-full items-center">
       <h1 className=" font-extrabold text-4xl leading-15">{props.title}</h1>
-      <p className=" text-xl">{props.slogan}</p>
+      <p className=" text-xl text-[#282f3a] shadow-black text-center font-mono">
+        {props.slogan}
+      </p>
 
       <div className="h-5"></div>
 
