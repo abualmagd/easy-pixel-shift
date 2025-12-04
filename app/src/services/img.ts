@@ -1,3 +1,13 @@
+"use client";
+import {
+  FillStyle,
+  ImageTracerBrowser,
+  Options,
+} from "@image-tracer-ts/browser";
+import { parseICO } from "icojs/browser";
+import { readFileAsArrayBuffer } from "./docx";
+import { fileNameFinder, fileTypeFinder } from "./utils";
+
 export async function convertImageFormat(
   file: File,
   targetType: "image/png" | "image/jpeg" | "image/webp"
@@ -75,4 +85,30 @@ export async function convertToPng(file: File): Promise<Blob> {
     img.onerror = () => reject(new Error("Failed to load image"));
     img.src = URL.createObjectURL(file);
   });
+}
+
+export async function convertToSvg(file: File): Promise<Blob> {
+  if (typeof window === "undefined") {
+    throw new Error("PDF conversion must run in the browser, not during SSR");
+  }
+  const options: Partial<Options> = { fillStyle: FillStyle.STROKE };
+  const svgString = await ImageTracerBrowser.fromFile(file, options);
+  console.log("svg: ", svgString);
+  return new Blob([svgString], { type: "image/svg+xml" });
+}
+
+export async function convertToIco(file: File): Promise<Blob> {
+  const type = fileTypeFinder(file);
+  if (type === "png") {
+    const buffer = await readFileAsArrayBuffer(file);
+    const images = await parseICO(buffer);
+    return new Blob([images[0].buffer], { type: "image/ico" });
+  } else {
+    const fileName = fileNameFinder(file);
+    const pngBlob = await convertToPng(file);
+    const pngFile = new File([pngBlob], fileName);
+    const buffer = await readFileAsArrayBuffer(pngFile);
+    const images = await parseICO(buffer);
+    return new Blob([images[0].buffer], { type: "image/ico" });
+  }
 }
