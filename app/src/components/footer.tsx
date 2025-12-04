@@ -15,8 +15,8 @@ export default function MyFooter() {
     >
       <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
         <div>
-          <FooterTitle title="Company" />
-          <FooterLinkGroup col>
+          <FooterTitle title="Company" className="text-white" />
+          <FooterLinkGroup col className="text-white">
             <FooterLink href="#">About</FooterLink>
             <FooterLink href="#">Careers</FooterLink>
             <FooterLink href="#">Brand Center</FooterLink>
@@ -24,8 +24,8 @@ export default function MyFooter() {
           </FooterLinkGroup>
         </div>
         <div>
-          <FooterTitle title="help center" />
-          <FooterLinkGroup col>
+          <FooterTitle title="help center" className="text-white" />
+          <FooterLinkGroup col className="text-white">
             <FooterLink href="#">Discord Server</FooterLink>
             <FooterLink href="#">Twitter</FooterLink>
             <FooterLink href="#">Facebook</FooterLink>
@@ -33,16 +33,16 @@ export default function MyFooter() {
           </FooterLinkGroup>
         </div>
         <div>
-          <FooterTitle title="legal" />
-          <FooterLinkGroup col>
+          <FooterTitle title="legal" className="text-white" />
+          <FooterLinkGroup col className="text-white">
             <FooterLink href="#">Privacy Policy</FooterLink>
             <FooterLink href="#">Licensing</FooterLink>
             <FooterLink href="#">Terms &amp; Conditions</FooterLink>
           </FooterLinkGroup>
         </div>
         <div>
-          <FooterTitle title="download" />
-          <FooterLinkGroup col>
+          <FooterTitle title="download" className="text-white" />
+          <FooterLinkGroup col className="text-white">
             <FooterLink href="#">iOS</FooterLink>
             <FooterLink href="#">Android</FooterLink>
             <FooterLink href="#">Windows</FooterLink>
@@ -59,7 +59,7 @@ export default function MyFooter() {
               Easy Pixel Shift
             </span>{" "}
           </div>
-          <FooterLinkGroup>
+          <FooterLinkGroup className="text-white">
             <FooterLink href="#">About</FooterLink>
             <FooterLink href="#">Privacy Policy</FooterLink>
             <FooterLink href="#">Licensing</FooterLink>

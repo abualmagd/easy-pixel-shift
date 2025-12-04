@@ -1,12 +1,9 @@
 "use client";
-import {
-  FillStyle,
-  ImageTracerBrowser,
-  Options,
-} from "@image-tracer-ts/browser";
+
 import { parseICO } from "icojs/browser";
 import { readFileAsArrayBuffer } from "./docx";
 import { fileNameFinder, fileTypeFinder } from "./utils";
+import { Options } from "@image-tracer-ts/browser";
 
 export async function convertImageFormat(
   file: File,
@@ -91,8 +88,11 @@ export async function convertToSvg(file: File): Promise<Blob> {
   if (typeof window === "undefined") {
     throw new Error("PDF conversion must run in the browser, not during SSR");
   }
-  const options: Partial<Options> = { fillStyle: FillStyle.STROKE };
-  const svgString = await ImageTracerBrowser.fromFile(file, options);
+
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const tracer = require("@image-tracer-ts/browser");
+  const options: Partial<Options> = { fillStyle: tracer.FillStyle.STROKE };
+  const svgString = await tracer.ImageTracerBrowser.fromFile(file, options);
   console.log("svg: ", svgString);
   return new Blob([svgString], { type: "image/svg+xml" });
 }
