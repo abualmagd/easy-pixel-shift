@@ -6,6 +6,7 @@ import {
   FooterLinkGroup,
   FooterTitle,
 } from "flowbite-react";
+import { myDocumentLinks, myImageLinks } from "../const";
 
 export default function MyFooter() {
   return (
@@ -15,38 +16,54 @@ export default function MyFooter() {
     >
       <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
         <div>
-          <FooterTitle title="Company" className="text-white" />
+          <FooterTitle title="Our Tools" className="text-white" />
           <FooterLinkGroup col className="text-white">
-            <FooterLink href="#">About</FooterLink>
-            <FooterLink href="#">Careers</FooterLink>
-            <FooterLink href="#">Brand Center</FooterLink>
-            <FooterLink href="#">Blog</FooterLink>
+            <FooterLink href="https://speaksnaps.com/">
+              Ai text to speach
+            </FooterLink>
+            <FooterLink href="https://doincornwall.com/">
+              visit cornwall
+            </FooterLink>
+            <FooterLink href="https://codefray.com/">learn coding</FooterLink>
           </FooterLinkGroup>
         </div>
         <div>
-          <FooterTitle title="help center" className="text-white" />
+          <FooterTitle title="Image converter" className="text-white" />
           <FooterLinkGroup col className="text-white">
-            <FooterLink href="#">Discord Server</FooterLink>
-            <FooterLink href="#">Twitter</FooterLink>
-            <FooterLink href="#">Facebook</FooterLink>
-            <FooterLink href="#">Contact Us</FooterLink>
+            {myImageLinks.map((item, i) => {
+              if (i > 5) {
+                return null;
+              } else {
+                return (
+                  <FooterLink key={i} href={item.link}>
+                    {item.name}
+                  </FooterLink>
+                );
+              }
+            })}
           </FooterLinkGroup>
         </div>
         <div>
-          <FooterTitle title="legal" className="text-white" />
+          <FooterTitle title="Document Converters" className="text-white" />
           <FooterLinkGroup col className="text-white">
-            <FooterLink href="#">Privacy Policy</FooterLink>
-            <FooterLink href="#">Licensing</FooterLink>
-            <FooterLink href="#">Terms &amp; Conditions</FooterLink>
+            {myDocumentLinks.map((item, i) => {
+              if (i > 5) {
+                return null;
+              } else {
+                return (
+                  <FooterLink key={i} href={item.link}>
+                    {item.name}
+                  </FooterLink>
+                );
+              }
+            })}
           </FooterLinkGroup>
         </div>
         <div>
-          <FooterTitle title="download" className="text-white" />
+          <FooterTitle title="Multi Converters" className="text-white" />
           <FooterLinkGroup col className="text-white">
-            <FooterLink href="#">iOS</FooterLink>
-            <FooterLink href="#">Android</FooterLink>
-            <FooterLink href="#">Windows</FooterLink>
-            <FooterLink href="#">MacOS</FooterLink>
+            <FooterLink href="/image-converter">Image converter</FooterLink>
+            <FooterLink href="/">File converter </FooterLink>
           </FooterLinkGroup>
         </div>
       </div>

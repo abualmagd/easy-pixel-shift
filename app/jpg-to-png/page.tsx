@@ -1,5 +1,13 @@
+import { Metadata } from "next";
 import Feature from "../src/components/feature";
 import ImageConverterContainer from "../src/components/imageConverterContainer";
+import { conversionMetaDataList } from "../src/metatags";
+import ImageLinks from "../src/components/imageLinks";
+import FileLinks from "../src/components/fileLinks";
+
+export const metadata: Metadata = conversionMetaDataList.filter(
+  (m) => m.link === "/jpg-to-png"
+)[0].metadata;
 
 export default function Page() {
   return (
@@ -12,6 +20,8 @@ export default function Page() {
           to="png"
         />
         <Feature from={"jpg"} to={"png"} />
+        <ImageLinks />
+        <FileLinks />
       </main>
     </div>
   );
