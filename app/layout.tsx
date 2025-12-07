@@ -4,6 +4,7 @@ import "./globals.css";
 import MyFooter from "./src/components/footer";
 import { ToastContainer } from "react-toastify";
 import Navbar from "./src/components/navbar";
+import { siteLink } from "./src/const";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +19,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Easy Pixel Shift",
   description: "convert image compress images convert jpg to pdf ",
+  metadataBase: new URL(`${siteLink}`),
 };
 
 export default function RootLayout({

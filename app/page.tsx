@@ -1,4 +1,6 @@
 import Converter from "./src/components/converterContainer";
+import FileLinks from "./src/components/fileLinks";
+import ImageLinks from "./src/components/imageLinks";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
           from=""
           to=""
         />
+        <FileLinks />
+        <ImageLinks />
       </main>
     </div>
   );

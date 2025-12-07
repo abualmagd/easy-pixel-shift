@@ -10,26 +10,35 @@ export const myImageLinks = [
   { name: "JPG to WebP", link: "/jpg-to-webp" },
   { name: "JPG to ICO", link: "/jpg-to-ico" },
 
+  // --- JPEG Conversions (New) ---
+  { name: "JPEG to PNG", link: "/jpeg-to-png" },
+  { name: "JPEG to SVG", link: "/jpeg-to-svg" },
+  { name: "JPEG to WebP", link: "/jpeg-to-webp" },
+  { name: "JPEG to ICO", link: "/jpeg-to-ico" },
+
   // --- PNG Conversions ---
   { name: "PNG to JPG", link: "/png-to-jpg" },
+  { name: "PNG to JPEG", link: "/png-to-jpeg" }, // Added
   { name: "PNG to SVG", link: "/png-to-svg" },
   { name: "PNG to WebP", link: "/png-to-webp" },
   { name: "PNG to ICO", link: "/png-to-ico" },
 
   // --- SVG Conversions ---
-  { name: "SVG to JPEG", link: "/svg-to-jpeg" }, // Note: JPEG is the same as JPG
+  { name: "SVG to JPEG", link: "/svg-to-jpeg" }, // Already existed
   { name: "SVG to PNG", link: "/svg-to-png" },
   { name: "SVG to WebP", link: "/svg-to-webp" },
   { name: "SVG to ICO", link: "/svg-to-ico" },
 
   // --- WebP Conversions ---
   { name: "WebP to JPG", link: "/webp-to-jpg" },
+  { name: "WebP to JPEG", link: "/webp-to-jpeg" }, // Added
   { name: "WebP to PNG", link: "/webp-to-png" },
   { name: "WebP to SVG", link: "/webp-to-svg" },
   { name: "WebP to ICO", link: "/webp-to-ico" },
 
   // --- ICO Conversions ---
   { name: "ICO to JPG", link: "/ico-to-jpg" },
+  { name: "ICO to JPEG", link: "/ico-to-jpeg" }, // Added
   { name: "ICO to PNG", link: "/ico-to-png" },
   { name: "ICO to SVG", link: "/ico-to-svg" },
   { name: "ICO to WebP", link: "/ico-to-webp" },

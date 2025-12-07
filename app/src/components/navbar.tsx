@@ -10,7 +10,8 @@ import {
   NavbarLink,
   NavbarToggle,
 } from "flowbite-react";
-import { HiArrowRight, HiChevronDown } from "react-icons/hi";
+import { HiChevronDown } from "react-icons/hi";
+import { myDocumentLinks, myImageLinks } from "../const";
 
 export default function Navbar() {
   return (
@@ -35,92 +36,58 @@ export default function Navbar() {
         <NavbarLink href="/">About</NavbarLink>
         <NavbarLink href="/">Contact</NavbarLink>
       </NavbarCollapse>
-      <MegaMenuDropdown>
-        <div className="mx-auto mt-6 grid max-w-7xl border-y border-gray-200 px-2 py-5 text-sm shadow-sm sm:grid-cols-2 md:grid-cols-3 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
+      <MegaMenuDropdown className=" w-full hidden">
+        <div className="mx-auto w-full mt-6 grid max-w-7xl border-y border-gray-200 px-2 py-5 text-sm shadow-sm sm:grid-cols-2 md:grid-cols-3 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
           <ul className="space-y-4 sm:mb-4 md:mb-0">
-            <li>
-              <a
-                href="#"
-                className="hover:text-primary-600 hover:underline dark:hover:text-primary-500"
-              >
-                Online Stores
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-primary-600 hover:underline dark:hover:text-primary-500"
-              >
-                Segmentation
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-primary-600 hover:underline dark:hover:text-primary-500"
-              >
-                Marketing CRM
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-primary-600 hover:underline dark:hover:text-primary-500"
-              >
-                Online Stores
-              </a>
-            </li>
+            {myImageLinks.map((item, i) => {
+              if (i > 5) {
+                return null;
+              } else {
+                return (
+                  <li
+                    key={i}
+                    className="hover:text-primary-600 hover:underline dark:hover:text-primary-500"
+                  >
+                    <a href={item.link}>{item.name}</a>
+                  </li>
+                );
+              }
+            })}
           </ul>
           <ul className="mb-4 hidden space-y-4 sm:block md:mb-0">
-            <li>
-              <a
-                href="#"
-                className="hover:text-primary-600 hover:underline dark:hover:text-primary-500"
-              >
-                Our Blog
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-primary-600 hover:underline dark:hover:text-primary-500"
-              >
-                Terms & Conditions
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-primary-600 hover:underline dark:hover:text-primary-500"
-              >
-                License
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="hover:text-primary-600 hover:underline dark:hover:text-primary-500"
-              >
-                Resources
-              </a>
-            </li>
+            {myDocumentLinks.map((item, i) => {
+              if (i > 5) {
+                return null;
+              } else {
+                return (
+                  <li
+                    key={i}
+                    className="hover:text-primary-600 hover:underline dark:hover:text-primary-500"
+                  >
+                    <a href={item.link}>{item.name}</a>
+                  </li>
+                );
+              }
+            })}
           </ul>
-          <div className="mt-4 md:mt-0">
-            <h2 className="mb-2 font-semibold text-gray-900 dark:text-white">
-              Our brands
-            </h2>
-            <p className="mb-2 text-gray-500 dark:text-gray-400">
-              At Flowbite, we have a portfolio of brands that cater to a variety
-              of preferences.
-            </p>
-            <a
-              href="#"
-              className="inline-flex items-center text-sm font-medium text-primary-600 hover:text-primary-600 dark:text-primary-500 dark:hover:text-primary-700"
-            >
-              Explore our brands
-              <span className="sr-only">Explore our brands</span>
-              <HiArrowRight className="ml-2" />
-            </a>
+          <div className="mt-4 md:mt-0 ">
+            <ul className="space-y-4 sm:mb-4 md:mb-0">
+              <li>
+                <h2 className="mb-2 font-semibold text-gray-900 dark:text-white">
+                  Our Tools
+                </h2>
+              </li>
+
+              <li>
+                <a href="https://speaksnaps.com/">Ai text to speach</a>
+              </li>
+              <li>
+                <a href="https://doincornwall.com/">visit cornwall</a>
+              </li>
+              <li>
+                <a href="https://codefray.com/">learn coding</a>
+              </li>
+            </ul>
           </div>
         </div>
       </MegaMenuDropdown>

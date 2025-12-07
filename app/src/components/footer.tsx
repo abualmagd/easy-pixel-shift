@@ -7,6 +7,8 @@ import {
   FooterTitle,
 } from "flowbite-react";
 import { myDocumentLinks, myImageLinks } from "../const";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function MyFooter() {
   return (
@@ -72,9 +74,21 @@ export default function MyFooter() {
       <div className="w-full text-center">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
           <div>
-            <span className="self-center text-transparent bg-clip-text bg-linear-to-bl from-fuchsia-600 to-amber-500  text-xl font-semibold whitespace-nowrap text-heading">
+            {/*<span className="self-center text-transparent bg-clip-text bg-linear-to-bl from-fuchsia-600 to-amber-500  text-xl font-semibold whitespace-nowrap text-heading">
               Easy Pixel Shift
-            </span>{" "}
+            </span>{" "}*/}
+            <Link href="/" className=" flex">
+              <Image
+                width={100}
+                height={100}
+                alt="easy pixel logo"
+                src="/eps-logo.png"
+                className="-mr-2  h-10 sm:h-12 md:h-14"
+              />
+              <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
+                Easy Pixel Shift
+              </span>
+            </Link>
           </div>
           <FooterLinkGroup className="text-white">
             <FooterLink href="#">About</FooterLink>

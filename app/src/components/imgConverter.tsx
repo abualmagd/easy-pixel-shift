@@ -9,10 +9,11 @@ export default function ImgConverter(props: {
   file: File;
   // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   removeFile: Function;
+  to: string;
 }) {
   const [state, setState] = useState("waiting");
   const [output, setOutput] = useState<Blob>();
-  const [to, setTo] = useState("png");
+  const [to, setTo] = useState(props.to || "png");
 
   const handleToChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setTo(e.target.value);

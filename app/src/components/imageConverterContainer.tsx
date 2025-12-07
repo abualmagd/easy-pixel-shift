@@ -64,7 +64,11 @@ export default function ImageConverterContainer(props: {
         </div>
       ) : (
         <div className=" w-full">
-          <ImgConverter file={selectedFile} removeFile={removeSelectedFile} />
+          <ImgConverter
+            file={selectedFile}
+            removeFile={removeSelectedFile}
+            to={props.to}
+          />
         </div>
       )}
     </div>
