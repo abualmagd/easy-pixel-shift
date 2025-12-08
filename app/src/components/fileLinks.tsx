@@ -11,7 +11,7 @@ export default function FileLinks() {
           return (
             <li key={index}>
               <a
-                href={item.link}
+                href={"/convert/" + item.link}
                 className=" text-blue-500 font-semibold font-sans"
               >
                 {item.name}

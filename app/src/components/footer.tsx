@@ -53,7 +53,7 @@ export default function MyFooter() {
                 return null;
               } else {
                 return (
-                  <FooterLink key={i} href={item.link}>
+                  <FooterLink key={i} href={"/convert/" + item.link}>
                     {item.name}
                   </FooterLink>
                 );
@@ -64,8 +64,12 @@ export default function MyFooter() {
         <div>
           <FooterTitle title="Multi Converters" className="text-white" />
           <FooterLinkGroup col className="text-white">
-            <FooterLink href="/image-converter">Image converter</FooterLink>
-            <FooterLink href="/">File converter </FooterLink>
+            <FooterLink href="/converters/image-converter">
+              Image converter
+            </FooterLink>
+            <FooterLink href="/converters/file-converter">
+              File converter{" "}
+            </FooterLink>
           </FooterLinkGroup>
         </div>
       </div>
@@ -91,10 +95,18 @@ export default function MyFooter() {
             </Link>
           </div>
           <FooterLinkGroup className="text-white">
-            <FooterLink href="#">About</FooterLink>
-            <FooterLink href="#">Privacy Policy</FooterLink>
-            <FooterLink href="#">Licensing</FooterLink>
-            <FooterLink href="#">Contact</FooterLink>
+            <FooterLink href="/about" target="_blank">
+              About
+            </FooterLink>
+            <FooterLink href="/privacy" target="_blank">
+              Privacy Policy
+            </FooterLink>
+            <FooterLink href="/terms" target="_blank">
+              Terms
+            </FooterLink>
+            <FooterLink href="https://wa.me/201508328238" target="_blank">
+              Contact
+            </FooterLink>
           </FooterLinkGroup>
         </div>
         <FooterCopyright

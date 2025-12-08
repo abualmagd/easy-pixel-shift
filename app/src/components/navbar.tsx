@@ -33,8 +33,12 @@ export default function Navbar() {
           Tools
           <HiChevronDown className="ml-2" />
         </MegaMenuDropdownToggle>
-        <NavbarLink href="/">About</NavbarLink>
-        <NavbarLink href="/">Contact</NavbarLink>
+        <NavbarLink href="/about" target="_blank">
+          About
+        </NavbarLink>
+        <NavbarLink href="https://wa.me/201508328238" target="_blank">
+          Contact
+        </NavbarLink>
       </NavbarCollapse>
       <MegaMenuDropdown className=" w-full hidden">
         <div className="mx-auto w-full mt-6 grid max-w-7xl border-y border-gray-200 px-2 py-5 text-sm shadow-sm sm:grid-cols-2 md:grid-cols-3 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">

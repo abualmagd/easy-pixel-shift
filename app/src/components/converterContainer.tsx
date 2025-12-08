@@ -61,7 +61,11 @@ export default function Converter(props: {
         </div>
       ) : (
         <div className=" w-full">
-          <MyConverter file={selectedFile} removeFile={removeSelectedFile} />
+          <MyConverter
+            file={selectedFile}
+            removeFile={removeSelectedFile}
+            to={props.to}
+          />
         </div>
       )}
     </div>

@@ -7,12 +7,13 @@ import { multiFileConvert } from "../services/multiConverter";
 
 export default function MyConverter(props: {
   file: File;
+  to: string;
   // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   removeFile: Function;
 }) {
   const [state, setState] = useState("waiting");
   const [output, setOutput] = useState<Blob>();
-  const [to, setTo] = useState("pdf");
+  const [to, setTo] = useState(props.to || "pdf");
 
   const handleToChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setTo(e.target.value);
@@ -53,6 +54,7 @@ export default function MyConverter(props: {
             <span>Output:</span>
 
             <select
+              defaultValue={to}
               onChange={(e) => handleToChange(e)}
               id="output"
               className="block w-full px-3 py-2 rounded  border border-rounded text-heading text-sm focus:ring-brand  focus:rounded shadow-xs placeholder:text-body"

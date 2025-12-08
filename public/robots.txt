@@ -1,0 +1,8 @@
+
+
+
+User-Agent: *
+Allow: /
+
+
+Sitemap: https://easypixelshift.com/sitemap.xml
