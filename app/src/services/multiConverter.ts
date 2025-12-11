@@ -30,7 +30,7 @@ export async function multiFileConvert(file: File, to: string) {
       default:
         return undefined;
     }
-  } else if (from === "html") {
+  } else if (from === "html" || from === "htm") {
     switch (to) {
       case "pdf":
         return await htmlToPdf(file);
@@ -70,6 +70,6 @@ export async function multiFileConvert(file: File, to: string) {
         return undefined;
     }
   } else {
-    throw Error("file isnot supported!");
+    throw Error("file is not supported!");
   }
 }

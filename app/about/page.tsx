@@ -41,7 +41,7 @@ export default function WhoUs() {
         </p>
         <div className=" flex flex-row mt-4">
           <Link
-            href={"https://twitter.com/SaasBoy00"}
+            href={"https://x.com/ismail_code"}
             target="_blank"
             rel="me noopener"
             className=" mr-3 p-2 flex justify-center hover:bg-slate-100 rounded-full bg-transparent transition-colors duration-150"

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import {
   Footer,
   FooterCopyright,
@@ -8,7 +9,6 @@ import {
 } from "flowbite-react";
 import { myDocumentLinks, myImageLinks } from "../const";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function MyFooter() {
   return (
@@ -82,9 +82,7 @@ export default function MyFooter() {
               Easy Pixel Shift
             </span>{" "}*/}
             <Link href="/" className=" flex">
-              <Image
-                width={100}
-                height={100}
+              <img
                 alt="easy pixel logo"
                 src="/eps-logo.png"
                 className="-mr-2  h-10 sm:h-12 md:h-14"

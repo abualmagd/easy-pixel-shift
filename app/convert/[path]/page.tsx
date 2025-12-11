@@ -4,6 +4,7 @@ import ImageLinks from "@/app/src/components/imageLinks";
 import { Metadata } from "next";
 import { myDocumentLinks } from "@/app/src/const";
 import { baseFileMetadataTemplate } from "@/app/src/metatags";
+import FFeature from "@/app/src/components/fFeatures";
 
 type Props = {
   params: Promise<{ path: string }>;
@@ -46,6 +47,7 @@ export default async function Page({ params }: Props) {
             from={from}
             to={to}
           />
+          <FFeature from={from} to={to} />
           <FileLinks />
           <ImageLinks />
         </main>

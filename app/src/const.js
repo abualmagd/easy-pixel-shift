@@ -65,3 +65,9 @@ export const myDocumentLinks = [
   { name: "DOCX to HTML", link: "/docx-to-html" },
   { name: "DOCX to TXT", link: "/docx-to-txt" },
 ];
+
+export const specialConverters = [
+  //more
+  { name: "JPG to PDF", link: "/jpg-to-pdf" },
+  { name: "PDF to JPG", link: "/pdf-to-jpg" },
+];

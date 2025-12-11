@@ -48,7 +48,9 @@ export default function ImgConverter(props: {
   return (
     <div className=" w-full flex-col  h-32 rounded border border-gray-500 flex">
       <div className="flex w-full p-4 justify-between">
-        <p>{props.file.name}</p>
+        <p className=" lg:max-w-60 max-w-32 max-h-10 overflow-hidden ">
+          {props.file.name}
+        </p>
         <div className=" flex gap-5 text-gray-500">
           <div className=" flex items-center gap-2 ">
             <span>Output:</span>

@@ -1,4 +1,5 @@
 import Converter from "@/app/src/components/converterContainer";
+import FileFeature from "@/app/src/components/fileFeature";
 import FileLinks from "@/app/src/components/fileLinks";
 import ImageLinks from "@/app/src/components/imageLinks";
 import { siteLink } from "@/app/src/const";
@@ -56,6 +57,7 @@ export default function Home() {
           from=""
           to=""
         />
+        <FileFeature />
         <FileLinks />
         <ImageLinks />
       </main>
