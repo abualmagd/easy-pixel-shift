@@ -66,13 +66,10 @@ export default function GifCustomizer({
         left: 0,
         top: 0,
       };
-      console.log("i ", index);
       const nFrames = [...myFrames];
-      const befPart = nFrames.filter((_, i) => i <= index);
-      const lastPart = nFrames.filter((_, i) => i > index);
-      const proFrames = [...befPart, newFrame, ...lastPart];
-      setMyFrames(proFrames);
-      handle(proFrames);
+      nFrames.splice(index + 1, 0, newFrame);
+      setMyFrames(nFrames);
+      handle(nFrames);
     }
   };
 
