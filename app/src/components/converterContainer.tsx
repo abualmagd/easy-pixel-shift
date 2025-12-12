@@ -22,7 +22,7 @@ export default function Converter(props: {
   return (
     <div className=" flex flex-col gap-3 w-full items-center">
       <h1 className=" font-extrabold text-4xl leading-15">{props.title}</h1>
-      <p className=" text-xl">{props.slogan}</p>
+      <p className=" text-xl dark:text-gray-400">{props.slogan}</p>
 
       <div className="h-5"></div>
 

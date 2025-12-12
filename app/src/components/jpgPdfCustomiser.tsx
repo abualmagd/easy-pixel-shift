@@ -7,7 +7,7 @@ export default function JpgPdfCustomiser({
   handle: (e: ChangeEvent<HTMLSelectElement>) => void;
 }) {
   return (
-    <div className=" w-full flex flex-col gap-5 my-10">
+    <div className=" w-full flex flex-col gap-5 my-10 dark:text-gray-400">
       <h2 className=" flex gap-5 mb-2 justify-start items-center font-semibold text-xl">
         <BsGear />
         Page Options:

@@ -70,4 +70,5 @@ export const specialConverters = [
   //more
   { name: "JPG to PDF", link: "/jpg-to-pdf" },
   { name: "PDF to JPG", link: "/pdf-to-jpg" },
+  { name: "GIF MAKER", link: "/gif-maker" },
 ];

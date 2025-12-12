@@ -9,3 +9,15 @@ body {
 .my-footer {
   color: white !important;
 }
+
+@media (prefers-color-scheme: dark) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .icon {
+    color: azure;
+  }
+}
