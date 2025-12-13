@@ -49,6 +49,10 @@ export const fileNameFinder = (file: File) => {
   return name;
 };
 
+export const downloadVide = (blob: Blob, name: string) => {
+  saveAs(blob, name);
+};
+
 export const downloadPNGFile = (
   pngBlob: Blob,
   fileName: string
