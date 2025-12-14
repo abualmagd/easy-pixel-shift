@@ -11,11 +11,11 @@ import {
   NavbarToggle,
 } from "flowbite-react";
 import { HiChevronDown } from "react-icons/hi";
-import { myDocumentLinks, myImageLinks } from "../const";
+import { allMediaConversions, myDocumentLinks, myImageLinks } from "../const";
 
 export default function Navbar() {
   return (
-    <MegaMenu>
+    <MegaMenu className=" shadow mb-1 dark:mb-0">
       <NavbarBrand href="/">
         <img
           alt="easy pixel logo"
@@ -74,25 +74,22 @@ export default function Navbar() {
               }
             })}
           </ul>
-          <div className="mt-4 md:mt-0 ">
-            <ul className="space-y-4 sm:mb-4 md:mb-0">
-              <li>
-                <h2 className="mb-2 font-semibold text-gray-900 dark:text-white">
-                  Our Tools
-                </h2>
-              </li>
-
-              <li>
-                <a href="https://speaksnaps.com/">Ai text to speach</a>
-              </li>
-              <li>
-                <a href="https://doincornwall.com/">visit cornwall</a>
-              </li>
-              <li>
-                <a href="https://codefray.com/">learn coding</a>
-              </li>
-            </ul>
-          </div>
+          <ul className="mb-4 hidden space-y-4 sm:block md:mb-0">
+            {allMediaConversions.map((item, i) => {
+              if (i > 5) {
+                return null;
+              } else {
+                return (
+                  <li
+                    key={i}
+                    className="hover:text-primary-600 hover:underline dark:hover:text-primary-500"
+                  >
+                    <a href={item.link}>{item.name}</a>
+                  </li>
+                );
+              }
+            })}
+          </ul>
         </div>
       </MegaMenuDropdown>
     </MegaMenu>

@@ -22,9 +22,8 @@ export async function convertVideo(file: File, format: SupportedFormat) {
     formats: ALL_FORMATS,
   });
   const outputFormat = formatMap[format];
-
   const output = new Output({
-    format: new outputFormat(), // Convert to WebM
+    format: new outputFormat(),
     target: new BufferTarget(),
   });
 

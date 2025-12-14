@@ -14,7 +14,7 @@ export default function MyFooter() {
   return (
     <Footer
       container
-      className="my-footer bg-blend-saturation bg-[#1e2e47] flex flex-col "
+      className="my-footer bg-blend-saturation dark:rounded-none bg-[#1e2e47] flex flex-col "
     >
       <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
         <div>
@@ -69,6 +69,9 @@ export default function MyFooter() {
             </FooterLink>
             <FooterLink href="/converters/file-converter">
               File converter{" "}
+            </FooterLink>
+            <FooterLink href="/converters/video-converter">
+              Video converter{" "}
             </FooterLink>
           </FooterLinkGroup>
         </div>

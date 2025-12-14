@@ -126,3 +126,110 @@ export const baseFileMetadataTemplate = (
     keywords: keywords,
   };
 };
+
+export const mediaMetadataTemplate = (from: string, to: string): Metadata => {
+  const fromLower = from.toLowerCase();
+  const toLower = to.toLowerCase();
+
+  // Helper function to replace placeholders (assuming it exists in scope)
+  const replacePlaceholders = (template: string, from: string, to: string) => {
+    return template
+      .replace(/{{FROM}}/g, from.toUpperCase())
+      .replace(/{{TO}}/g, to.toUpperCase())
+      .replace(/{{from}}/g, from.toLowerCase())
+      .replace(/{{to}}/g, to.toLowerCase());
+  };
+
+  // --- Start Dynamic Content Definitions ---
+  let titleTemplate =
+    "{{FROM}} to {{TO}} Converter Online: Free Video/Audio Tool";
+  let descriptionTemplate =
+    "Convert your {{FROM}} media files to {{TO}} format quickly and easily. High-quality and fast conversion, free to use online.";
+
+  // Define Media Formats for better targeting in logic
+  const videoFormats = ["mp4", "webm", "mov", "mkv"];
+  const audioFormats = ["mp3", "wav", "ogg", "flac", "adts"];
+
+  // --- Custom Logic for Target Media Formats ---
+
+  if (videoFormats.includes(fromLower) && audioFormats.includes(toLower)) {
+    // Logic for Video-to-Audio Extraction (e.g., MP4 to MP3)
+    titleTemplate =
+      "Extract Audio: {{FROM}} to {{TO}} Converter (Video to Audio)";
+    descriptionTemplate =
+      "**Extract high-quality audio** from your video file. Convert **{{FROM}} video to a {{TO}} audio file** easily online. Fast and secure audio extraction.";
+  } else if (toLower === "mp4") {
+    // Logic for converting TO the universal MP4 format
+    titleTemplate = "{{FROM}} to MP4 Converter: Universal Video Format";
+    descriptionTemplate =
+      "Convert your media to the highly compatible **MP4 format**. Ensure your {{FROM}} file plays on all devices and streaming platforms.";
+  } else if (toLower === "mp3") {
+    // Logic for converting TO the universal MP3 format
+    titleTemplate = "{{FROM}} to MP3 Converter: Universal Audio Format";
+    descriptionTemplate =
+      "Convert your audio or video to the universally supported **MP3 format**. Ideal for music and podcast downloads.";
+  } else if (toLower === "flac") {
+    // Logic for converting TO the lossless FLAC format
+    titleTemplate = "{{FROM}} to FLAC Converter: Lossless Audio Quality";
+    descriptionTemplate =
+      "Convert your audio to the **FLAC lossless format** for zero quality loss. Perfect for archiving and high-fidelity listening.";
+  } else if (toLower === "mkv") {
+    // Logic for converting TO the flexible MKV container
+    titleTemplate = "{{FROM}} to MKV Converter: Multi-Track Video Container";
+    descriptionTemplate =
+      "Convert your video to the flexible **MKV container format**. Ideal for multiple audio tracks and subtitles.";
+  }
+
+  // --- Apply Placeholders ---
+  const title = replacePlaceholders(titleTemplate, from, to);
+  const description = replacePlaceholders(descriptionTemplate, from, to);
+
+  // --- Define Keywords ---
+  const keywordsTemplate = [
+    "{{from}} to {{to}} converter",
+    "convert {{from}} to {{to}}",
+    "online {{from}} to {{to}}",
+    "free {{from}} to {{to}} tool",
+    // Generic keyword for the output type
+    `${toLower} converter online`,
+    // Specific keywords based on conversion type
+    ...(videoFormats.includes(fromLower) && videoFormats.includes(toLower)
+      ? ["video converter online", "media conversion"]
+      : []),
+    ...(videoFormats.includes(fromLower) && audioFormats.includes(toLower)
+      ? ["video to audio converter", "extract audio from video"]
+      : []),
+    // Add common formats being converted
+    "mp4",
+    "mov",
+    "webm",
+    "mkv",
+    "mp3",
+    "wav",
+    "flac",
+  ].join(", ");
+
+  const keywords = replacePlaceholders(keywordsTemplate, from, to).split(", ");
+
+  return {
+    title: title,
+    description: description,
+
+    // OpenGraph and Twitter use the generated title and description
+    openGraph: {
+      title: title,
+      description: description,
+      url: `${siteLink}+/${fromLower}-to-${toLower}`,
+      images: ["/eps-logo-easy-pixel-shift.jpeg"],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: ["/eps-logo-easy-pixel-shift.jpeg"],
+    },
+
+    keywords: keywords,
+  };
+};

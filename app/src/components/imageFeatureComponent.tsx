@@ -6,7 +6,7 @@ export default function ImageFeature() {
   return (
     <section className="flex flex-col gap-5 w-full">
       <div className="how flex flex-col gap-10">
-        <h2 className=" font-semibold text-xl leading-3 font-mono">
+        <h2 className=" font-semibold text-xl font-mono">
           How to Convert Images?
         </h2>
         <ol className=" list-decimal text-md text-[#282f3a] shadow-black">
