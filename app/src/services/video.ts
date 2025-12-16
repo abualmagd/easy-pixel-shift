@@ -18,9 +18,14 @@ import {
   AdtsOutputFormat,
   FlacOutputFormat,
 } from "mediabunny";
-import { fileTypeFinder } from "./utils";
+import { canEncodeAudio } from "mediabunny";
+import { registerMp3Encoder } from "@mediabunny/mp3-encoder";
 
 export async function convertVideo(file: File, format: SupportedFormat) {
+  if (!(await canEncodeAudio("mp3"))) {
+    registerMp3Encoder();
+  }
+
   const input = new Input({
     source: new BlobSource(file),
     formats: ALL_FORMATS,
@@ -33,7 +38,7 @@ export async function convertVideo(file: File, format: SupportedFormat) {
 
   const conversion = await Conversion.init({ input, output });
   if (!conversion.isValid) {
-    await convertWithFFmpeg(file, format);
+    throw Error(" your browser doesnot support this conversion!");
   } else {
     await conversion.execute();
     const mimType = await output.getMimeType();
@@ -64,85 +69,6 @@ const formatMap: Record<SupportedFormat, any> = {
   adts: AdtsOutputFormat,
   flac: FlacOutputFormat,
 };
-
-interface FFmpegInstance {
-  load(): Promise<void>;
-  writeFile(filename: string, data: Uint8Array): Promise<void>;
-  exec(args: string[]): Promise<{ stdout: string; stderr: string }>;
-  readFile(filename: string): Promise<Uint8Array>;
-  deleteFile(filename: string): Promise<void>;
-}
-
-// Initialize FFmpeg.wasm
-async function initFFmpeg(): Promise<FFmpegInstance | null> {
-  // Load FFmpeg.wasm from CDN
-  /* const script = document.createElement("script");
-  script.src =
-    "https://cdn.jsdelivr.net/npm/@ffmpeg.wasm/main/dist/index.global.js";
-  await new Promise((resolve, reject) => {
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
-
-  // Wait for FFmpeg to be available globally
-  await new Promise((resolve) => setTimeout(resolve, 100));*/
-
-  if (typeof window !== undefined) {
-    const { FFmpeg } = window as any;
-    const ffmpegInstance = FFmpeg.create({ core: "@ffmpeg.wasm/core-mt" });
-    await ffmpegInstance.load();
-
-    console.log("FFmpeg.wasm loaded successfully");
-    return ffmpegInstance;
-  } else {
-    return null;
-  }
-}
-
-async function convertWithFFmpeg(
-  file: File,
-  targetFormat: SupportedFormat
-): Promise<Blob> {
-  const ffmpeg = await initFFmpeg();
-
-  const inputFilename = `input.${fileTypeFinder(file)}`;
-  const outputFilename = `output.${targetFormat}`;
-
-  // Read file as ArrayBuffer
-  const arrayBuffer = await file.arrayBuffer();
-  const data = new Uint8Array(arrayBuffer);
-
-  // Write input file to FFmpeg's virtual filesystem
-  await ffmpeg?.writeFile(inputFilename, data);
-
-  // Build FFmpeg command based on conversion type
-  const args = buildFFmpegArgs(
-    inputFilename,
-    outputFilename,
-    file.type,
-    targetFormat
-  );
-
-  console.log("Running FFmpeg command:", args.join(" "));
-
-  // Execute conversion
-  await ffmpeg?.exec(args);
-
-  // Read output file
-  const outputData = await ffmpeg?.readFile(outputFilename);
-
-  // Clean up files
-  await ffmpeg?.deleteFile(inputFilename);
-  await ffmpeg?.deleteFile(outputFilename);
-
-  // Convert to Blob
-  const mimeType = getMimeType(targetFormat);
-
-  const blobData = new Uint8Array(outputData as any).buffer;
-
-  return new Blob([blobData], { type: mimeType });
-}
 
 export type SupportedFormat =
   | "mp4"
@@ -192,69 +118,3 @@ export type VideoFormat =
   | "iphone"
   | "android"
   | "ipad";
-
-// Build FFmpeg arguments for conversion
-function buildFFmpegArgs(
-  inputFile: string,
-  outputFile: string,
-  inputType: string,
-  outputFormat: SupportedFormat
-): string[] {
-  const args = ["-i", inputFile];
-
-  // Handle specific conversions
-  if (
-    inputType.startsWith("video/") &&
-    ["flac", "mp3", "wav", "ogg", "adts"].includes(outputFormat)
-  ) {
-    // Extract audio from video
-    args.push("-vn"); // No video
-    args.push("-acodec", getFFmpegCodec(outputFormat));
-  } else if (inputType.startsWith("audio/")) {
-    // Audio to audio conversion
-    args.push("-acodec", getFFmpegCodec(outputFormat));
-  }
-
-  // Audio quality settings
-  if (outputFormat === "mp3") {
-    args.push("-b:a", "192k"); // MP3 bitrate
-  } else if (outputFormat === "flac") {
-    args.push("-compression_level", "5"); // FLAC compression level
-  }
-
-  // Output file
-  args.push(outputFile);
-
-  return args;
-}
-
-// Get FFmpeg codec for format
-function getFFmpegCodec(format: SupportedFormat): string {
-  const codecMap: Record<SupportedFormat, string> = {
-    mp4: "libx264",
-    webm: "libvpx-vp9",
-    mov: "libx264",
-    mkv: "libx264",
-    ogg: "libvorbis",
-    mp3: "libmp3lame",
-    wav: "pcm_s16le",
-    adts: "aac",
-    flac: "flac",
-  };
-  return codecMap[format] || "copy";
-}
-
-function getMimeType(format: SupportedFormat): string {
-  const mimeMap: Record<SupportedFormat, string> = {
-    webm: "video/webm",
-    mp4: "video/mp4",
-    mov: "video/quicktime",
-    mkv: "video/x-matroska",
-    ogg: "audio/ogg",
-    mp3: "audio/mpeg",
-    wav: "audio/wav",
-    adts: "audio/aac",
-    flac: "audio/flac",
-  };
-  return mimeMap[format] || "application/octet-stream";
-}

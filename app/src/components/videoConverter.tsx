@@ -5,7 +5,6 @@ import { ChangeEvent, useState } from "react";
 import { downloadFile, fileNameFinder, notify } from "../services/utils";
 import { convertVideo, SupportedFormat } from "../services/video";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import Script from "next/script";
 
 export default function VideoConverter(props: {
   title: string;
@@ -24,11 +23,6 @@ export default function VideoConverter(props: {
   };
   return (
     <>
-      <Script
-        id="ffmgg"
-        src="https://cdn.jsdelivr.net/npm/@ffmpeg.wasm/main/dist/index.global.js"
-        strategy="afterInteractive"
-      ></Script>
       <div className=" flex flex-col gap-3 w-full items-center">
         <h1 className=" font-extrabold text-4xl leading-15">{props.title}</h1>
         <p className=" text-xl dark:text-gray-400">{props.slogan}</p>
@@ -146,8 +140,8 @@ const MyVideoCpnverter = (props: {
               <option value="ogg">Ogg</option>
               <option value="mp3">Mp3</option>
               <option value="wav">Wav</option>
-              <option value="adts">Adts</option>
-              <option value="flac">Flac</option>
+              <option value="adts">Acc</option>
+              <option value="fla">Flac</option>
             </select>
           </div>
           <button onClick={remove} className=" cursor-pointer">
