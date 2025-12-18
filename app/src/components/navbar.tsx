@@ -84,7 +84,7 @@ export default function Navbar() {
                     key={i}
                     className="hover:text-primary-600 hover:underline dark:hover:text-primary-500"
                   >
-                    <a href={item.link}>{item.name}</a>
+                    <a href={"/media" + item.link}>{item.name}</a>
                   </li>
                 );
               }
