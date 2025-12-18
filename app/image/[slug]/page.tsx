@@ -49,7 +49,7 @@ export default async function Page({ params }: Props) {
             to="png"
           />
           <Feature from={from} to={to} />
-          <ImageLinks />
+          <ImageLinks dic={undefined} />
           <FileLinks />
         </main>
       </div>

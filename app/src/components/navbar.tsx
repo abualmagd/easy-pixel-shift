@@ -12,11 +12,13 @@ import {
 } from "flowbite-react";
 import { HiChevronDown } from "react-icons/hi";
 import { allMediaConversions, myDocumentLinks, myImageLinks } from "../const";
+import { LanguageSwicher } from "./languageSwicher";
 
-export default function Navbar() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function Navbar({ dic }: { dic?: any }) {
   return (
-    <MegaMenu className=" shadow mb-1 dark:mb-0">
-      <NavbarBrand href="/">
+    <MegaMenu className=" shadow mb-1 dark:mb-0  font-sans">
+      <NavbarBrand href={dic ? `/${dic.lang}` : "/"}>
         <img
           alt="easy pixel logo"
           src="/eps-logo.png"
@@ -28,17 +30,21 @@ export default function Navbar() {
       </NavbarBrand>
       <NavbarToggle />
       <NavbarCollapse>
-        <NavbarLink href="/">Home</NavbarLink>
+        <NavbarLink href={dic ? `/${dic.lang}` : "/"}>
+          {dic ? dic.links.home : "Home"}
+        </NavbarLink>
+
         <MegaMenuDropdownToggle>
-          Tools
+          {dic ? dic.links.tools : "Tools"}
           <HiChevronDown className="ml-2" />
         </MegaMenuDropdownToggle>
         <NavbarLink href="/about" target="_blank">
-          About
+          {dic ? dic.links.about : "About"}
         </NavbarLink>
         <NavbarLink href="https://wa.me/201508328238" target="_blank">
-          Contact
+          {dic ? dic.links.contact : "Contact"}
         </NavbarLink>
+        <LanguageSwicher dic={dic} />
       </NavbarCollapse>
       <MegaMenuDropdown className=" w-full hidden">
         <div className="mx-auto w-full mt-6 grid max-w-7xl border-y border-gray-200 px-2 py-5 text-sm shadow-sm sm:grid-cols-2 md:grid-cols-3 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400">
@@ -52,7 +58,7 @@ export default function Navbar() {
                     key={i}
                     className="hover:text-primary-600 hover:underline dark:hover:text-primary-500"
                   >
-                    <a href={item.link}>{item.name}</a>
+                    <a href={"/image" + item.link}>{item.name}</a>
                   </li>
                 );
               }

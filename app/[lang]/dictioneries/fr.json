@@ -1,5 +1,87 @@
 {
+  "lang": "fr",
+  "langName": "Français",
   "actions": {
-    "convert": "convertir"
+    "convert": "convertir",
+    "upload": "Cliquer pour téléverser"
+  },
+
+  "imageConverter": {
+    "metatages": {
+      "title": "Convertisseur d'images en ligne - Conversion gratuite et rapide",
+      "description": "Convertissez facilement vos images entre les formats populaires comme PNG, JPG, WEBP et plus encore, le tout en ligne et gratuitement. Conversion rapide, sécurisée et de haute qualité.",
+      "keywords": [
+        "convertisseur d'images",
+        "convertisseur d'images en ligne",
+        "convertir image en jpg",
+        "convertir image en png",
+        "convertisseur d'images gratuit",
+        "conversion de format d'image",
+        "convertisseur webp"
+      ],
+      "authors": [
+        {
+          "name": "Ismail Abu Almagd"
+        }
+      ],
+      "openGraph": {
+        "title": "Convertisseur d'images en ligne - Conversion gratuite et rapide",
+        "description": "Convertissez facilement vos images entre les formats populaires comme PNG, JPG, WEBP et plus encore, le tout en ligne et gratuitement. Conversion rapide, sécurisée et de haute qualité.",
+        "type": "website",
+        "images": [
+          {
+            "url": "https://easypixelshift.com/eps-logo-easy-pixel-shift.jpeg",
+            "width": 1200,
+            "height": 630,
+            "alt": "Aperçu de l'outil de conversion d'images"
+          }
+        ]
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Convertisseur d'images en ligne - Rapide et Gratuit",
+        "description": "Convertissez vos images entre les formats PNG, JPG et WEBP en ligne. Rapide, sécurisé et totalement gratuit.",
+        "images": "https://easypixelshift.com/eps-logo-easy-pixel-shift.jpeg"
+      }
+    },
+    "title": "Free Image Converter",
+    "description": "Convertissez facilement vos images d'un format à un autre, en ligne.",
+    "feature": {
+      "featureHow": "Comment convertir des images ?",
+      "first": "Cliquez sur le bouton « Choisir un fichier » pour sélectionner l'image que vous souhaitez convertir depuis votre appareil.",
+      "second": "Sélectionnez le format d'image de destination dans la liste déroulante « Convertir en ».",
+      "third": "Cliquez sur le bouton bleu « Convertir » pour lancer le processus de conversion de votre fichier.",
+      "convertAny": {
+        "title": "Convertissez n'importe quelle image",
+        "description": "Convertissez vos images entre un ensemble de formats populaires, notamment JPG, PNG, SVG, WebP et ICO."
+      },
+      "bestConverter": {
+        "title": "Le meilleur convertisseur d'images",
+        "description": "La meilleure application web pour convertir vos images en haute qualité dans de nombreux formats. Cet outil prend en charge la conversion de divers types d'images, y compris les formats animés."
+      },
+      "freeSecure": {
+        "title": "Gratuit et sécurisé",
+        "description": "Notre convertisseur d'images est gratuit et fonctionne sur n'importe quel navigateur web. Vos fichiers sont convertis dans votre navigateur et ne sont envoyés nulle part, garantissant une sécurité totale."
+      }
+    }
+  },
+  "links": {
+    "imageConverters": "Convertisseurs d'images",
+    "documentConverters": "Convertisseurs de documents",
+    "specialConverters": "Convertisseurs spéciaux",
+    "fileConverter": "Convertisseur de fichiers",
+    "imageConverter": "Convertisseur d'images",
+    "videoConverter": "Convertisseur vidéo",
+    "multiConverters": "Multi-convertisseurs",
+    "ourTools": "Nos outils",
+    "aiTextToSpeech": "Synthèse vocale par IA",
+    "visitCornwall": "Visitez les Cornouailles",
+    "learnCoding": "Apprendre le code",
+    "home": "Accueil",
+    "about": "À propos",
+    "contact": "Contact",
+    "tools": "Outils",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions générales"
   }
 }

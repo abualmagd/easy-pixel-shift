@@ -10,7 +10,8 @@ import {
 import { myDocumentLinks, myImageLinks } from "../const";
 import Link from "next/link";
 
-export default function MyFooter() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default function MyFooter({ dic }: { dic?: any }) {
   return (
     <Footer
       container
@@ -18,26 +19,34 @@ export default function MyFooter() {
     >
       <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
         <div>
-          <FooterTitle title="Our Tools" className="text-white" />
+          <FooterTitle
+            title={dic ? dic.links.ourTools : "Our Tools"}
+            className="text-white"
+          />
           <FooterLinkGroup col className="text-white">
             <FooterLink href="https://speaksnaps.com/">
-              Ai text to speach
+              {dic ? dic.links.aiTextToSpeech : "Ai text to speach"}
             </FooterLink>
             <FooterLink href="https://doincornwall.com/">
-              visit cornwall
+              {dic ? dic.links.visitCornwall : "visit cornwall"}
             </FooterLink>
-            <FooterLink href="https://codefray.com/">learn coding</FooterLink>
+            <FooterLink href="https://codefray.com/">
+              {dic ? dic.links.learnCoding : "learn coding"}
+            </FooterLink>
           </FooterLinkGroup>
         </div>
         <div>
-          <FooterTitle title="Image converter" className="text-white" />
+          <FooterTitle
+            title={dic ? dic.links.imageConverters : "Image converter"}
+            className="text-white"
+          />
           <FooterLinkGroup col className="text-white">
             {myImageLinks.map((item, i) => {
               if (i > 5) {
                 return null;
               } else {
                 return (
-                  <FooterLink key={i} href={item.link}>
+                  <FooterLink key={i} href={"/image" + item.link}>
                     {item.name}
                   </FooterLink>
                 );
@@ -46,7 +55,10 @@ export default function MyFooter() {
           </FooterLinkGroup>
         </div>
         <div>
-          <FooterTitle title="Document Converters" className="text-white" />
+          <FooterTitle
+            title={dic ? dic.links.documentConverters : "Document Converters"}
+            className="text-white"
+          />
           <FooterLinkGroup col className="text-white">
             {myDocumentLinks.map((item, i) => {
               if (i > 5) {
@@ -62,16 +74,19 @@ export default function MyFooter() {
           </FooterLinkGroup>
         </div>
         <div>
-          <FooterTitle title="Multi Converters" className="text-white" />
+          <FooterTitle
+            title={dic ? dic.links.multiConverters : "Multi Converters"}
+            className="text-white"
+          />
           <FooterLinkGroup col className="text-white">
             <FooterLink href="/converters/image-converter">
-              Image converter
+              {dic ? dic.links.imageConverter : "Image converter"}
             </FooterLink>
             <FooterLink href="/converters/file-converter">
-              File converter{" "}
+              {dic ? dic.links.fileConverter : "File converter"}
             </FooterLink>
             <FooterLink href="/converters/video-converter">
-              Video converter{" "}
+              {dic ? dic.links.videoConverter : "Video converter"}
             </FooterLink>
           </FooterLinkGroup>
         </div>
@@ -96,17 +111,20 @@ export default function MyFooter() {
             </Link>
           </div>
           <FooterLinkGroup className="text-white">
-            <FooterLink href="/about" target="_blank">
-              About
+            <FooterLink
+              href={dic ? dic.lang + "/about" : "/about"}
+              target="_blank"
+            >
+              {dic ? dic.links.about : "About"}
             </FooterLink>
             <FooterLink href="/privacy" target="_blank">
-              Privacy Policy
+              {dic ? dic.links.privacy : "Privacy Policy"}
             </FooterLink>
             <FooterLink href="/terms" target="_blank">
-              Terms
+              {dic ? dic.links.terms : "Terms"}
             </FooterLink>
             <FooterLink href="https://wa.me/201508328238" target="_blank">
-              Contact
+              {dic ? dic.links.contact : "Contact"}
             </FooterLink>
           </FooterLinkGroup>
         </div>

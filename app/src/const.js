@@ -116,3 +116,14 @@ export const allMediaConversions = [
   { name: "WAV to AAC", link: "/wav-to-adts" },
   { name: "FLAC to AAC", link: "/flac-to-adts" },
 ];
+
+export const languages = [
+  {
+    lang: "ar",
+    name: "العربية",
+  },
+  {
+    lang: "fr",
+    name: "Français",
+  },
+];
