@@ -7,7 +7,7 @@ export default function VideoFeature() {
     <section className="flex flex-col gap-5 w-full mt-10">
       <div className="how flex flex-col gap-10">
         <h2 className=" font-semibold text-xl  font-mono">
-          How to Convert Videos?
+          How to Convert Videos/Audios?
         </h2>
         <ol className=" list-decimal text-md text-[#282f3a] shadow-black">
           <li>

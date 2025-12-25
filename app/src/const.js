@@ -71,6 +71,7 @@ export const specialConverters = [
   { name: "JPG to PDF", link: "/jpg-to-pdf" },
   { name: "PDF to JPG", link: "/pdf-to-jpg" },
   { name: "GIF MAKER", link: "/gif-maker" },
+  { name: "VIDEO/Audio Converter", link: "/video-converter" },
 ];
 
 export const allMediaConversions = [
@@ -114,4 +115,15 @@ export const allMediaConversions = [
   { name: "MP3 to AAC", link: "/mp3-to-adts" },
   { name: "WAV to AAC", link: "/wav-to-adts" },
   { name: "FLAC to AAC", link: "/flac-to-adts" },
+];
+
+export const languages = [
+  {
+    lang: "ar",
+    name: "العربية",
+  },
+  {
+    lang: "fr",
+    name: "Français",
+  },
 ];

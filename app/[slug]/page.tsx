@@ -45,11 +45,11 @@ export default async function Page({ params }: Props) {
           <ImageConverterContainer
             title={`${from} to ${to}`}
             slogan={`Easily convert ${from} to ${to} With The Best online tool to convert ${from} to ${to}..`}
-            from="jpg"
-            to="png"
+            from={from}
+            to={to}
           />
           <Feature from={from} to={to} />
-          <ImageLinks />
+          <ImageLinks dic={undefined} />
           <FileLinks />
         </main>
       </div>

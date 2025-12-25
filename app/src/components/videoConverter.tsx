@@ -141,7 +141,7 @@ const MyVideoCpnverter = (props: {
               <option value="mp3">Mp3</option>
               <option value="wav">Wav</option>
               <option value="adts">Acc</option>
-              <option value="fla">Flac</option>
+              <option value="flac">Flac</option>
             </select>
           </div>
           <button onClick={remove} className=" cursor-pointer">

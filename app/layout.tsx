@@ -33,6 +33,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Navbar />
+        {children}
+        <MyFooter />
+        <ToastContainer />
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-NWVRE58F5M"
@@ -45,11 +49,6 @@ export default function RootLayout({
 
   gtag('config', 'G-NWVRE58F5M'); `}
         </Script>
-
-        <Navbar />
-        {children}
-        <MyFooter />
-        <ToastContainer />
       </body>
     </html>
   );
