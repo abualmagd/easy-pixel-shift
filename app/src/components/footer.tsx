@@ -24,13 +24,13 @@ export default function MyFooter({ dic }: { dic?: any }) {
             className="text-white"
           />
           <FooterLinkGroup col className="text-white">
-            <FooterLink href="https://speaksnaps.com/">
+            <FooterLink href="https://speaksnaps.com/" target="_blank">
               {dic ? dic.links.aiTextToSpeech : "Ai text to speach"}
             </FooterLink>
-            <FooterLink href="https://doincornwall.com/">
+            <FooterLink href="https://doincornwall.com/" target="_blank">
               {dic ? dic.links.visitCornwall : "visit cornwall"}
             </FooterLink>
-            <FooterLink href="https://codefray.com/">
+            <FooterLink href="https://codefray.com/" target="_blank">
               {dic ? dic.links.learnCoding : "learn coding"}
             </FooterLink>
           </FooterLinkGroup>
