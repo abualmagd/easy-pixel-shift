@@ -5,7 +5,7 @@ import MyFooter from "./src/components/footer";
 import { ToastContainer } from "react-toastify";
 import Navbar from "./src/components/navbar";
 import { siteLink } from "./src/const";
-import Script from "next/script";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -65,6 +65,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleAnalytics gaId="G-VWH69FK9NJ" />
+      <GoogleTagManager gtmId="G-VWH69FK9NJ" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -72,18 +74,6 @@ export default function RootLayout({
         {children}
         <MyFooter />
         <ToastContainer />
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-NWVRE58F5M"
-          strategy="afterInteractive"
-        ></Script>
-        <Script id="google-analytics">
-          {` window.dataLayer = window.dataLayer || [];
-  function gtag(){window.dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NWVRE58F5M'); `}
-        </Script>
       </body>
     </html>
   );

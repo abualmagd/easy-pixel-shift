@@ -43,14 +43,14 @@ export const baseMetadataTemplate = (from: string, to: string): Metadata => {
       description: description,
       url: `${siteLink}/convert/${from}-to-${to}`,
       // Note: You may need a separate strategy for images if they are highly specific
-      images: ["/eps-logo-easy-pixel-shift.jpeg"],
+      images: ["https://easypixelshift.com/eps-logo-easy-pixel-shift.jpeg"],
     },
 
     twitter: {
       card: "summary_large_image",
       title: title,
       description: description,
-      images: ["/eps-logo-easy-pixel-shift.jpeg"],
+      images: ["https://easypixelshift.com/eps-logo-easy-pixel-shift.jpeg"],
     },
 
     keywords: keywords,
@@ -113,14 +113,14 @@ export const baseFileMetadataTemplate = (
       title: title,
       description: description,
       url: `${siteLink}+/+${fromLower}-to-${toLower}`,
-      images: ["/eps-logo-easy-pixel-shift.jpeg"],
+      images: ["https://easypixelshift.com/eps-logo-easy-pixel-shift.jpeg"],
     },
 
     twitter: {
       card: "summary_large_image",
       title: title,
       description: description,
-      images: ["/eps-logo-easy-pixel-shift.jpeg"],
+      images: ["https://easypixelshift.com/eps-logo-easy-pixel-shift.jpeg"],
     },
 
     keywords: keywords,
@@ -220,14 +220,14 @@ export const mediaMetadataTemplate = (from: string, to: string): Metadata => {
       title: title,
       description: description,
       url: `${siteLink}+/${fromLower}-to-${toLower}`,
-      images: ["/eps-logo-easy-pixel-shift.jpeg"],
+      images: ["https://easypixelshift.com/eps-logo-easy-pixel-shift.jpeg"],
     },
 
     twitter: {
       card: "summary_large_image",
       title: title,
       description: description,
-      images: ["/eps-logo-easy-pixel-shift.jpeg"],
+      images: ["https://easypixelshift.com//eps-logo-easy-pixel-shift.jpeg"],
     },
 
     keywords: keywords,

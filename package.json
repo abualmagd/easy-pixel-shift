@@ -11,6 +11,7 @@
   "dependencies": {
     "@image-tracer-ts/browser": "^1.0.3",
     "@mediabunny/mp3-encoder": "^1.26.0",
+    "@next/third-parties": "^16.1.1",
     "docx": "^9.5.1",
     "file-saver": "^2.0.5",
     "flowbite": "^4.0.1",
