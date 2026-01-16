@@ -4,6 +4,8 @@ import { Metadata } from "next";
 import { baseFileMetadataTemplate } from "@/app/src/metatags";
 import FFeature from "@/app/src/components/fFeatures";
 import GifMaker from "@/app/src/components/gifMaker";
+import { DataSecure } from "@/app/src/components/data";
+import SeoContent from "@/app/src/components/content";
 
 export async function generateMetadata(): Promise<Metadata> {
   const from = "images";
@@ -21,6 +23,8 @@ export default async function Page() {
         <FFeature from={from} to={to} />
         <FileLinks />
         <ImageLinks />
+        <DataSecure />
+        <SeoContent page="gif" />
       </main>
     </div>
   );

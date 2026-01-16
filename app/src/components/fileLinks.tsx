@@ -31,7 +31,7 @@ export default function FileLinks({ dic }: { dic?: any }) {
           return (
             <li key={index}>
               <a
-                href={"/converters/" + item.link}
+                href={"/converters" + item.link}
                 className=" text-blue-500 font-semibold font-sans"
               >
                 {item.name}

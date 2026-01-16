@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import "@/public/privacy.css";
 
 export const metadata: Metadata = {
   title: "privacy, Easy pixel shift Image, File converter",

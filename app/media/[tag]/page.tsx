@@ -1,4 +1,6 @@
+import { DataSecure } from "@/app/src/components/data";
 import FileLinks from "@/app/src/components/fileLinks";
+import FormatDef from "@/app/src/components/FormatDef";
 import MeadiaFeature from "@/app/src/components/mediaFeature";
 import VideoConverter from "@/app/src/components/videoConverter";
 import VideoLinks from "@/app/src/components/videoLinks";
@@ -45,23 +47,26 @@ export default async function Page({ params }: Props) {
       <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
         <main className="flex min-h-screen w-full max-w-3xl flex-col gap-10 items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
           <VideoConverter
-            title={`${from === "adts" ? "Acc" : from.toLocaleUpperCase()} to ${
-              to === "adts" ? "ACC" : to.toLocaleUpperCase()
+            title={`${from === "adts" ? "AAC" : from.toLocaleUpperCase()} to ${
+              to === "adts" ? "AAC" : to.toLocaleUpperCase()
             }`}
-            slogan={`Easily convert ${from === "adts" ? "Acc" : from} to ${
-              to === "adts" ? "Acc" : to
-            } With The Best online tool to convert ${from} to ${
-              to === "adts" ? "Acc" : to
-            }..`}
+            slogan={`Easily convert ${from === "adts" ? "Aac" : from} to ${
+              to === "adts" ? "Aac" : to
+            } With The Most Secure and Fast online tool, for free.`}
             from={from}
             to={to as SupportedFormat}
           />
           <MeadiaFeature
-            from={from === "adts" ? "Acc" : from}
-            to={to === "adts" ? "Acc" : to}
+            from={from === "adts" ? "Aac" : from}
+            to={to === "adts" ? "Aac" : to}
           />
           <VideoLinks />
           <FileLinks />
+          <DataSecure />
+          <FormatDef
+            from={from === "adts" ? "Aac" : from}
+            to={to === "adts" ? "Aac" : to}
+          />
         </main>
       </div>
     );

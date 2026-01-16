@@ -2,6 +2,8 @@ import ImageConverterContainer from "@/app/src/components/imageConverterContaine
 import ImageFeature from "@/app/src/components/imageFeatureComponent";
 import ImageLinks from "@/app/src/components/imageLinks";
 import FileLinks from "@/app/src/components/fileLinks";
+import { DataSecure } from "./src/components/data";
+import SeoContent from "./src/components/content";
 
 export default function Page() {
   return (
@@ -16,6 +18,8 @@ export default function Page() {
         <ImageFeature />
         <ImageLinks />
         <FileLinks />
+        <DataSecure />
+        <SeoContent page="home" />
       </main>
     </div>
   );

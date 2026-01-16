@@ -4,6 +4,8 @@ import { Metadata } from "next";
 import { baseFileMetadataTemplate } from "@/app/src/metatags";
 import FFeature from "@/app/src/components/fFeatures";
 import PdfJpgConverter from "@/app/src/components/pdfJpgConverter";
+import { DataSecure } from "@/app/src/components/data";
+import FormatDef from "@/app/src/components/FormatDef";
 
 export function generateMetadata(): Metadata {
   const from = "pdf";
@@ -26,6 +28,8 @@ export default async function Page() {
         <FFeature from={from} to={to} />
         <FileLinks />
         <ImageLinks />
+        <DataSecure />
+        <FormatDef from={from} to={to} />
       </main>
     </div>
   );

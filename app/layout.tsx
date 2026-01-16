@@ -18,9 +18,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Online Image Converter - Free & Fast Image Format Conversion",
+  title: "All-in-One Digital File Transformation",
   description:
-    "Convert images easily between popular formats like PNG, JPG, WEBP, and more, all online and for free. Fast, secure, and high-quality image file conversion.",
+    "EasyPixelShift is a premium processing suite designed for speed and privacy. We provide high-fidelity conversion tools for images, videos, and documents without requiring software downloads.",
   keywords: [
     "image converter",
     "online image converter",

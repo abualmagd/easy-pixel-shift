@@ -1,3 +1,5 @@
+import SeoContent from "@/app/src/components/content";
+import { DataSecure } from "@/app/src/components/data";
 import FileLinks from "@/app/src/components/fileLinks";
 import VideoConverter from "@/app/src/components/videoConverter";
 import VideoFeature from "@/app/src/components/videoFeature";
@@ -60,6 +62,8 @@ export default function Home() {
         <VideoFeature />
         <VideoLinks />
         <FileLinks />
+        <DataSecure />
+        <SeoContent page="video" />
       </main>
     </div>
   );

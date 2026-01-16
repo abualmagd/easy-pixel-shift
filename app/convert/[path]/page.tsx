@@ -5,6 +5,8 @@ import { Metadata } from "next";
 import { myDocumentLinks } from "@/app/src/const";
 import { baseFileMetadataTemplate } from "@/app/src/metatags";
 import FFeature from "@/app/src/components/fFeatures";
+import { DataSecure } from "@/app/src/components/data";
+import FormatDef from "@/app/src/components/FormatDef";
 
 type Props = {
   params: Promise<{ path: string }>;
@@ -43,13 +45,15 @@ export default async function Page({ params }: Props) {
         <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
           <Converter
             title={`Convert ${from.toUpperCase()}  to ${to.toLocaleUpperCase()} free`}
-            slogan={`Easily convert files from ${from} format to ${to}, online.`}
+            slogan={`Easily convert files from ${from} format to ${to}, online,for free.`}
             from={from}
             to={to}
           />
           <FFeature from={from} to={to} />
           <FileLinks />
           <ImageLinks />
+          <DataSecure />
+          <FormatDef from={from} to={to} />
         </main>
       </div>
     );

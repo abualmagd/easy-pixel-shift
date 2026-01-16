@@ -1,4 +1,6 @@
+import SeoContent from "@/app/src/components/content";
 import Converter from "@/app/src/components/converterContainer";
+import { DataSecure } from "@/app/src/components/data";
 import FileFeature from "@/app/src/components/fileFeature";
 import FileLinks from "@/app/src/components/fileLinks";
 import ImageLinks from "@/app/src/components/imageLinks";
@@ -60,6 +62,8 @@ export default function Home() {
         <FileFeature />
         <FileLinks />
         <ImageLinks />
+        <DataSecure />
+        <SeoContent page="file" />
       </main>
     </div>
   );

@@ -4,6 +4,7 @@ import ImageFeature from "../../src/components/imageFeatureComponent";
 import ImageLinks from "../../src/components/imageLinks";
 import FileLinks from "../../src/components/fileLinks";
 import { siteLink } from "@/app/src/const";
+import { DataSecure } from "@/app/src/components/data";
 
 export const metadata: Metadata = {
   title: "Online Image Converter",
@@ -59,6 +60,7 @@ export default function Page() {
         <ImageFeature />
         <ImageLinks />
         <FileLinks />
+        <DataSecure />
       </main>
     </div>
   );

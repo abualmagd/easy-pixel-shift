@@ -5,6 +5,8 @@ import ImageLinks from "@/app/src/components/imageLinks";
 import { myImageLinks } from "@/app/src/const";
 import { baseMetadataTemplate } from "@/app/src/metatags";
 import { Metadata } from "next";
+import { DataSecure } from "../src/components/data";
+import FormatDef from "../src/components/FormatDef";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -43,7 +45,7 @@ export default async function Page({ params }: Props) {
       <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
         <main className="flex min-h-screen w-full max-w-3xl flex-col gap-10 items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
           <ImageConverterContainer
-            title={`${from} to ${to}`}
+            title={`${from.toUpperCase()} to ${to.toLocaleUpperCase()}`}
             slogan={`Easily convert ${from} to ${to} With The Best online tool to convert ${from} to ${to}..`}
             from={from}
             to={to}
@@ -51,6 +53,8 @@ export default async function Page({ params }: Props) {
           <Feature from={from} to={to} />
           <ImageLinks dic={undefined} />
           <FileLinks />
+          <DataSecure />
+          <FormatDef from={from} to={to} />
         </main>
       </div>
     );
