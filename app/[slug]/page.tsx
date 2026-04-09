@@ -7,6 +7,8 @@ import { baseMetadataTemplate } from "@/app/src/metatags";
 import { Metadata } from "next";
 import { DataSecure } from "../src/components/data";
 import FormatDef from "../src/components/FormatDef";
+import ComparisonSection from "../src/components/cmpare";
+import { BlogComponent } from "../src/components/blogComponent";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -55,6 +57,8 @@ export default async function Page({ params }: Props) {
           <FileLinks />
           <DataSecure />
           <FormatDef from={from} to={to} />
+          <ComparisonSection />
+          <BlogComponent />
         </main>
       </div>
     );

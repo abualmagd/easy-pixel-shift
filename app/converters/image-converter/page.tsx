@@ -5,6 +5,7 @@ import ImageLinks from "../../src/components/imageLinks";
 import FileLinks from "../../src/components/fileLinks";
 import { siteLink } from "@/app/src/const";
 import { DataSecure } from "@/app/src/components/data";
+import ComparisonSection from "@/app/src/components/cmpare";
 
 export const metadata: Metadata = {
   title: "Online Image Converter",
@@ -61,6 +62,7 @@ export default function Page() {
         <ImageLinks />
         <FileLinks />
         <DataSecure />
+        <ComparisonSection />
       </main>
     </div>
   );

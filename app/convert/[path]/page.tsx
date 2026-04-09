@@ -7,6 +7,8 @@ import { baseFileMetadataTemplate } from "@/app/src/metatags";
 import FFeature from "@/app/src/components/fFeatures";
 import { DataSecure } from "@/app/src/components/data";
 import FormatDef from "@/app/src/components/FormatDef";
+import ComparisonSection from "@/app/src/components/cmpare";
+import { BlogComponent } from "@/app/src/components/blogComponent";
 
 type Props = {
   params: Promise<{ path: string }>;
@@ -54,6 +56,8 @@ export default async function Page({ params }: Props) {
           <ImageLinks />
           <DataSecure />
           <FormatDef from={from} to={to} />
+          <ComparisonSection />
+          <BlogComponent />
         </main>
       </div>
     );

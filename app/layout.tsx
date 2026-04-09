@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-sync-scripts */
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -67,11 +68,21 @@ export default function RootLayout({
     <html lang="en">
       <GoogleAnalytics gaId="G-VWH69FK9NJ" />
       <GoogleTagManager gtmId="G-VWH69FK9NJ" />
+      <head>
+        {/*<script src="https://pl28740379.effectivegatecpm.com/f1/f4/58/f1f45894a9b3b7a980d6c8d9cf2b0c96.js"></script>*/}
+        <script src="https://pl28772445.effectivegatecpm.com/06/d0/75/06d075bf202e4b02a6a6b430a7367064.js"></script>
+        <script
+          async={true}
+          data-cfasync="false"
+          src="https://pl28772397.effectivegatecpm.com/7fb5ee8521ee85826de075ff3cbd4f42/invoke.js"
+        ></script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
         {children}
+        <div id="container-7fb5ee8521ee85826de075ff3cbd4f42"></div>
         <MyFooter />
         <ToastContainer />
       </body>

@@ -4,6 +4,8 @@ import ImageLinks from "@/app/src/components/imageLinks";
 import FileLinks from "@/app/src/components/fileLinks";
 import { DataSecure } from "./src/components/data";
 import SeoContent from "./src/components/content";
+import ComparisonSection from "./src/components/cmpare";
+import { BlogComponent } from "./src/components/blogComponent";
 
 export default function Page() {
   return (
@@ -20,6 +22,8 @@ export default function Page() {
         <FileLinks />
         <DataSecure />
         <SeoContent page="home" />
+        <ComparisonSection />
+        <BlogComponent />
       </main>
     </div>
   );

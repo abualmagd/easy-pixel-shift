@@ -6,7 +6,7 @@ import { useState } from "react";
 import { ChangeEvent } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { downloadFile, fileNameFinder, notify } from "../services/utils";
-import { convertPdfToJpgFirstPage, convertPdfToJpgZip } from "../services/pdf";
+//import { convertPdfToJpgFirstPage, convertPdfToJpgZip } from "../services/pdf";
 
 export default function PdfJpgConverter(props: {
   title: string;
@@ -121,6 +121,8 @@ function MyPdfToJpgConverter(props: {
     if (props.pages === "all") {
       try {
         setState("loading");
+        const { convertPdfToJpgZip } = await import("../services/pdf");
+
         const out = await convertPdfToJpgZip(props.file);
         setOutput(out);
         notify("converted well", false);
@@ -134,6 +136,7 @@ function MyPdfToJpgConverter(props: {
       try {
         console.log("opt: ", props.pages);
         setState("loading");
+        const { convertPdfToJpgFirstPage } = await import("../services/pdf");
         const out = await convertPdfToJpgFirstPage(props.file);
         setOutput(out);
         notify("converted well", false);

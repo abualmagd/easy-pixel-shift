@@ -3,7 +3,7 @@
 import { FileInput, Label } from "flowbite-react";
 import { ChangeEvent, useState } from "react";
 import { downloadFile, fileNameFinder, notify } from "../services/utils";
-import { convertVideo, SupportedFormat } from "../services/video";
+import { SupportedFormat } from "../services/video";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
 export default function VideoConverter(props: {
@@ -97,6 +97,7 @@ const MyVideoCpnverter = (props: {
   const convert = async () => {
     try {
       setState("loading");
+      const { convertVideo } = await import("../services/video");
       const out = await convertVideo(props.file, to);
       setOutput(out);
       notify("converted well", false);

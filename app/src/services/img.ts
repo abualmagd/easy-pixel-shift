@@ -7,7 +7,7 @@ import { Options } from "@image-tracer-ts/browser";
 
 export async function convertImageFormat(
   file: File,
-  targetType: "image/png" | "image/jpeg" | "image/webp"
+  targetType: "image/png" | "image/jpeg" | "image/webp",
 ): Promise<Blob> {
   return new Promise((resolve, reject) => {
     const img = new Image();
@@ -26,7 +26,7 @@ export async function convertImageFormat(
           else reject("Conversion failed");
         },
         targetType,
-        targetType === "image/png" ? undefined : 0.92
+        targetType === "image/png" ? undefined : 0.92,
       );
     };
     img.onerror = reject;
@@ -75,7 +75,7 @@ export async function convertToPng(file: File): Promise<Blob> {
             }
           }
         },
-        "image/png" // no quality parameter for PNG
+        "image/png", // no quality parameter for PNG
       );
     };
 

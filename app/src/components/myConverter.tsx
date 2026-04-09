@@ -3,7 +3,7 @@
 import { ChangeEvent, useState } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { downloadFile, fileNameFinder, notify } from "../services/utils";
-import { multiFileConvert } from "../services/multiConverter";
+//import { multiFileConvert } from "../services/multiConverter";
 
 export default function MyConverter(props: {
   file: File;
@@ -25,6 +25,7 @@ export default function MyConverter(props: {
   const convert = async () => {
     try {
       setState("loading");
+      const { multiFileConvert } = await import("../services/multiConverter");
       const out = await multiFileConvert(props.file, to);
       setOutput(out);
       notify("converted well", false);
@@ -39,6 +40,9 @@ export default function MyConverter(props: {
   const dowloadIt = () => {
     try {
       const name = fileNameFinder(props.file);
+      if (to === "artxt") {
+        downloadFile(output!, name + "-easy-pixel-shift", "txt");
+      }
       downloadFile(output!, name + "-easy-pixel-shift", to);
     } catch (error) {
       console.log("error in downloadin");

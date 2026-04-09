@@ -12,7 +12,8 @@ export default function Feature({ from, to }: { from: string; to: string }) {
         <ol className=" list-decimal text-md text-[#282f3a] shadow-black">
           <li>
             <span className="n">
-              Click the “<b>Choose File</b>” button to select your {from} file{" "}
+              Click the “<b>Choose File</b>” button to select your {from}{" "}
+              file{" "}
             </span>
           </li>
           <li>

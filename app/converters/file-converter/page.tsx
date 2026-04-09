@@ -1,3 +1,5 @@
+import { BlogComponent } from "@/app/src/components/blogComponent";
+import ComparisonSection from "@/app/src/components/cmpare";
 import SeoContent from "@/app/src/components/content";
 import Converter from "@/app/src/components/converterContainer";
 import { DataSecure } from "@/app/src/components/data";
@@ -64,6 +66,8 @@ export default function Home() {
         <ImageLinks />
         <DataSecure />
         <SeoContent page="file" />
+        <ComparisonSection />
+        <BlogComponent />
       </main>
     </div>
   );

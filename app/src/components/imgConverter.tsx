@@ -3,7 +3,6 @@
 import { ChangeEvent, useState } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { downloadFile, fileNameFinder, notify } from "../services/utils";
-import { imageConverting } from "../services/imageConverter";
 
 export default function ImgConverter(props: {
   file: File;
@@ -25,6 +24,7 @@ export default function ImgConverter(props: {
   const convert = async () => {
     try {
       setState("loading");
+      const { imageConverting } = await import("../services/imageConverter");
       const out = await imageConverting(props.file, to);
       setOutput(out);
       notify("converted well", false);
@@ -45,6 +45,7 @@ export default function ImgConverter(props: {
       notify(String(error), true);
     }
   };
+
   return (
     <div className=" w-full flex-col  h-32 rounded border border-gray-500 flex">
       <div className="flex w-full p-4 justify-between">

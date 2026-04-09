@@ -1,14 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
+if (!window) {
+}
 import html2canvas from "html2canvas";
-import { jsPDF } from "jspdf";
 import { Document, Packer, Paragraph, TextRun } from "docx";
 import { createCompleteHtmlDocument } from "./docx";
 import { fileNameFinder } from "./utils";
 
 export async function convertTxtToPdf(file: File) {
   const text = await readFileAsText(file);
+  if (typeof window === "undefined") return;
+
+  // 2. Dynamically import the heavy browser-dependent libraries
+  const { jsPDF } = await import("jspdf");
   const pdf = new jsPDF();
   pdf.setFont("helvetica");
   pdf.setFontSize(12);
@@ -177,6 +182,10 @@ export const htmlToPdf = async (file: File): Promise<Blob | undefined> => {
       throw new Error("Invalid PNG data generated");
     }
 
+    if (typeof window === "undefined") return;
+
+    // 2. Dynamically import the heavy browser-dependent libraries
+    const { jsPDF } = await import("jspdf");
     const pdf = new jsPDF("p", "mm", "a4");
     const pageWidth = pdf.internal.pageSize.getWidth();
     //const pageHeight = pdf.internal.pageSize.getHeight();
@@ -310,7 +319,11 @@ export async function convertJpgToPdf(file: File): Promise<Blob> {
       const img = new Image();
       img.src = event.target.result as string;
 
-      img.onload = () => {
+      img.onload = async () => {
+        if (typeof window === "undefined") return;
+
+        // 2. Dynamically import the heavy browser-dependent libraries
+        const { jsPDF } = await import("jspdf");
         // Create PDF in portrait A4 format
         const pdf = new jsPDF({
           orientation: "portrait",
@@ -370,7 +383,7 @@ interface ConvertOptions {
 
 export async function convertJpgToPdfCustomize(
   file: File,
-  options?: ConvertOptions
+  options?: ConvertOptions,
 ): Promise<Blob> {
   // Set default options
   const {
@@ -408,8 +421,12 @@ export async function convertJpgToPdfCustomize(
       const img = new Image();
       img.src = event.target.result as string;
 
-      img.onload = () => {
+      img.onload = async () => {
         try {
+          if (typeof window === "undefined") return;
+
+          // 2. Dynamically import the heavy browser-dependent libraries
+          const { jsPDF } = await import("jspdf");
           // Create PDF with specified orientation and format
           const pdf = new jsPDF({
             orientation,
@@ -484,7 +501,7 @@ export async function convertJpgToPdfCustomize(
               // Default to 'fit'
               const defaultRatio = Math.min(
                 availableWidth / imgWidth,
-                availableHeight / imgHeight
+                availableHeight / imgHeight,
               );
               finalWidth = imgWidth * defaultRatio;
               finalHeight = imgHeight * defaultRatio;
@@ -528,7 +545,7 @@ interface PdfToJpgOptions {
 
 export async function convertPdfToJpg(
   pdfFile: File,
-  options?: PdfToJpgOptions
+  options?: PdfToJpgOptions,
 ): Promise<Blob[]> {
   const {
     quality = 0.9,
@@ -614,7 +631,7 @@ export async function convertPdfToJpg(
             }
           },
           type,
-          quality
+          quality,
         );
       });
 
@@ -632,7 +649,7 @@ export async function convertPdfToJpg(
  */
 export async function convertPdfToJpgZip(
   pdfFile: File,
-  options?: PdfToJpgOptions
+  options?: PdfToJpgOptions,
 ): Promise<Blob> {
   try {
     // Import JSZip dynamically
@@ -700,10 +717,52 @@ export async function convertPdfToJpgFirstPage(pdfFile: File): Promise<Blob> {
           }
         },
         "image/jpeg",
-        0.9
+        0.9,
       );
     } catch (error) {
       reject(new Error(`Conversion failed: ${error}`));
     }
   });
+}
+
+import * as pdfjsLib from "pdfjs-dist";
+
+/**
+ * Convert PDF file to TXT Blob using pdfjs-dist
+ * @param file - PDF File object
+ * @returns Promise resolving to TXT Blob
+ */
+export async function convertPdfToTxt(file: File): Promise<Blob> {
+  try {
+    // Load pdfjs worker
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
+
+    // Convert file to ArrayBuffer
+    const arrayBuffer = await file.arrayBuffer();
+
+    // Load the PDF document
+    const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
+    const pdf = await loadingTask.promise;
+
+    let extractedText = "";
+
+    // Extract text from each page
+    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+      const page = await pdf.getPage(pageNum);
+      const textContent = await page.getTextContent();
+
+      // Combine text items with spaces
+      const pageText = textContent.items.map((item: any) => item.str).join(" ");
+
+      extractedText += pageText + "\n\n";
+    }
+
+    // Create and return TXT Blob
+    return new Blob([extractedText.trim()], {
+      type: "text/plain;charset=utf-8",
+    });
+  } catch (error) {
+    console.error("Error converting PDF to TXT:", error);
+    throw new Error(`Failed to convert PDF to TXT: ${error}`);
+  }
 }

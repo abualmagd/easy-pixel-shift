@@ -10,6 +10,7 @@ import { convertHtmlToText, convertHtmlToWord, convertTxtToHtml } from "./html";
 import {
   convertPdfToDocxSimple,
   convertPdfToHtml,
+  convertPdfToTxt,
   convertTxtToPdf,
   htmlToPdf,
 } from "./pdf";
@@ -61,11 +62,13 @@ export async function multiFileConvert(file: File, to: string) {
       case "pdf":
         throw Error("its the same file extension");
       case "txt":
-        return convertHtmlToText(file);
+        return convertPdfToTxt(file);
       case "docx":
         return convertPdfToDocxSimple(file); //here
       case "html":
         return convertPdfToHtml(file);
+      case "artxt":
+        return convertPdfToTxt(file); //fix this
       default:
         return undefined;
     }

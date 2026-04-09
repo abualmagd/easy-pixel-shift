@@ -6,6 +6,8 @@ import FFeature from "@/app/src/components/fFeatures";
 import GifMaker from "@/app/src/components/gifMaker";
 import { DataSecure } from "@/app/src/components/data";
 import SeoContent from "@/app/src/components/content";
+import ComparisonSection from "@/app/src/components/cmpare";
+import { BlogComponent } from "@/app/src/components/blogComponent";
 
 export async function generateMetadata(): Promise<Metadata> {
   const from = "images";
@@ -25,6 +27,8 @@ export default async function Page() {
         <ImageLinks />
         <DataSecure />
         <SeoContent page="gif" />
+        <ComparisonSection />
+        <BlogComponent />
       </main>
     </div>
   );

@@ -1,3 +1,4 @@
+import { BlogComponent } from "@/app/src/components/blogComponent";
 import { DataSecure } from "@/app/src/components/data";
 import FileLinks from "@/app/src/components/fileLinks";
 import FormatDef from "@/app/src/components/FormatDef";
@@ -67,6 +68,7 @@ export default async function Page({ params }: Props) {
             from={from === "adts" ? "Aac" : from}
             to={to === "adts" ? "Aac" : to}
           />
+          <BlogComponent />
         </main>
       </div>
     );

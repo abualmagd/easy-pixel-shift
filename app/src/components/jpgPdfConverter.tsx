@@ -5,7 +5,7 @@ import { useState } from "react";
 import { ChangeEvent } from "react";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import { downloadFile, fileNameFinder, notify } from "../services/utils";
-import { convertJpgToPdfCustomize } from "../services/pdf";
+//import { convertJpgToPdfCustomize } from "../services/pdf";
 import JpgPdfCustomiser from "./jpgPdfCustomiser";
 
 interface ConvertOptions {
@@ -118,6 +118,7 @@ function MyJpgToPdfConverter(props: {
   const convert = async () => {
     try {
       setState("loading");
+      const { convertJpgToPdfCustomize } = await import("../services/pdf");
       const out = await convertJpgToPdfCustomize(props.file, props.opts);
       setOutput(out);
       notify("converted well", false);

@@ -6,6 +6,8 @@ import FFeature from "@/app/src/components/fFeatures";
 import JpgPdfConverter from "@/app/src/components/jpgPdfConverter";
 import { DataSecure } from "@/app/src/components/data";
 import FormatDef from "@/app/src/components/FormatDef";
+import ComparisonSection from "@/app/src/components/cmpare";
+import { BlogComponent } from "@/app/src/components/blogComponent";
 
 export async function generateMetadata(): Promise<Metadata> {
   const from = "jpg";
@@ -30,6 +32,8 @@ export default async function Page() {
         <ImageLinks />
         <DataSecure />
         <FormatDef from={from} to={to} />
+        <ComparisonSection />
+        <BlogComponent />
       </main>
     </div>
   );
