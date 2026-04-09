@@ -30,8 +30,8 @@ export default function Navbar({ dic }: { dic?: any }) {
       </NavbarBrand>
       <NavbarToggle />
       <NavbarCollapse>
-        <NavbarLink href={dic ? `/${dic.lang}` : "/"}>
-          {dic ? dic.links.home : "Home"}
+        <NavbarLink href={dic ? `/${dic.lang}` : "/blog"}>
+          {dic ? dic.links.home : "Blog"}
         </NavbarLink>
 
         <MegaMenuDropdownToggle>

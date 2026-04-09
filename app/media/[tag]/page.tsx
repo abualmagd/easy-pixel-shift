@@ -2,6 +2,7 @@ import { BlogComponent } from "@/app/src/components/blogComponent";
 import { DataSecure } from "@/app/src/components/data";
 import FileLinks from "@/app/src/components/fileLinks";
 import FormatDef from "@/app/src/components/FormatDef";
+import { GlobalMain } from "@/app/src/components/Main";
 import MeadiaFeature from "@/app/src/components/mediaFeature";
 import VideoConverter from "@/app/src/components/videoConverter";
 import VideoLinks from "@/app/src/components/videoLinks";
@@ -46,7 +47,7 @@ export default async function Page({ params }: Props) {
 
     return (
       <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-        <main className="flex min-h-screen w-full max-w-3xl flex-col gap-10 items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+        <GlobalMain>
           <VideoConverter
             title={`${from === "adts" ? "AAC" : from.toLocaleUpperCase()} to ${
               to === "adts" ? "AAC" : to.toLocaleUpperCase()
@@ -69,7 +70,7 @@ export default async function Page({ params }: Props) {
             to={to === "adts" ? "Aac" : to}
           />
           <BlogComponent />
-        </main>
+        </GlobalMain>
       </div>
     );
   }

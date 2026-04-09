@@ -6,6 +6,7 @@ import FileLinks from "../../src/components/fileLinks";
 import { siteLink } from "@/app/src/const";
 import { DataSecure } from "@/app/src/components/data";
 import ComparisonSection from "@/app/src/components/cmpare";
+import { GlobalMain } from "@/app/src/components/Main";
 
 export const metadata: Metadata = {
   title: "Online Image Converter",
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl gap-10 flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+      <GlobalMain>
         <ImageConverterContainer
           title={"Image converter"}
           slogan="Easily convert images from one format to another, online."
@@ -63,7 +64,7 @@ export default function Page() {
         <FileLinks />
         <DataSecure />
         <ComparisonSection />
-      </main>
+      </GlobalMain>
     </div>
   );
 }

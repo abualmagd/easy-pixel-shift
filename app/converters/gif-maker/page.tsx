@@ -8,6 +8,7 @@ import { DataSecure } from "@/app/src/components/data";
 import SeoContent from "@/app/src/components/content";
 import ComparisonSection from "@/app/src/components/cmpare";
 import { BlogComponent } from "@/app/src/components/blogComponent";
+import { GlobalMain } from "@/app/src/components/Main";
 
 export async function generateMetadata(): Promise<Metadata> {
   const from = "images";
@@ -20,7 +21,7 @@ export default async function Page() {
   const to = "gif";
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+      <GlobalMain>
         <GifMaker />
         <FFeature from={from} to={to} />
         <FileLinks />
@@ -29,7 +30,7 @@ export default async function Page() {
         <SeoContent page="gif" />
         <ComparisonSection />
         <BlogComponent />
-      </main>
+      </GlobalMain>
     </div>
   );
 }

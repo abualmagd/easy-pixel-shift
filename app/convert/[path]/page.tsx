@@ -9,6 +9,7 @@ import { DataSecure } from "@/app/src/components/data";
 import FormatDef from "@/app/src/components/FormatDef";
 import ComparisonSection from "@/app/src/components/cmpare";
 import { BlogComponent } from "@/app/src/components/blogComponent";
+import { GlobalMain } from "@/app/src/components/Main";
 
 type Props = {
   params: Promise<{ path: string }>;
@@ -44,7 +45,7 @@ export default async function Page({ params }: Props) {
     const to = formats[1] || "docx";
     return (
       <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-        <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+        <GlobalMain>
           <Converter
             title={`Convert ${from.toUpperCase()}  to ${to.toLocaleUpperCase()} free`}
             slogan={`Easily convert files from ${from} format to ${to}, online,for free.`}
@@ -58,7 +59,7 @@ export default async function Page({ params }: Props) {
           <FormatDef from={from} to={to} />
           <ComparisonSection />
           <BlogComponent />
-        </main>
+        </GlobalMain>
       </div>
     );
   }

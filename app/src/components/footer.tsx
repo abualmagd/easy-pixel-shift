@@ -112,6 +112,12 @@ export default function MyFooter({ dic }: { dic?: any }) {
           </div>
           <FooterLinkGroup className="text-white">
             <FooterLink
+              href={dic ? dic.lang + "/blog" : "/blog"}
+              target="_blank"
+            >
+              {dic ? dic.links.blog : "Blog"}
+            </FooterLink>
+            <FooterLink
               href={dic ? dic.lang + "/about" : "/about"}
               target="_blank"
             >

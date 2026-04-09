@@ -6,6 +6,7 @@ import { DataSecure } from "@/app/src/components/data";
 import FileFeature from "@/app/src/components/fileFeature";
 import FileLinks from "@/app/src/components/fileLinks";
 import ImageLinks from "@/app/src/components/imageLinks";
+import { GlobalMain } from "@/app/src/components/Main";
 import { siteLink } from "@/app/src/const";
 import { Metadata } from "next";
 
@@ -54,7 +55,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+      <GlobalMain>
         <Converter
           title={"File converter"}
           slogan="Easily convert files from one format to another, online."
@@ -68,7 +69,7 @@ export default function Home() {
         <SeoContent page="file" />
         <ComparisonSection />
         <BlogComponent />
-      </main>
+      </GlobalMain>
     </div>
   );
 }
