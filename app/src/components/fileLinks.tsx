@@ -24,14 +24,14 @@ export default function FileLinks({ dic }: { dic?: any }) {
 
       <div className="h-20"></div>
       <h2 className=" font-semibold text-xl leading-3 font-mono">
-        {dic ? dic.links.specialConverters : "Special converters"}
+        {dic ? dic.links.specialConverters : "Special tools"}
       </h2>
       <ul className="grid mt-10 lg:grid-cols-3 grid-cols-2 gap-5 justify-items-start">
         {specialConverters.map((item, index) => {
           return (
             <li key={index}>
               <a
-                href={"/converters" + item.link}
+                href={item.link}
                 className=" text-blue-500 font-semibold font-sans"
               >
                 {item.name}
