@@ -72,6 +72,8 @@ export const specialConverters = [
   { name: "PDF to JPG", link: "/pdf-to-jpg" },
   { name: "GIF MAKER", link: "/gif-maker" },
   { name: "VIDEO/Audio Converter", link: "/video-converter" },
+  { name: "Image Resizer", link: "/image-resizer" },
+  { name: "Image Compressor", link: "/image-compressor" },
 ];
 
 export const allMediaConversions = [

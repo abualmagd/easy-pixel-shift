@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-if (!window) {
-}
 import html2canvas from "html2canvas";
 import { Document, Packer, Paragraph, TextRun } from "docx";
 import { createCompleteHtmlDocument } from "./docx";
@@ -725,8 +723,6 @@ export async function convertPdfToJpgFirstPage(pdfFile: File): Promise<Blob> {
   });
 }
 
-import * as pdfjsLib from "pdfjs-dist";
-
 /**
  * Convert PDF file to TXT Blob using pdfjs-dist
  * @param file - PDF File object
@@ -734,7 +730,9 @@ import * as pdfjsLib from "pdfjs-dist";
  */
 export async function convertPdfToTxt(file: File): Promise<Blob> {
   try {
+    const pdfjsLib = await import("pdfjs-dist");
     // Load pdfjs worker
+
     pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
 
     // Convert file to ArrayBuffer
