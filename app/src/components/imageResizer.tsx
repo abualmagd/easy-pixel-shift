@@ -192,7 +192,7 @@ export default function ImageResizer() {
                       }}
                       className={`flex justify-between items-center cursor-pointer p-4 border rounded-lg transition-all text-sm group shadow-sm ${
                         activePreset === p.name
-                          ? "bg-blue-600 border-blue-600 text-white"
+                          ? "bg-gray-200 border-blue-600 text-white"
                           : "bg-white dark:bg-gray-700 border-gray-200 hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-gray-600"
                       }`}
                     >
