@@ -2,76 +2,85 @@ import { AiOutlineSecurityScan } from "react-icons/ai";
 import { BsArrowUpRightCircle } from "react-icons/bs";
 import { MdOndemandVideo } from "react-icons/md";
 
-export default function MeadiaFeature({
+function getConversionGuidance(from: string, to: string) {
+  const source = from.toLowerCase();
+  const target = to.toLowerCase();
+
+  if (["mp3", "wav", "flac", "ogg", "aac (adts)"].includes(target)) {
+    if (target === "mp3") {
+      return "MP3 is a lossy audio format. When converting a video to MP3, the audio track is extracted and the video is not included. Re-encoding may reduce audio quality.";
+    }
+    if (target === "wav") {
+      return "WAV commonly stores uncompressed audio, so the output can be much larger than the source. A video-to-WAV conversion extracts audio rather than keeping the picture.";
+    }
+    if (target === "flac") {
+      return "FLAC is a lossless audio format. It can preserve decoded audio without additional lossy compression, but it cannot restore quality already lost in the source.";
+    }
+    if (target === "ogg") {
+      return "Ogg is a media container. Playback compatibility depends on the audio codec written inside it and the player you use.";
+    }
+    return "AAC in ADTS is an audio stream format, not a general-purpose video container. It is intended for compatible AAC audio workflows.";
+  }
+
+  if (["mp4", "webm", "mov", "mkv", "ogg"].includes(target)) {
+    return "MP4, WebM, MOV, MKV, and Ogg are containers. A container can hold different audio and video codecs, so changing the container does not guarantee that every stream will play in every device or browser.";
+  }
+
+  return "The result depends on the source streams, target format, browser support, and available device resources. Keep the original file until you have checked playback and audio/video synchronization.";
+}
+
+export default function MediaFeature({
   from,
   to,
 }: {
   from: string;
   to: string;
 }) {
+  const guidance = getConversionGuidance(from, to);
+
   return (
-    <section className="flex flex-col gap-5 w-full">
-      <div className="how flex flex-col gap-10">
-        <h2 className=" font-semibold text-xl  font-mono">
-          How to Convert {from} to {to}?
+    <section className="w-full space-y-7" aria-labelledby="media-conversion-guide">
+      <div className="space-y-3">
+        <h2 id="media-conversion-guide" className="text-xl font-semibold">
+          How to convert {from} to {to}
         </h2>
-        <ol className=" list-decimal text-md text-[#282f3a] shadow-black">
-          <li>
-            <span className="n">
-              Click the “<b>Choose File</b>” button to select your {from} file{" "}
-            </span>
-          </li>
-          <li>
-            <span className="n">
-              Click on the “<b>Convert to {to}</b>” button to start the
-              conversion
-            </span>
-          </li>
-          <li>
-            <span className="n">
-              When the conversion from {from} to {to} is complete, click the “
-              <b>Download {to}</b>” button
-            </span>
-          </li>
+        <ol className="list-decimal space-y-2 pl-6 text-base leading-7 text-slate-700">
+          <li>Select a media file from your device. The file should contain streams supported by the browser conversion engine.</li>
+          <li>Check the output format selected in the converter. You can change it before starting.</li>
+          <li>Start conversion and wait for processing to finish. Large files may take longer and use substantial memory.</li>
+          <li>Download the result and test it in the player or application where you intend to use it.</li>
         </ol>
       </div>
-      <div className="features mt-10 gap-5 grid lg:grid-cols-3 grid-cols-1 ">
-        <div className="flex w-full gap-5 h-full  items-center flex-col">
-          <div className="icon flex w-full justify-center ">
-            <MdOndemandVideo size={40} />
-          </div>
-          <h2 className=" text-2xl font-semibold">Easy to Use</h2>
-          <p className=" mt-7 text-[#282f3a] shadow-black">
-            Simply upload your {from} files and click the convert button. You
-            The process of convert {from} to {to} is quick and straightforward.
-          </p>
-        </div>
 
-        <div className="flex w-full gap-5 h-full  items-center flex-col">
-          <div className="icon flex w-full justify-center items-center">
-            <BsArrowUpRightCircle size={35} />
-          </div>
-          <h2 className=" text-2xl font-semibold">
-            Best {from} to {to} Converter
-          </h2>
-          <p className="text-[#282f3a] shadow-black">
-            Best web app to convert your {from} videos/audios into high-quality{" "}
-            {to} format. This tool supports converting various media types
-            including videos/audios formats.
-          </p>
-        </div>
+      <div className="rounded-xl border border-slate-200 bg-slate-50 p-5">
+        <h3 className="text-lg font-semibold text-slate-900">
+          What to know about {from} to {to}
+        </h3>
+        <p className="mt-2 text-sm leading-7 text-slate-700">{guidance}</p>
+      </div>
 
-        <div className="flex w-full gap-5 h-full  items-center flex-col">
-          <div className="icon flex w-full justify-center items-center">
-            <AiOutlineSecurityScan size={40} />
-          </div>
-          <h2 className=" text-2xl font-semibold">Free & Secure</h2>
-          <p className=" mt-7 text-[#282f3a] shadow-black">
-            Our {from} to {to} converter is free and works on any web browser.
-            Your files are converted in your browser and {"aren't"} sent
-            anywhere, ensuring complete safety.
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+        <article className="flex flex-col items-center gap-3 text-center">
+          <MdOndemandVideo size={40} aria-hidden="true" />
+          <h3 className="text-lg font-semibold text-slate-900">Container and codec</h3>
+          <p className="text-sm leading-6 text-slate-700">
+            A file extension describes its container or format, but playback also depends on the codecs inside the file.
           </p>
-        </div>
+        </article>
+        <article className="flex flex-col items-center gap-3 text-center">
+          <BsArrowUpRightCircle size={35} aria-hidden="true" />
+          <h3 className="text-lg font-semibold text-slate-900">Browser resources</h3>
+          <p className="text-sm leading-6 text-slate-700">
+            Conversion runs in your browser using your device's processing power and memory. Close other demanding tabs if a large conversion struggles.
+          </p>
+        </article>
+        <article className="flex flex-col items-center gap-3 text-center">
+          <AiOutlineSecurityScan size={40} aria-hidden="true" />
+          <h3 className="text-lg font-semibold text-slate-900">Local file processing</h3>
+          <p className="text-sm leading-6 text-slate-700">
+            This converter reads the selected file through the browser's file interface and builds the output in browser memory; it does not send the media to a conversion server in this workflow.
+          </p>
+        </article>
       </div>
     </section>
   );
