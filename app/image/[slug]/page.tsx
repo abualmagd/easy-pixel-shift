@@ -1,58 +1,50 @@
+import { notFound } from "next/navigation";
 import Feature from "@/app/src/components/feature";
 import FileLinks from "@/app/src/components/fileLinks";
 import ImageConverterContainer from "@/app/src/components/imageConverterContainer";
 import ImageLinks from "@/app/src/components/imageLinks";
 import { myImageLinks } from "@/app/src/const";
 import { baseMetadataTemplate } from "@/app/src/metatags";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
-  const paths = myImageLinks;
-
-  return paths.map((path) => ({
-    slug: path.link.split("/")[1],
+  return myImageLinks.map((item) => ({
+    slug: item.link.split("/")[1],
   }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-
-  // Parse formats from slug
-  const formats = slug.split("-to-");
-
-  const from = formats[0] || "jpg"; // 'jpg'
-  const to = formats[1] || "png"; // 'svg'
+  const conversion = myImageLinks.find((item) => item.link === `/${slug}`);
+  if (!conversion) return {};
+  const [from, to] = slug.split("-to-");
   return baseMetadataTemplate(from, to);
 }
 
 export default async function Page({ params }: Props) {
   const { slug } = await params;
-  if (!slug) {
-    return <div>not found</div>;
-  } else {
-    const formats = slug.split("-to-");
+  const conversion = myImageLinks.find((item) => item.link === `/${slug}`);
+  if (!conversion) notFound();
 
-    const from = formats[0] || "jpg"; // 'jpg'
-    const to = formats[1] || "png"; // 'svg'
+  const [from, to] = slug.split("-to-");
 
-    return (
-      <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-        <main className="flex min-h-screen w-full max-w-3xl flex-col gap-10 items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-          <ImageConverterContainer
-            title={`${from} to ${to}`}
-            slogan={`Easily convert ${from} to ${to} With The Best online tool to convert ${from} to ${to}..`}
-            from="jpg"
-            to="png"
-          />
-          <Feature from={from} to={to} />
-          <ImageLinks dic={undefined} />
-          <FileLinks />
-        </main>
-      </div>
-    );
-  }
+  return (
+    <div className="flex min-h-screen items-center justify-center bg-zinc-50">
+      <main className="flex min-h-screen w-full max-w-5xl flex-col items-center gap-10 bg-white px-4 py-12 sm:px-6 lg:px-10">
+        <ImageConverterContainer
+          title={`Convert ${from.toUpperCase()} to ${to.toUpperCase()}`}
+          slogan={`Convert an image from ${from.toUpperCase()} to ${to.toUpperCase()} in your browser. Choose a file, convert it, and download the result.`}
+          from={from}
+          to={to}
+        />
+        <Feature from={from} to={to} />
+        <ImageLinks />
+        <FileLinks />
+      </main>
+    </div>
+  );
 }
