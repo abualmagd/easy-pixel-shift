@@ -9,6 +9,7 @@ import {
 import { convertHtmlToText, convertHtmlToWord, convertTxtToHtml } from "./html";
 import {
   convertPdfToDocxSimple,
+  convertPdfToTxt,
   convertPdfToHtml,
   convertTxtToPdf,
   htmlToPdf,
@@ -61,7 +62,7 @@ export async function multiFileConvert(file: File, to: string) {
       case "pdf":
         throw Error("its the same file extension");
       case "txt":
-        return convertHtmlToText(file);
+        return convertPdfToTxt(file);
       case "docx":
         return convertPdfToDocxSimple(file); //here
       case "html":

@@ -29,6 +29,48 @@ export async function convertTxtToPdf(file: File) {
   return pdf.output("blob");
 }
 
+
+/**
+ * Extract selectable text from a PDF into a plain-text file.
+ * This does not perform OCR, so scanned pages without a text layer may be empty.
+ */
+export async function convertPdfToTxt(file: File): Promise<Blob> {
+  if (typeof window === "undefined") {
+    throw new Error("PDF conversion must run in the browser, not during SSR");
+  }
+
+  const { getDocument, GlobalWorkerOptions } = await import("pdfjs-dist");
+  GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
+
+  const loadingTask = getDocument({ data: await file.arrayBuffer() });
+  const pdf = await loadingTask.promise;
+  const pages: string[] = [];
+
+  for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+    const page = await pdf.getPage(pageNumber);
+    const textContent = await page.getTextContent();
+    const lines: { y: number; text: string }[] = [];
+
+    for (const item of textContent.items as any[]) {
+      if (typeof item.str !== "string" || !item.str.trim()) continue;
+      const y = Array.isArray(item.transform) ? item.transform[5] : 0;
+      const previous = lines[lines.length - 1];
+
+      if (previous && Math.abs(previous.y - y) <= 3) {
+        previous.text += item.str;
+      } else {
+        lines.push({ y, text: item.str });
+      }
+    }
+
+    pages.push(lines.map((line) => line.text.trim()).filter(Boolean).join("\n"));
+  }
+
+  return new Blob([pages.join("\n\n")], {
+    type: "text/plain;charset=utf-8",
+  });
+}
+
 export async function convertPdfToDocxSimple(file: File): Promise<Blob> {
   if (typeof window === "undefined") {
     throw new Error("PDF conversion must run in the browser, not during SSR");
