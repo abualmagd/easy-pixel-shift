@@ -5,10 +5,12 @@ import { MdOndemandVideo } from "react-icons/md";
 function getConversionGuidance(from: string, to: string) {
   const source = from.toLowerCase();
   const target = to.toLowerCase();
+  const audioTargets: string[] = ["mp3", "wav", "flac", "ogg", "aac (adts)"];
+  const videoTargets: string[] = ["mp4", "webm", "mov", "mkv", "ogg"];
 
-  if (["mp3", "wav", "flac", "ogg", "aac (adts)"].includes(target)) {
+  if (audioTargets.includes(target)) {
     if (target === "mp3") {
-      return "MP3 is a lossy audio format. When converting a video to MP3, the audio track is extracted and the video is not included. Re-encoding may reduce audio quality.";
+      return `${source.toUpperCase()} to MP3 extracts or converts the audio track; the output does not include video. MP3 uses lossy compression, so re-encoding may reduce audio quality.`;
     }
     if (target === "wav") {
       return "WAV commonly stores uncompressed audio, so the output can be much larger than the source. A video-to-WAV conversion extracts audio rather than keeping the picture.";
@@ -22,7 +24,7 @@ function getConversionGuidance(from: string, to: string) {
     return "AAC in ADTS is an audio stream format, not a general-purpose video container. It is intended for compatible AAC audio workflows.";
   }
 
-  if (["mp4", "webm", "mov", "mkv", "ogg"].includes(target)) {
+  if (videoTargets.includes(target)) {
     return "MP4, WebM, MOV, MKV, and Ogg are containers. A container can hold different audio and video codecs, so changing the container does not guarantee that every stream will play in every device or browser.";
   }
 
