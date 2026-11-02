@@ -56,7 +56,7 @@ export default function Converter(props: {
               onChange={(e) => handleFile(e)}
               id="dropzone-file"
               className="hidden"
-              accept=".pdf,.docx,.doc,.html,.htm,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/html,text/plain"
+              accept=".pdf,.docx,.html,.htm,.txt,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/html,text/plain"
             />
           </Label>
         </div>

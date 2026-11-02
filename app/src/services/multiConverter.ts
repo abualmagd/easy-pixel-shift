@@ -49,7 +49,11 @@ export async function multiFileConvert(file: File, to: string) {
     }
   }
 
-  if (from === "docx" || from === "doc") {
+  if (from === "doc") {
+    throw new Error("Legacy .doc files are not supported. Open the file in a word processor and save it as .docx first.");
+  }
+
+  if (from === "docx") {
     switch (to) {
       case "pdf":
         return convertWordToPdf(file);
