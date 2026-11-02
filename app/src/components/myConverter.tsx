@@ -11,12 +11,17 @@ export default function MyConverter(props: {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
   removeFile: Function;
 }) {
-  const [state, setState] = useState("waiting");
+  const [state, setState] = useState<"waiting" | "loading" | "download">("waiting");
   const [output, setOutput] = useState<Blob>();
   const [to, setTo] = useState(props.to || "pdf");
 
   const handleToChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    setTo(e.target.value);
+    const nextFormat = e.target.value;
+    if (nextFormat !== to) {
+      setTo(nextFormat);
+      setOutput(undefined);
+      setState("waiting");
+    }
   };
 
   const remove = () => {
@@ -56,8 +61,9 @@ export default function MyConverter(props: {
             <span>Output:</span>
 
             <select
-              defaultValue={to}
-              onChange={(e) => handleToChange(e)}
+              value={to}
+              disabled={state === "loading"}
+              onChange={handleToChange}
               id="output"
               className="block w-full px-3 py-2 rounded  border border-rounded text-heading text-sm focus:ring-brand  focus:rounded shadow-xs placeholder:text-body"
             >
@@ -67,7 +73,7 @@ export default function MyConverter(props: {
               <option value="docx">Docx</option>
             </select>
           </div>
-          <button onClick={remove} className=" cursor-pointer">
+          <button type="button" onClick={remove} disabled={state === "loading"} className="cursor-pointer disabled:cursor-not-allowed disabled:opacity-50">
             <IoMdCloseCircleOutline size={30} />
           </button>
         </div>
@@ -75,6 +81,7 @@ export default function MyConverter(props: {
       <div className="bg-gray-100 rounded-b-md h-14 w-full flex justify-center items-center">
         {state === "waiting" && (
           <button
+            type="button"
             onClick={convert}
             className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm cursor-pointer font-medium min-w-44 text-heading rounded-base group rounded hover:scale-90 bg-linear-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
           >
@@ -111,6 +118,7 @@ export default function MyConverter(props: {
         )}
         {state === "download" && (
           <button
+            type="button"
             onClick={dowloadIt}
             className="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm cursor-pointer font-medium min-w-44 text-heading rounded-base group rounded hover:scale-90 bg-linear-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800"
           >
