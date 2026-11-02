@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import { siteLink } from "./src/const";
 import ImageConverterContainer from "@/app/src/components/imageConverterContainer";
@@ -10,16 +8,6 @@ import ImageLinks from "@/app/src/components/imageLinks";
 import FileLinks from "@/app/src/components/fileLinks";
 import Navbar from "./src/components/navbar";
 import MyFooter from "./src/components/footer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Free Online Image Converter | JPG, PNG, WebP, SVG & ICO",
@@ -53,33 +41,31 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Navbar />
-        <div className="min-h-screen bg-zinc-50">
-          <main className="mx-auto flex w-full max-w-5xl flex-col gap-12 bg-white px-4 py-12 sm:px-6 lg:px-10">
-            <ImageConverterContainer
-              title="Free online image converter"
-              slogan="Convert JPG, JPEG, PNG, WebP, SVG and ICO images. Choose a file and select the format you need."
-              from=""
-              to=""
-            />
-            <ImageFeature />
-            <ImageFormatGuide />
-            <div className="space-y-3">
-              <h2 className="text-2xl font-semibold text-slate-900">Explore image converters</h2>
-              <p className="text-base leading-7 text-slate-600">
-                Open a dedicated converter when you already know the source and
-                output formats you need.
-              </p>
-              <ImageLinks />
-            </div>
-            <FileLinks />
-          </main>
-        </div>
-        <MyFooter />
-        <ToastContainer />
-      </body>
-    </html>
+    <>
+      <Navbar />
+      <div className="min-h-screen bg-zinc-50">
+        <main className="mx-auto flex w-full max-w-5xl flex-col gap-12 bg-white px-4 py-12 sm:px-6 lg:px-10">
+          <ImageConverterContainer
+            title="Free online image converter"
+            slogan="Convert JPG, JPEG, PNG, WebP, SVG and ICO images. Choose a file and select the format you need."
+            from=""
+            to=""
+          />
+          <ImageFeature />
+          <ImageFormatGuide />
+          <div className="space-y-3">
+            <h2 className="text-2xl font-semibold text-slate-900">Explore image converters</h2>
+            <p className="text-base leading-7 text-slate-600">
+              Open a dedicated converter when you already know the source and
+              output formats you need.
+            </p>
+            <ImageLinks />
+          </div>
+          <FileLinks />
+        </main>
+      </div>
+      <MyFooter />
+      <ToastContainer />
+    </>
   );
 }
