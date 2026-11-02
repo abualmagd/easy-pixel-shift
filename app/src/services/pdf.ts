@@ -179,7 +179,7 @@ export const readFileAsText = (file: File) => {
   });
 };
 
-export const htmlToPdf = async (file: File): Promise<Blob | undefined> => {
+export const htmlToPdf = async (file: File): Promise<Blob> => {
   let container: HTMLDivElement | null = null;
 
   try {
@@ -238,7 +238,9 @@ export const htmlToPdf = async (file: File): Promise<Blob | undefined> => {
     return pdfBlob;
   } catch (error) {
     console.error("Error generating PDF:", error);
-    return undefined;
+    throw new Error(
+      error instanceof Error ? error.message : "Unable to create a PDF from this HTML file"
+    );
   } finally {
     // Always clean up
     if (container && document.body.contains(container)) {

@@ -1,4 +1,4 @@
-"use client ";
+"use client";
 
 import {
   convertTextToWord,
@@ -18,59 +18,66 @@ import { fileTypeFinder } from "./utils";
 
 export async function multiFileConvert(file: File, to: string) {
   const from = fileTypeFinder(file);
+
   if (from === "txt") {
     switch (to) {
       case "pdf":
-        return await convertTxtToPdf(file);
+        return convertTxtToPdf(file);
       case "html":
         return convertTxtToHtml(file);
       case "docx":
         return convertTextToWord(file);
       case "txt":
-        throw Error("its the same file extension");
+        throw new Error("The source file is already TXT.");
       default:
-        return undefined;
+        throw new Error(`TXT to ${to.toUpperCase()} conversion is not supported.`);
     }
-  } else if (from === "html" || from === "htm") {
+  }
+
+  if (from === "html" || from === "htm") {
     switch (to) {
       case "pdf":
-        return await htmlToPdf(file);
+        return htmlToPdf(file);
       case "txt":
         return convertHtmlToText(file);
       case "docx":
-        return convertHtmlToWord(file); //here
+        return convertHtmlToWord(file);
       case "html":
-        throw Error("its the same file extension");
+        throw new Error("The source file is already HTML.");
       default:
-        return undefined;
+        throw new Error(`HTML to ${to.toUpperCase()} conversion is not supported.`);
     }
-  } else if (from === "docx" || from === "doc") {
+  }
+
+  if (from === "docx" || from === "doc") {
     switch (to) {
       case "pdf":
-        return await convertWordToPdf(file);
+        return convertWordToPdf(file);
       case "html":
         return convertWordToHtml(file);
       case "txt":
         return convertWordToTxt(file);
       case "docx":
-        throw Error("its the same file extension");
+        throw new Error("The source file is already DOCX.");
       default:
-        return undefined;
+        throw new Error(`Word to ${to.toUpperCase()} conversion is not supported.`);
     }
-  } else if (from === "pdf") {
+  }
+
+  if (from === "pdf") {
     switch (to) {
       case "pdf":
-        throw Error("its the same file extension");
+        throw new Error("The source file is already PDF.");
       case "txt":
         return convertPdfToTxt(file);
       case "docx":
-        return convertPdfToDocxSimple(file); //here
+        return convertPdfToDocxSimple(file);
       case "html":
         return convertPdfToHtml(file);
       default:
-        return undefined;
+        throw new Error(`PDF to ${to.toUpperCase()} conversion is not supported.`);
     }
-  } else {
-    throw Error("file is not supported!");
   }
+
+  throw new Error("Unsupported file type. Choose a PDF, DOCX, HTML, or TXT file.");
 }

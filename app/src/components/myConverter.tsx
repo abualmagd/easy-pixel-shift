@@ -31,6 +31,9 @@ export default function MyConverter(props: {
     try {
       setState("loading");
       const out = await multiFileConvert(props.file, to);
+      if (!(out instanceof Blob)) {
+        throw new Error("The selected conversion did not produce a downloadable file. Try another output format.");
+      }
       setOutput(out);
       notify("converted well", false);
       setState("download");
