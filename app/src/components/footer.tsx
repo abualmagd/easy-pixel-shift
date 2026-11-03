@@ -56,9 +56,6 @@ export default function MyFooter({ dic }: { dic?: any }) {
             </FooterLink>
             <FooterLink href="/privacy">{dic ? dic.links.privacy : "Privacy policy"}</FooterLink>
             <FooterLink href="/terms">{dic ? dic.links.terms : "Terms"}</FooterLink>
-            <FooterLink href="https://wa.me/201508328238" target="_blank" rel="noopener noreferrer">
-              {dic ? dic.links.contact : "Contact"}
-            </FooterLink>
           </FooterLinkGroup>
         </div>
       </div>

@@ -41,9 +41,6 @@ export default function Navbar({ dic }: { dic?: any }) {
         <NavbarLink href="/about" target="_blank">
           {dic ? dic.links.about : "About"}
         </NavbarLink>
-        <NavbarLink href="https://wa.me/201508328238" target="_blank">
-          {dic ? dic.links.contact : "Contact"}
-        </NavbarLink>
         <LanguageSwicher dic={dic} />
       </NavbarCollapse>
       <MegaMenuDropdown className=" w-full hidden">
