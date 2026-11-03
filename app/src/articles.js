@@ -209,34 +209,7 @@ export const myArticles = [
   {
     id: 9,
     slug: "pdf-professional-standard",
-    title: "The Critical Role of PDF in Business",
-    image:
-      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800",
-    content: `
-    <p>Businesses run on documents that need to look identical no matter who opens them or what device they're using — and that single requirement explains why the <strong>PDF (Portable Document Format)</strong> has stuck around since Adobe introduced it in the early 1990s. The whole point of the format was fidelity: a document should look the same on a laptop in Berlin as it does on a printer in Chicago.</p>
- 
-    <h2>The Problem PDF Was Built to Solve</h2>
-    <p>Nearly everyone has had this happen: you spend an hour getting a resume or proposal formatted just right in Word, send it off, and the recipient opens it to find the fonts swapped out, the margins shifted, and an image awkwardly overlapping a paragraph. That happens because Word documents aren't static — they adapt to whatever fonts and settings exist on the machine opening them. A PDF sidesteps all of that by locking the fonts, layout, and graphics into a single self-contained file. It's effectively frozen, which is exactly why it's the safe default for contracts, resumes, and anything destined for print.</p>
- 
-    <h2>PDFs Do More Than People Give Them Credit For</h2>
-    <p>It's tempting to think of a PDF as just a digital sheet of paper, but modern PDFs are genuinely interactive documents under the hood. They can include:</p>
-    <ul>
-        <li><strong>Fillable forms</strong> — letting someone type information directly into the document instead of printing and scanning it back.</li>
-        <li><strong>Digital signatures</strong> — enough to make a contract legally binding without either party being in the same room, or even the same country.</li>
-        <li><strong>Password protection</strong> — a baseline requirement for anything involving financial records or personal identification.</li>
-        <li><strong>Accessibility tagging</strong> — structuring the content so screen readers can describe it accurately to users with visual impairments.</li>
-    </ul>
- 
-    <h3>Keeping PDFs Web-Friendly</h3>
-    <p>The tradeoff for all that fidelity is weight — PDFs can get heavy fast, especially once images and embedded fonts pile up. Any business hosting whitepapers, catalogs, or menus online needs to think seriously about <a href="https://www.adobe.com/acrobat/online/compress-pdf.html" target="_blank">PDF compression</a>. Done right, a compressed PDF still prints beautifully but opens almost instantly in a browser — no visitor sitting there watching a loading spinner. In a professional setting, a well-optimized PDF isn't just a file type; it's a quiet signal that the business behind it pays attention to detail.</p>
-    `,
-  },
-
-  {
-    id: 21,
-    slug: "client-side-vs-server-side-conversion-privacy",
-    title:
-      "The Deep Dive: Why Client-Side File Conversion is the Ultimate Frontier for Data Privacy",
+    title: "Client-Side vs. Server-Side File Conversion: Privacy and Trade-offs",
     image:
       "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800",
     content:
@@ -260,25 +233,24 @@ export const myArticles = [
     title: "Why You Should Always Compress Your Images",
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800",
-    content: `
-    <p>Click a link, watch the little loading spinner turn for five or six seconds, and most of us are already halfway back to the search results before the page even finishes drawing itself. That impatience is exactly why <strong>image compression</strong> matters so much more than it gets credit for. It's the quiet practice of shrinking a file's size while keeping it looking essentially the same to the naked eye, and it plays a bigger role in <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank">search rankings</a> and visitor retention than most site owners realize.</p>
-    
-    <h2>What an Uncompressed Image Actually Costs You</h2>
-    <p>Oversized, uncompressed images are one of the most common reasons a website feels sluggish. Upload a 10MB photo straight from a nice camera onto your homepage, and every single visitor is now forced to download all 10MB just to see it. On a fast home connection that might be barely noticeable. On someone's phone, on patchy 4G, in a moving car? That's the difference between them staying and them leaving. A well-tuned compression algorithm — lossy or lossless — can typically shave 80 to 90 percent off an image's weight while keeping it looking sharp to anyone actually looking at it, rather than pixel-peeping.</p>
-    
-    <h3>1. Faster Pages, Better Search Visibility</h3>
-    <p>Google has been fairly blunt about this: <strong>Core Web Vitals</strong> factor directly into how pages rank. Faster sites tend to climb higher. Compressing your images helps your "Largest Contentful Paint" land sooner, which quietly tells search engines your site is healthy and well cared for. There's a human side to this too — pages that feel snappy simply keep people around longer. You're not just trimming kilobytes off a file; you're buying yourself a bit more of a visitor's patience before they bounce.</p>
-    
-    <h3>2. Storage Costs Add Up Quietly</h3>
-    <p>Whether you're on AWS, Google Cloud, or a modest shared host, storage isn't free, and it never really was. A media library full of 5MB JPEGs instead of 200KB WebP files is paying for room it doesn't need. Backups get worse too — a bloated database full of oversized assets turns a routine backup into a genuine chore. Compression buys back real gigabytes, both in the cloud and on local drives.</p>
-    
-    <h3>3. Mobile Data Isn't Free for Everyone</h3>
-    <p>It's easy to forget that a lot of visitors are on capped data plans, watching every megabyte. Serving them an uncompressed image is effectively spending their data allowance without asking. Optimizing images properly means people on limited connections get a faster, lighter experience — and that consideration tends to reflect well on a brand, even if nobody explicitly thanks you for it.</p>
- 
-    <h2>Finding the Sweet Spot Between Lossy and Lossless</h2>
-    <p>The real skill is knowing how far to push it. Lossless compression strips out unnecessary metadata while keeping every pixel intact, which makes it the safer bet for logos and anything that needs to stay perfectly crisp. Lossy compression genuinely discards data — you get the smallest possible file, but push it too far and you'll start seeing <strong>artifacting</strong>: blocky distortions, muddy textures, the visual signature of an image compressed past its limit. A reasonable rule of thumb is aiming for a JPEG quality setting somewhere between 60 and 80 percent — usually the sweet spot where the compression is essentially invisible to a casual viewer.</p>
-    
-    <p>All told, image compression might be the single easiest performance win available in web development. It's a small step in your workflow that pays off in speed, in hosting costs, and in whether visitors actually stick around. Don't let heavy, uncompressed photos be the reason people leave before they've even seen what you've built.</p>`,
+    content: `<p>When you use an online file converter, an important question is easy to overlook: does your file get processed on your device, or is it uploaded to a remote server first? Both approaches can produce the same downloadable result, but they have different privacy, performance, and compatibility trade-offs. Understanding the difference helps you decide what is appropriate for personal photos, business documents, and sensitive files.</p>
+<h2>What Client-Side Conversion Means</h2>
+<p>In a client-side workflow, the browser reads the selected file and performs the conversion locally. Web APIs such as the File API, Canvas, WebAssembly, and browser-based media libraries can decode data, transform it, and create a new Blob for download. The file does not need to be uploaded to a conversion server for that processing step.</p>
+<p>This approach can reduce the amount of file data sent to a service and avoids waiting for a remote conversion job. It also has limits: large files consume device memory and CPU, older devices may be slow, and browser support differs by format and codec.</p>
+<h2>What Server-Side Conversion Means</h2>
+<p>In a server-side workflow, the browser uploads the source file to a remote service. The server runs the conversion software and returns the result. This can support resource-intensive jobs, specialized codecs, and consistent processing across devices. It also means the service receives the file, so its upload security, retention, access controls, and deletion policy matter.</p>
+<p>Server-side processing is not automatically unsafe, and client-side processing is not a blanket guarantee of privacy. The implementation and the service's surrounding data practices matter.</p>
+<h2>How to Evaluate a Converter's Privacy Claims</h2>
+<ul>
+<li><strong>Look for a clear processing explanation.</strong> The provider should say whether files are uploaded, processed locally, or handled differently for different tools.</li>
+<li><strong>Check the network activity.</strong> In browser developer tools, inspect the Network panel while selecting and converting a test file. Look for requests that contain the file or large binary payloads. This is a useful check, not a complete security audit.</li>
+<li><strong>Read the privacy policy.</strong> Check analytics, advertising scripts, logs, retention, and whether files or metadata are collected.</li>
+<li><strong>Test with a harmless sample first.</strong> Do not use confidential documents to test an unfamiliar service.</li>
+</ul>
+<h2>How EasyPixelShift Handles Conversion</h2>
+<p>The conversion modules in the EasyPixelShift codebase use browser-side code: image conversion uses browser image and canvas APIs, document tools use browser file-processing libraries, and video conversion reads a Blob in the browser. This is evidence about the conversion path in those modules; it should not be interpreted as a promise that the entire website makes no network requests. The site still needs to load its application code and may load analytics or other third-party resources.</p>
+<h2>Which Approach Should You Prefer?</h2>
+<p>For a sensitive file, prefer a tool whose processing path and data practices you can verify. Client-side processing can reduce file exposure to a remote conversion service, while server-side processing may be more capable for demanding tasks. Choose based on the actual tool, the file's sensitivity, and the limits you are willing to accept—not on a privacy slogan alone.</p>`
   },
 
   {
@@ -326,24 +298,7 @@ export const myArticles = [
   {
     id: 20,
     slug: "the-future-of-avif",
-    title: "AVIF: Is This the Final Form of Image Compression?",
-    image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200",
-    content: `
-    <p>Just as most of us settled comfortably into using WebP, a newer contender showed up: <strong>AVIF (AV1 Image File Format)</strong>. If WebP felt like a meaningful step up from JPEG, AVIF is closer to a full generational leap — and it's routinely described as the most efficient image format currently in use.</p>
-    
-    <h2>Why AVIF Keeps Winning the Speed Tests</h2>
-    <p>AVIF is built on the AV1 video codec, originally engineered for 4K and 8K streaming, which gives it an unusually strong foundation for still images too. It can take a 1MB JPEG and compress it down to around 50KB with essentially no visible quality loss. It also supports 12-bit color, transparency, and HDR — putting it ahead of WebP across nearly every technical measure. For anyone chasing a strong <strong>Google Lighthouse score</strong>, AVIF is close to the ideal outcome.</p>
-    
-    <h3>Is It Time to Actually Switch?</h3>
-    <p>Browser support used to be the sticking point holding AVIF back, but that's largely resolved as of 2026 — Chrome, Firefox, Safari, and Edge all support it now. The sensible approach is treating AVIF as your primary format and keeping a WebP fallback around for older or less common setups. Converting an existing image library over to this dual-format approach is exactly the kind of tedious, repetitive task a tool like <a href="https://easypixelshift.com">easypixelshift.com</a> is built to handle — batch-processing a legacy library into a format that's actually ready for where the web is heading. Whether AVIF turns out to be the genuine "final form" of image compression or just the current leading edge, it's hard to argue it isn't the smart choice right now.</p>`,
-  },
-
-  {
-    id: 25,
-    slug: "future-of-image-formats-avif-heic-webp",
-    title:
-      "The 2026 Image Format Wars: A 1500-Word Deep Dive into AVIF, HEIC, and the Successors of JPEG",
+    title: "AVIF, HEIC, and WebP: How to Choose the Right Image Format",
     image:
       "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800",
     content:
@@ -367,22 +322,26 @@ export const myArticles = [
     title: "Deciphering Video Formats and Their Differences",
     image:
       "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=800",
-    content: `
-    <p>Picking the right video format today comes down to a genuine balancing act — between <strong>universal playback</strong>, meaning the file opens without a fuss on your grandmother's aging tablet, and <strong>editing flexibility</strong>, which is what a professional editor needs to color grade and manipulate footage properly. The trick to understanding this tradeoff is realizing a video file is really two things stacked together: a "container" (the file extension you actually see) and a "codec" (the underlying math doing the compression work).</p>
-    
-    <h2>MP4: The Format Nobody Argues With</h2>
-    <p><strong>MP4</strong>, typically running the H.264 or newer H.265 codec, is about as close to a universal standard as video gets on the internet. Uploading to YouTube, Vimeo, or basically any social platform? MP4 is almost always the right call. It strikes an impressively good balance between sharp definition and manageable file size, and thanks to its sheer ubiquity, it plays back cleanly on everything from smart TVs to budget smartphones to game consoles.</p>
-    
-    <p><img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=800" alt="Professional Video Editing and Post-Production Suite" style="width:100%; height:auto; border-radius: 10px; margin: 20px 0;" /></p>
-    
-    <h2>MOV: Built for the Editing Bay, Not the Feed</h2>
-    <p>Spend any time on a Mac and you'll run into <strong>MOV</strong> files constantly. Developed by Apple, this format is a favorite inside professional editing software like Final Cut Pro and Adobe Premiere, mostly because it tends to carry more raw data and less aggressive compression than MP4 — which is exactly what you want while you're still actively editing. The downside is size: MOV files can get large fast, and hosting a raw MOV directly on a website is a quick way to run up a painful bandwidth bill.</p>
-    
-    <h2>MKV: Built for Hoarding Everything</h2>
-    <p>Then there's <strong>MKV (Matroska)</strong> — not really a "video format" in the traditional sense so much as an open-source container that can hold essentially unlimited video, audio, and subtitle tracks all bundled into a single file. That flexibility makes it the go-to choice for serious <strong>archival</strong> work. Want a movie file that carries five language tracks and three subtitle options simultaneously? MKV is really the only practical way to pull that off. Its one real weakness is playback support — some basic mobile browsers and native players still stumble on MKV without something like VLC installed.</p>
-    
-    <h2>Codecs Are Doing the Actual Work</h2>
-    <p>The container gets all the attention, but the <strong>codec</strong> is where the real engineering happens. H.264 remains the reliable classic, while <strong>HEVC (H.265)</strong> represents the next step forward, delivering comparable quality at roughly half the file size. For those specifically looking for a royalty-free option, <a href="https://aomedia.org/av1/" target="_blank">AV1</a> is steadily becoming the preferred choice among major streaming platforms like Netflix. Getting a handle on these distinctions is what separates video that looks great but never buffers from content that technically plays fine but never actually finds its audience.</p>`,
+    content: `<p>AVIF, HEIC, and WebP can all store efficient digital images, but they are not interchangeable in every workflow. The best choice depends on where the image will be opened, whether transparency or animation is needed, how much compression matters, and whether the file is a working original or a final web asset.</p>
+<h2>WebP: A Practical Web Delivery Format</h2>
+<p>WebP supports both lossy and lossless compression, transparency, and animation. It is supported by modern browsers and is often a convenient format for website images. It is not always the smallest option for every image, so compare the result at the quality level you actually need rather than assuming one format always wins.</p>
+<h2>AVIF: Strong Compression With Workflow Trade-offs</h2>
+<p>AVIF is based on the AV1 image format and can deliver small files at good visual quality. It supports features such as transparency, HDR, and a wide range of color information. Encoding may take longer than JPEG or WebP, and some editing or publishing workflows may need updated software. For public websites, test browser support and provide a fallback when your audience or tooling requires one.</p>
+<h2>HEIC: Common in Apple Photo Workflows</h2>
+<p>HEIC commonly refers to HEIF images encoded with HEVC. Apple devices use it to store photos efficiently, but compatibility outside the Apple ecosystem can vary by operating system, browser, application, and codec availability. It is often a good capture format for keeping phone photos compact, but it may be inconvenient when sharing files with people using older or unsupported software.</p>
+<h2>Quick Comparison</h2>
+<table>
+<thead><tr><th>Format</th><th>Useful strengths</th><th>Things to check</th></tr></thead>
+<tbody>
+<tr><td>WebP</td><td>Web delivery, transparency, animation, broad modern-browser support</td><td>Editing and legacy application compatibility</td></tr>
+<tr><td>AVIF</td><td>Efficient compression, HDR and transparency support</td><td>Encoding time and support in your editing or publishing workflow</td></tr>
+<tr><td>HEIC</td><td>Compact phone photography and Apple ecosystem workflows</td><td>Sharing and opening on non-Apple devices</td></tr>
+</tbody>
+</table>
+<h2>A Sensible Workflow</h2>
+<p>Keep the original capture when it matters, especially if you may edit it again. For a website, export a delivery copy in WebP or AVIF after checking visual quality, dimensions, and browser support. For sharing a phone photo, convert HEIC only when the recipient or application cannot open it. Avoid repeatedly converting already compressed files, because each lossy export can introduce additional quality loss.</p>
+<h2>How to Make the Final Choice</h2>
+<p>Test a representative image rather than relying on a generic file-size claim. Compare the visual result at the actual display size, check transparency if you need it, and verify that the target devices and applications can open the file. A slightly larger file that works everywhere may be a better choice than a smaller file that breaks an important workflow.</p>`
   },
 
   {
@@ -457,29 +416,7 @@ export const myArticles = [
   {
     id: 11,
     slug: "mastering-image-resizing",
-    title:
-      "The Art of Resizing: How to Change Dimensions Without Losing Quality",
-    image:
-      "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1200",
-    content: `
-    <p>Resizing an image sounds trivial — drag a corner handle, done. In practice, it's a genuinely technical operation that involves recalculating every single pixel in the file. Whether you're squeezing a photo into an Instagram square or prepping a high-resolution banner for a website header, understanding what's actually happening under the hood — a process called <strong>interpolation</strong> — is the difference between a clean result and a blurry disappointment.</p>
- 
-    <h2>Resizing and Resampling Aren't the Same Thing</h2>
-    <p>Most people use these two words interchangeably, but they describe genuinely different operations. <strong>Resizing</strong> changes the physical print dimensions — the inches — without touching the underlying pixel count, which just adjusts the resolution (DPI). <strong>Resampling</strong>, on the other hand, actually adds or removes pixel data. Upscale an image, and your software has no choice but to invent new pixels that weren't there before. This is exactly the step where most amateur attempts go wrong, producing that blurry, pixelated mess everyone's seen at least once.</p>
- 
-    <h3>Doing an Upscale Properly</h3>
-    <p>If you've got a small logo that needs to be much bigger, your best bet is going back to the original <strong>vector source</strong> if one still exists. When that's not an option, modern browser-based tools at <a href="https://easypixelshift.com">easypixelshift.com</a> use reasonably sophisticated interpolation algorithms to smooth edges during a resize rather than just brute-force stretching them. It's worth remembering: shrinking a large image down almost always looks great, but pushing a small image up will always be a genuine challenge for maintaining image integrity, no matter how good the software is.</p>
-    
-    <h2>Aspect Ratio: The Mistake That Ruins Everything Else</h2>
-    <p>The single biggest resizing mistake is "stretching" — forcing a 4:3 photo into a 16:9 slot without cropping first. Do that and you'll distort faces and warp any straight architectural lines in the shot, sometimes badly enough that it's genuinely distracting. Always protect the <strong>aspect ratio</strong>. When the dimensions don't line up naturally, use a "cover" crop approach instead of a stretch — it keeps everything looking proportional and natural, which matters a lot more than most people expect until they see the alternative.</p>
-    `,
-  },
-
-  {
-    id: 22,
-    slug: "seo-image-optimization-deep-dive-2026",
-    title:
-      "Mastering Image SEO: How File Formats Impact Your Search Rankings in 2026",
+    title: "Image SEO: Practical Ways to Optimize Images for Search and Speed",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800",
     content:
@@ -492,14 +429,26 @@ export const myArticles = [
     title: "From Paper to Pixels: How OCR Technology Works",
     image:
       "https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=1200",
-    content: `
-    <p>Ever snapped a photo of a printed page and wished you could just select the text and copy it, the way you would on a regular website? That's essentially what <strong>Optical Character Recognition (OCR)</strong> makes possible. OCR is the bridge between paper and the searchable, editable world of digital text — the thing quietly turning a flat image of a document into something a computer can actually read.</p>
- 
-    <h2>What's Really Happening Behind the Scenes</h2>
-    <p>OCR doesn't simply glance at an image and understand it instantly — there's a real multi-step process involved. First, the software <strong>pre-processes</strong> the image, cleaning up noise and straightening any skewed alignment. From there, it uses <strong>pattern recognition</strong> or <strong>feature extraction</strong> to identify individual letters and digits one by one. The more capable modern systems go a step further and use AI to understand context — recognizing that a vertical stroke in "100" is clearly the number one, while the same stroke in "Hello" is the letter 'l'.</p>
- 
-    <h3>Why Businesses Actually Care About This</h3>
-    <p>For most organizations, OCR is the practical path to a genuinely <strong>paperless office</strong>. Turn a stack of scanned PDFs into searchable text, and finding a specific invoice from three years back takes seconds instead of a trip through a filing cabinet. Tools such as <a href="https://easypixelshift.com">easypixelshift.com</a> can help by preparing your source images in the formats OCR engines read most reliably. From translating a street sign in a foreign country in real time to digitizing decades-old archives, OCR keeps earning its place as one of the more genuinely useful pieces of everyday technology.</p>`,
+    content: `<p>Image optimization is not a trick that makes a page rank on its own. It is a set of practical decisions that help search engines understand images and help visitors load and use a page efficiently. Good image SEO combines descriptive content, suitable dimensions, efficient formats, and accessible markup.</p>
+<h2>Start With the Image's Purpose</h2>
+<p>Choose an image that genuinely supports the page. A product photograph should show the product clearly; a diagram should explain the process discussed nearby. Avoid decorative stock images that add no information. A relevant image placed beside the paragraph it illustrates is more useful to readers than an unrelated image added only to fill space.</p>
+<h2>Write Useful File Names and Alt Text</h2>
+<p>Before uploading, give the file a short descriptive name such as <code>transparent-logo-png.png</code> rather than <code>IMG_4837.png</code>. Write alternative text that communicates the image's purpose to someone who cannot see it. For example, a functional logo link might use the brand name as its alt text, while a chart should summarize the information it conveys. If an image is purely decorative, an empty alt attribute is usually appropriate.</p>
+<p>Do not stuff keywords into file names or alt text. Describe what is actually present and why it matters in context.</p>
+<h2>Choose a Format That Fits the Image</h2>
+<ul>
+<li><strong>JPEG:</strong> A practical choice for photographs when broad compatibility and adjustable lossy compression are important.</li>
+<li><strong>WebP:</strong> Supports lossy and lossless compression, transparency, and animation, with broad support in modern browsers.</li>
+<li><strong>AVIF:</strong> Can provide strong compression and useful image features, but encoding can take longer and compatibility requirements should be checked for the audience and workflow.</li>
+<li><strong>PNG:</strong> Useful for lossless graphics, screenshots, and transparency, although photographic PNGs can be unnecessarily large.</li>
+<li><strong>SVG:</strong> Appropriate for many logos, icons, and diagrams that need to scale cleanly; it is not a replacement for photographic formats.</li>
+</ul>
+<h2>Serve the Right Dimensions</h2>
+<p>Do not send a huge original image to every screen if a smaller version will look equally sharp. Use responsive image markup such as <code>srcset</code> and <code>sizes</code> so the browser can select an appropriate source for the layout and screen density. Compressing a 4000-pixel image does not replace resizing it when the page only displays it at 500 pixels wide.</p>
+<h2>Protect the Largest Images on the Page</h2>
+<p>Large hero images and product photos can affect how quickly the main content appears. Set explicit width and height (or an aspect ratio) to reserve space, use an appropriately sized source, and avoid lazy-loading an image that is immediately visible at the top of the page. Images farther down the page are usually good candidates for lazy loading.</p>
+<h2>What Image Optimization Can—and Cannot—Do for SEO</h2>
+<p>Descriptive alt text, relevant placement, crawlable image URLs, and fast page experiences help make images more useful and accessible. No file format guarantees higher rankings, and converting an image to WebP or AVIF does not automatically improve search visibility. Measure the page before and after changes, check that image URLs remain crawlable, and prioritize improvements that make the page better for people.</p>`
   },
 
   {
@@ -605,24 +554,7 @@ export const myArticles = [
   {
     id: 19,
     slug: "e-book-formatting-basics",
-    title: "Self-Publishing 101: Converting Your Manuscript to EPUB",
-    image:
-      "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200",
-    content: `
-    <p>The gap between "writer" and "published author" has arguably never been smaller, thanks to self-publishing. But before your manuscript is ready for Amazon, there's one technical hurdle worth understanding properly: the <strong>EPUB format</strong>.</p>
- 
-    <h2>Why a PDF Won't Cut It</h2>
-    <p>A common early mistake is trying to sell a book directly as a PDF. The problem is that PDFs are fundamentally "fixed" in their layout. On a compact Kindle screen, a PDF page renders tiny, forcing readers to zoom in and scroll sideways just to get through a single sentence. <strong>EPUB, by contrast, is "reflowable."</strong> It lets the reader adjust font size and background color freely, and the text automatically reflows to fit whatever screen it lands on. That's exactly why it's become the industry standard rather than an optional nicety.</p>
- 
-    <h3>A Sensible Conversion Workflow</h3>
-    <p>The cleanest path to a polished e-book starts with a properly formatted Word document — using actual "Styles" for your headers rather than manually bolding text — and then converting that through a dedicated tool. Compress any embedded images beforehand using something like <a href="https://easypixelshift.com">easypixelshift.com</a>, since an e-book pushing past 10MB can trigger higher delivery fees on some platforms. Get the formatting right, and your finished book becomes genuinely indistinguishable from something that came out of a major publishing house.</p>`,
-  },
-
-  {
-    id: 23,
-    slug: "mastering-vector-graphics-svg-for-web",
-    title:
-      "The Architect's Guide to Scalable Vector Graphics (SVG): Beyond Simple Icons",
+    title: "SVG for the Web: How Vector Graphics Work and When to Use Them",
     image:
       "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=800",
     content:
@@ -792,25 +724,30 @@ export const myArticles = [
     title: "PDF to JPG: Pulling Clean Images Out of Documents",
     image:
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800",
-    content: `
-    <p>PDFs are great at holding a document together — text, images, charts, all locked into one tidy file. But every so often what you actually need isn't the whole document, just one picture buried on page four: a diagram, a scanned photo, a chart someone sent you inside a report. Screenshotting your own screen and cropping it in Paint works, technically, but it's slow and the result usually looks a little rough around the edges. Converting <strong>PDF to JPG</strong> properly gets you a clean, usable image without any of that fuss.</p>
- 
-    <h2>Why This Comes Up More Than You'd Expect</h2>
-    <p>A surprising number of everyday tasks boil down to "I have a PDF, I need a picture." Maybe it's an ID scan a form wants as a JPG upload, a product spec sheet where you just need the diagram, or an old scanned photo that somehow only exists inside a PDF file someone emailed you a decade ago. Whatever the reason, the goal is the same: pull a specific page, or the images on it, out cleanly, without dragging the rest of the document along.</p>
- 
-    <h3>Whole Page vs. Just the Embedded Image</h3>
-    <p>It's worth being clear about what you actually want, because these are two different jobs. Converting a full PDF page into a JPG renders everything on that page — text, layout, images — as one flattened picture, which is exactly what you want if you're trying to preserve the whole page's appearance for a presentation slide or a quick reference. Extracting an embedded image, on the other hand, pulls out just the original photo or graphic that was placed inside the PDF, at its original resolution, without any surrounding text or margins. If you know which one you actually need before you start, you'll save yourself a round of re-doing it.</p>
- 
-    <h3>Watching Out for Quality Loss</h3>
-    <p>Not every PDF-to-JPG conversion is created equal. A page rendered at too low a resolution comes out looking soft or blocky, especially if there's any text on it you'll want to read later. When you're converting anything you plan to reuse — for print, for a portfolio, for anything beyond a quick reference — it's worth rendering at a higher DPI than the default, even if the resulting file is a bit larger. It's much easier to compress a sharp image down afterward than to sharpen a blurry one after the fact.</p>
- 
-    <h2>Batch Extraction for Multi-Page Documents</h2>
-    <p>If you're working with a PDF that has dozens of pages, each with its own diagram or photo, doing this one page at a time gets old fast. A tool that can batch-convert or batch-extract every image in a document at once — something like <a href="https://easypixelshift.com">easypixelshift.com</a> — turns a genuinely tedious afternoon into a couple of clicks. That's especially useful for anyone digitizing an old scanned archive or pulling assets out of a design portfolio that was exported as a single PDF.</p>
- 
-    <h3>A Quick Note on Privacy</h3>
-    <p>PDFs frequently carry sensitive content — signed contracts, ID documents, financial statements. Before uploading one of those to a random online converter, it's worth checking whether the tool actually needs to send your file to a server at all, or whether it can process everything locally in your browser instead. The latter is generally the safer default whenever the document contains anything you wouldn't want sitting on someone else's hard drive.</p>
- 
-    <p>Converting a PDF into usable images isn't glamorous work, but getting it right the first time — the correct resolution, the correct choice between full page and embedded image, and a reasonably private tool — saves a surprising amount of repeated effort down the line.</p>`,
+    content: `<p>SVG (Scalable Vector Graphics) is an image format built around shapes, paths, text, and other objects described with XML. Unlike a JPEG or PNG, which stores a grid of pixels, an SVG describes how the graphic should be drawn. That makes it especially useful for logos, icons, diagrams, and interface illustrations that need to remain sharp at different sizes.</p>
+<h2>Why SVG Stays Sharp</h2>
+<p>A raster image has a fixed pixel grid. When enlarged beyond its original dimensions, the browser must interpolate pixels and the result can look soft. An SVG stores geometric instructions, so the browser can render those shapes at the required size. This is why a well-made SVG logo can look crisp on both a small phone screen and a large display.</p>
+<h2>When SVG Is a Good Choice</h2>
+<ul>
+<li><strong>Logos and brand marks:</strong> especially when the artwork uses clean shapes and needs several display sizes.</li>
+<li><strong>Icons and interface graphics:</strong> where sharp edges and small file sizes matter.</li>
+<li><strong>Diagrams and charts:</strong> when the content is made from lines, labels, and shapes rather than photographs.</li>
+</ul>
+<h2>When to Use PNG, JPEG, or WebP Instead</h2>
+<p>SVG is not a universal replacement for raster images. Photographs contain complex textures and color variations that are generally better stored in JPEG, WebP, or AVIF. Screenshots with fine pixel detail may also be better kept as PNG or another raster format. Choose the format based on the source artwork, not simply on the fact that SVG can scale.</p>
+<h2>Converting a Raster Image to SVG</h2>
+<p>Changing a PNG or JPEG file extension to <code>.svg</code> does not turn its pixels into vector paths. True raster-to-vector conversion requires tracing: software estimates shapes and boundaries from the pixels. The result can be useful for high-contrast artwork, but photographs and detailed gradients usually produce complex or inaccurate paths. Keep the original raster file and inspect traced output before using it in production.</p>
+<h2>SVG Security and Optimization</h2>
+<p>An SVG is structured text and can contain more than simple shapes, including scripts, event handlers, styles, and references to external resources. Treat SVG files from untrusted sources carefully. Sanitize them before embedding user-supplied SVG markup into a website, avoid inserting raw untrusted SVG with HTML injection, and remove unnecessary metadata and editor-specific data from files you publish.</p>
+<h2>Practical Export Checklist</h2>
+<ol>
+<li>Keep an editable source file from your design application.</li>
+<li>Export SVG for simple vector artwork and check the result at several sizes.</li>
+<li>Use a raster format for photographs and pixel-based screenshots.</li>
+<li>Remove unnecessary hidden layers and metadata where appropriate.</li>
+<li>Sanitize externally supplied SVG before using it in a web page.</li>
+</ol>
+<p>SVG works best when the source is genuinely vector artwork. Used in the right place, it provides sharp, flexible graphics; used as a wrapper for a photograph or an unsafe upload, it adds complexity without delivering the expected benefit.</p>`
   },
 
   {
