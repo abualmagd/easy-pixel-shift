@@ -40,7 +40,7 @@ export const fileNameFinder = (file: File) => {
 
   if (lastDotIndex > 0 && lastDotIndex < file.name.length - 1) {
     // Extract the substring after the last dot
-    name = file.name.split(".")[0].toLowerCase();
+    name = file.name.slice(0, lastDotIndex).toLowerCase();
   } else if (file.name.length > 0 && lastDotIndex === -1) {
     name = "file";
   } else if (lastDotIndex === file.name.length - 1) {
