@@ -256,7 +256,7 @@ export const myArticles = [
 <h2>How EasyPixelShift Handles Conversion</h2>
 <p>The conversion modules in the EasyPixelShift codebase use browser-side code: image conversion uses browser image and canvas APIs, document tools use browser file-processing libraries, and video conversion reads a Blob in the browser. This is evidence about the conversion path in those modules; it should not be interpreted as a promise that the entire website makes no network requests. The site still needs to load its application code and may load analytics or other third-party resources.</p>
 <h2>Which Approach Should You Prefer?</h2>
-<p>For a sensitive file, prefer a tool whose processing path and data practices you can verify. Client-side processing can reduce file exposure to a remote conversion service, while server-side processing may be more capable for demanding tasks. Choose based on the actual tool, the file's sensitivity, and the limits you are willing to accept—not on a privacy slogan alone.</p>`,
+<p>For a sensitive file, prefer a tool whose processing path and data practices you can verify. Client-side processing can reduce file exposure to a remote conversion service, while server-side processing may be more capable for demanding tasks. Choose based on the actual tool, the file's sensitivity, and the limits you are willing to accept—not on a privacy slogan alone.</p><h2>Further reading</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/File_API" target="_blank" rel="noopener noreferrer">MDN: File API</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="_blank" rel="noopener noreferrer">MDN: Canvas API</a></li></ul>`,
   },
 
   {
@@ -362,7 +362,7 @@ export const myArticles = [
 <p>AVIF can be a strong delivery option for modern web projects, especially when reducing image transfer size matters. A responsive image setup can offer AVIF to compatible browsers and provide WebP or JPEG alternatives where needed. Keep a high-quality original so that you can regenerate delivery files later as tools and requirements change.</p>
 <h2>Do Not Confuse Conversion With Image Enhancement</h2>
 <p>Converting a JPEG to AVIF does not restore detail that was lost when the JPEG was first compressed. It creates a new encoding of the information that remains. If the source is blurry or heavily compressed, the AVIF output will not become a true high-resolution original simply because the destination format is newer.</p>
-<p>AVIF is a useful option, not a universal final format. Test it with representative images, compare quality rather than file size alone, and choose a fallback strategy that fits the people and software using your images.</p>`,
+<p>AVIF is a useful option, not a universal final format. Test it with representative images, compare quality rather than file size alone, and choose a fallback strategy that fits the people and software using your images.</p><h2>Further reading</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types" target="_blank" rel="noopener noreferrer">MDN: Image file type and format guide</a></li><li><a href="https://aomedia.org/av1/" target="_blank" rel="noopener noreferrer">Alliance for Open Media: AV1</a></li></ul>`,
   },
 
   {
@@ -545,7 +545,7 @@ export const myArticles = [
 <h2>Protect the Largest Images on the Page</h2>
 <p>Large hero images and product photos can affect how quickly the main content appears. Set explicit width and height (or an aspect ratio) to reserve space, use an appropriately sized source, and avoid lazy-loading an image that is immediately visible at the top of the page. Images farther down the page are usually good candidates for lazy loading.</p>
 <h2>What Image Optimization Can—and Cannot—Do for SEO</h2>
-<p>Descriptive alt text, relevant placement, crawlable image URLs, and fast page experiences help make images more useful and accessible. No file format guarantees higher rankings, and converting an image to WebP or AVIF does not automatically improve search visibility. Measure the page before and after changes, check that image URLs remain crawlable, and prioritize improvements that make the page better for people.</p>`,
+<p>Descriptive alt text, relevant placement, crawlable image URLs, and fast page experiences help make images more useful and accessible. No file format guarantees higher rankings, and converting an image to WebP or AVIF does not automatically improve search visibility. Measure the page before and after changes, check that image URLs remain crawlable, and prioritize improvements that make the page better for people.</p><h2>Further reading</h2><ul><li><a href="https://developers.google.com/search/docs/appearance/google-images" target="_blank" rel="noopener noreferrer">Google Search Central: Google Images SEO best practices</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture" target="_blank" rel="noopener noreferrer">MDN: The picture element</a></li></ul>`,
   },
 
   {
@@ -594,7 +594,7 @@ export const myArticles = [
 <li>Keep the original separate from the cleaned sharing copy.</li>
 <li>Recheck metadata after every conversion or export workflow.</li>
 </ul>
-<p>Metadata is not inherently bad: it helps photographers search, sort, and understand their work. The useful habit is to decide deliberately which details belong in your archive and which details should travel with a public copy.</p>`,
+<p>Metadata is not inherently bad: it helps photographers search, sort, and understand their work. The useful habit is to decide deliberately which details belong in your archive and which details should travel with a public copy.</p><h2>Further reading</h2><ul><li><a href="https://exiftool.org/" target="_blank" rel="noopener noreferrer">ExifTool: Image metadata reference and utility</a></li><li><a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000146.shtml" target="_blank" rel="noopener noreferrer">Library of Congress: Exchangeable Image File Format (EXIF)</a></li></ul>`,
   },
 
   {
@@ -619,7 +619,7 @@ export const myArticles = [
 <h2>Choose a Modern Output Based on the Goal</h2>
 <p>If people only need to watch an animation, a modern video file may be enough. If they need to click buttons, explore menus, or complete an exercise, a video is not an equivalent replacement. If the goal is long-term preservation, keep the original files and record how the content was created and used.</p>
 <h2>What Not to Do</h2>
-<p>Avoid downloading unofficial Flash Player installers or browser extensions that promise to make every old SWF work again. They may expose your device to security risks and do not solve the long-term compatibility problem. Preserve the source, document the behavior, and migrate the content to a supported format that matches its original purpose.</p>`,
+<p>Avoid downloading unofficial Flash Player installers or browser extensions that promise to make every old SWF work again. They may expose your device to security risks and do not solve the long-term compatibility problem. Preserve the source, document the behavior, and migrate the content to a supported format that matches its original purpose.</p><h2>Further reading</h2><ul><li><a href="https://www.adobe.com/products/flashplayer/end-of-life.html" target="_blank" rel="noopener noreferrer">Adobe: Flash Player end of life</a></li></ul>`,
   },
 
   {
@@ -652,7 +652,7 @@ export const myArticles = [
 <li>Expecting a color conversion to reproduce colors outside the printer's gamut.</li>
 <li>Discarding the original RGB or design master after export.</li>
 </ul>
-<p>The safest workflow is to keep a well-managed source file and prepare a separate print version using the printer's specifications. A format converter can change the file container, but accurate print color requires a color-managed workflow and the correct output profile.</p>`,
+<p>The safest workflow is to keep a well-managed source file and prepare a separate print version using the printer's specifications. A format converter can change the file container, but accurate print color requires a color-managed workflow and the correct output profile.</p><h2>Further reading</h2><ul><li><a href="https://www.color.org/" target="_blank" rel="noopener noreferrer">International Color Consortium</a></li><li><a href="https://helpx.adobe.com/photoshop/using/working-with-color-profiles.html" target="_blank" rel="noopener noreferrer">Adobe: Working with color profiles</a></li></ul>`,
   },
 
   {
@@ -769,7 +769,7 @@ export const myArticles = [
 <p>After export, open the book in more than one reading application. Check the table of contents, chapter navigation, cover image, metadata, image sizing, and text flow. A standards validator such as EPUBCheck can identify structural problems that may not be obvious when previewing only the first chapter.</p>
 <h2>Keep a Source and a Review Copy</h2>
 <p>Keep the editable manuscript and the exported EPUB separately. If you update the book, regenerate the EPUB from the source rather than editing the packaged file by hand. Review the final output on a phone-sized screen and a larger e-reader display before distributing it.</p>
-<p>Changing a DOCX file into another document format does not automatically create a well-structured EPUB. A reliable e-book workflow requires clean source styles, correct navigation and metadata, and a careful review in actual reading software.</p>`,
+<p>Changing a DOCX file into another document format does not automatically create a well-structured EPUB. A reliable e-book workflow requires clean source styles, correct navigation and metadata, and a careful review in actual reading software.</p><h2>Further reading</h2><ul><li><a href="https://www.w3.org/TR/epub-33/" target="_blank" rel="noopener noreferrer">W3C: EPUB 3.3 specification</a></li><li><a href="https://www.w3.org/publishing/epubcheck/" target="_blank" rel="noopener noreferrer">W3C: EPUBCheck</a></li></ul>`,
   },
 
   {
@@ -839,7 +839,7 @@ export const myArticles = [
 </ul>
 <h2>How to Get a More Reliable Result</h2>
 <p>Start with a copy of the original, choose an output format that fits the destination, and test a representative file before processing important material. For documents, review the output page by page. For images, check dimensions, transparency, and visual quality. For media, play the exported file from beginning to end and verify that audio and video remain synchronized.</p>
-<p>A transparent converter should explain what it supports, where processing occurs, and what quality or compatibility limitations remain. Those details help people choose the right tool for the job instead of relying on broad promises such as perfect conversion or absolute privacy.</p>`,
+<p>A transparent converter should explain what it supports, where processing occurs, and what quality or compatibility limitations remain. Those details help people choose the right tool for the job instead of relying on broad promises such as perfect conversion or absolute privacy.</p><h2>Further reading</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/File_API" target="_blank" rel="noopener noreferrer">MDN: File API</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Blob" target="_blank" rel="noopener noreferrer">MDN: Blob</a></li></ul>`,
   },
 
   {
