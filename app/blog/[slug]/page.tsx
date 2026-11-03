@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { myArticles } from "@/app/src/articles";
+import { siteLink } from "@/app/src/const";
 import { BlogComponent } from "@/app/src/components/blogComponent";
 import {
   getArticleExcerpt,
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const description = getArticleExcerpt(article.content, 155);
-  const canonical = `/blog/${article.slug}`;
+  const canonical = `${siteLink}/blog/${article.slug}`;
 
   return {
     title: `${article.title} | EasyPixelShift Guides`,

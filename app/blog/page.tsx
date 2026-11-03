@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { myArticles } from "@/app/src/articles";
+import { siteLink } from "@/app/src/const";
 import {
   getArticleExcerpt,
   getArticleReadingTime,
@@ -10,13 +11,13 @@ export const metadata: Metadata = {
   title: "File Conversion & Image Optimization Guides | EasyPixelShift",
   description:
     "Practical guides to image formats, file conversion, compression, resizing, privacy, and preparing digital assets for the web and print.",
-  alternates: { canonical: "/blog" },
+  alternates: { canonical: `${siteLink}/blog` },
   openGraph: {
     type: "website",
     title: "File Conversion & Image Optimization Guides | EasyPixelShift",
     description:
       "Practical explanations and workflows for choosing, converting, and optimizing digital files.",
-    url: "/blog",
+    url: `${siteLink}/blog`,
   },
 };
 
