@@ -209,6 +209,32 @@ export const myArticles = [
   {
     id: 9,
     slug: "pdf-professional-standard",
+    title: "The Critical Role of PDF in Business",
+    image:
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800",
+    content: `
+    <p>Businesses run on documents that need to look identical no matter who opens them or what device they're using — and that single requirement explains why the <strong>PDF (Portable Document Format)</strong> has stuck around since Adobe introduced it in the early 1990s. The whole point of the format was fidelity: a document should look the same on a laptop in Berlin as it does on a printer in Chicago.</p>
+ 
+    <h2>The Problem PDF Was Built to Solve</h2>
+    <p>Nearly everyone has had this happen: you spend an hour getting a resume or proposal formatted just right in Word, send it off, and the recipient opens it to find the fonts swapped out, the margins shifted, and an image awkwardly overlapping a paragraph. That happens because Word documents aren't static — they adapt to whatever fonts and settings exist on the machine opening them. A PDF sidesteps all of that by locking the fonts, layout, and graphics into a single self-contained file. It's effectively frozen, which is exactly why it's the safe default for contracts, resumes, and anything destined for print.</p>
+ 
+    <h2>PDFs Do More Than People Give Them Credit For</h2>
+    <p>It's tempting to think of a PDF as just a digital sheet of paper, but modern PDFs are genuinely interactive documents under the hood. They can include:</p>
+    <ul>
+        <li><strong>Fillable forms</strong> — letting someone type information directly into the document instead of printing and scanning it back.</li>
+        <li><strong>Digital signatures</strong> — enough to make a contract legally binding without either party being in the same room, or even the same country.</li>
+        <li><strong>Password protection</strong> — a baseline requirement for anything involving financial records or personal identification.</li>
+        <li><strong>Accessibility tagging</strong> — structuring the content so screen readers can describe it accurately to users with visual impairments.</li>
+    </ul>
+ 
+    <h3>Keeping PDFs Web-Friendly</h3>
+    <p>The tradeoff for all that fidelity is weight — PDFs can get heavy fast, especially once images and embedded fonts pile up. Any business hosting whitepapers, catalogs, or menus online needs to think seriously about <a href="https://www.adobe.com/acrobat/online/compress-pdf.html" target="_blank">PDF compression</a>. Done right, a compressed PDF still prints beautifully but opens almost instantly in a browser — no visitor sitting there watching a loading spinner. In a professional setting, a well-optimized PDF isn't just a file type; it's a quiet signal that the business behind it pays attention to detail.</p>
+    `,
+  },
+
+  {
+    id: 21,
+    slug: "client-side-vs-server-side-conversion-privacy",
     title: "Client-Side vs. Server-Side File Conversion: Privacy and Trade-offs",
     image:
       "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800",
@@ -298,6 +324,22 @@ export const myArticles = [
   {
     id: 20,
     slug: "the-future-of-avif",
+    title: "AVIF: Is This the Final Form of Image Compression?",
+    image:
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200",
+    content: `
+    <p>Just as most of us settled comfortably into using WebP, a newer contender showed up: <strong>AVIF (AV1 Image File Format)</strong>. If WebP felt like a meaningful step up from JPEG, AVIF is closer to a full generational leap — and it's routinely described as the most efficient image format currently in use.</p>
+    
+    <h2>Why AVIF Keeps Winning the Speed Tests</h2>
+    <p>AVIF is built on the AV1 video codec, originally engineered for 4K and 8K streaming, which gives it an unusually strong foundation for still images too. It can take a 1MB JPEG and compress it down to around 50KB with essentially no visible quality loss. It also supports 12-bit color, transparency, and HDR — putting it ahead of WebP across nearly every technical measure. For anyone chasing a strong <strong>Google Lighthouse score</strong>, AVIF is close to the ideal outcome.</p>
+    
+    <h3>Is It Time to Actually Switch?</h3>
+    <p>Browser support used to be the sticking point holding AVIF back, but that's largely resolved as of 2026 — Chrome, Firefox, Safari, and Edge all support it now. The sensible approach is treating AVIF as your primary format and keeping a WebP fallback around for older or less common setups. Converting an existing image library over to this dual-format approach is exactly the kind of tedious, repetitive task a tool like <a href="https://easypixelshift.com">easypixelshift.com</a> is built to handle — batch-processing a legacy library into a format that's actually ready for where the web is heading. Whether AVIF turns out to be the genuine "final form" of image compression or just the current leading edge, it's hard to argue it isn't the smart choice right now.</p>`,
+  },
+
+  {
+    id: 25,
+    slug: "future-of-image-formats-avif-heic-webp",
     title: "AVIF, HEIC, and WebP: How to Choose the Right Image Format",
     image:
       "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800",
@@ -416,6 +458,27 @@ export const myArticles = [
   {
     id: 11,
     slug: "mastering-image-resizing",
+    title:
+      "The Art of Resizing: How to Change Dimensions Without Losing Quality",
+    image:
+      "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1200",
+    content: `
+    <p>Resizing an image sounds trivial — drag a corner handle, done. In practice, it's a genuinely technical operation that involves recalculating every single pixel in the file. Whether you're squeezing a photo into an Instagram square or prepping a high-resolution banner for a website header, understanding what's actually happening under the hood — a process called <strong>interpolation</strong> — is the difference between a clean result and a blurry disappointment.</p>
+ 
+    <h2>Resizing and Resampling Aren't the Same Thing</h2>
+    <p>Most people use these two words interchangeably, but they describe genuinely different operations. <strong>Resizing</strong> changes the physical print dimensions — the inches — without touching the underlying pixel count, which just adjusts the resolution (DPI). <strong>Resampling</strong>, on the other hand, actually adds or removes pixel data. Upscale an image, and your software has no choice but to invent new pixels that weren't there before. This is exactly the step where most amateur attempts go wrong, producing that blurry, pixelated mess everyone's seen at least once.</p>
+ 
+    <h3>Doing an Upscale Properly</h3>
+    <p>If you've got a small logo that needs to be much bigger, your best bet is going back to the original <strong>vector source</strong> if one still exists. When that's not an option, modern browser-based tools at <a href="https://easypixelshift.com">easypixelshift.com</a> use reasonably sophisticated interpolation algorithms to smooth edges during a resize rather than just brute-force stretching them. It's worth remembering: shrinking a large image down almost always looks great, but pushing a small image up will always be a genuine challenge for maintaining image integrity, no matter how good the software is.</p>
+    
+    <h2>Aspect Ratio: The Mistake That Ruins Everything Else</h2>
+    <p>The single biggest resizing mistake is "stretching" — forcing a 4:3 photo into a 16:9 slot without cropping first. Do that and you'll distort faces and warp any straight architectural lines in the shot, sometimes badly enough that it's genuinely distracting. Always protect the <strong>aspect ratio</strong>. When the dimensions don't line up naturally, use a "cover" crop approach instead of a stretch — it keeps everything looking proportional and natural, which matters a lot more than most people expect until they see the alternative.</p>
+    `,
+  },
+
+  {
+    id: 22,
+    slug: "seo-image-optimization-deep-dive-2026",
     title: "Image SEO: Practical Ways to Optimize Images for Search and Speed",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800",
@@ -554,6 +617,22 @@ export const myArticles = [
   {
     id: 19,
     slug: "e-book-formatting-basics",
+    title: "Self-Publishing 101: Converting Your Manuscript to EPUB",
+    image:
+      "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1200",
+    content: `
+    <p>The gap between "writer" and "published author" has arguably never been smaller, thanks to self-publishing. But before your manuscript is ready for Amazon, there's one technical hurdle worth understanding properly: the <strong>EPUB format</strong>.</p>
+ 
+    <h2>Why a PDF Won't Cut It</h2>
+    <p>A common early mistake is trying to sell a book directly as a PDF. The problem is that PDFs are fundamentally "fixed" in their layout. On a compact Kindle screen, a PDF page renders tiny, forcing readers to zoom in and scroll sideways just to get through a single sentence. <strong>EPUB, by contrast, is "reflowable."</strong> It lets the reader adjust font size and background color freely, and the text automatically reflows to fit whatever screen it lands on. That's exactly why it's become the industry standard rather than an optional nicety.</p>
+ 
+    <h3>A Sensible Conversion Workflow</h3>
+    <p>The cleanest path to a polished e-book starts with a properly formatted Word document — using actual "Styles" for your headers rather than manually bolding text — and then converting that through a dedicated tool. Compress any embedded images beforehand using something like <a href="https://easypixelshift.com">easypixelshift.com</a>, since an e-book pushing past 10MB can trigger higher delivery fees on some platforms. Get the formatting right, and your finished book becomes genuinely indistinguishable from something that came out of a major publishing house.</p>`,
+  },
+
+  {
+    id: 23,
+    slug: "mastering-vector-graphics-svg-for-web",
     title: "SVG for the Web: How Vector Graphics Work and When to Use Them",
     image:
       "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=800",
