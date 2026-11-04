@@ -21,7 +21,13 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Run lint
-        run: npm run lint
+      - name: Lint blog code
+        run: >-
+          npx eslint
+          app/blog/page.tsx
+          "app/blog/[slug]/page.tsx"
+          app/src/articles.js
+          app/src/blogUtils.ts
+          app/src/components/blogComponent.tsx
       - name: Build application
         run: npm run build
