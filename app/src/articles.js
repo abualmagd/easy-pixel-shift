@@ -2,7 +2,7 @@ export const myArticles = [
   {
     id: 1,
     slug: "mastering-file-conversion",
-    title: "File Conversion Explained: How to Choose the Right Format",,
+    title: "File Conversion Explained: How to Choose the Right Format",
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800",
     content: `<p>File conversion means representing information in a different format so another application, device, or workflow can use it. The process may be as simple as changing a text document into HTML, or as complex as decoding a video and encoding it with a different codec. The important point is that a successful conversion is not defined by the new extension alone: the output must preserve the information you need and work in its intended destination.</p>
@@ -37,7 +37,7 @@ export const myArticles = [
   {
     id: 2,
     slug: "image-formats-explained",
-    title: "JPEG, PNG, WebP, and AVIF: Choosing an Image Format",,
+    title: "JPEG, PNG, WebP, and AVIF: Choosing an Image Format",
     image:
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800",
     content: `<p>Image formats make different trade-offs between file size, visual quality, transparency, animation, editing, and compatibility. There is no single format that is best for every image. A photograph, a transparent logo, a screenshot, and a website illustration may all need different export settings.</p>
@@ -67,7 +67,7 @@ export const myArticles = [
   {
     id: 9,
     slug: "pdf-professional-standard",
-    title: "PDF vs. Editable Documents: When to Use Each Format at Work",,
+    title: "PDF vs. Editable Documents: When to Use Each Format at Work",
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800",
     content: `<p>PDF is widely used in business because it can preserve a document's page layout across different computers and operating systems. That makes it useful for invoices, reports, forms, manuals, and documents that need to be reviewed or printed consistently. But PDF is not always the best format for creating or revising content. Choosing between PDF and an editable document such as DOCX depends on what the recipient needs to do.</p>
@@ -120,7 +120,7 @@ export const myArticles = [
   {
     id: 27,
     slug: "png-to-svg-high-quality-converter-online-guide",
-    title: "PNG to SVG: What Vectorization Can—and Cannot—Recover",,
+    title: "PNG to SVG: What Vectorization Can—and Cannot—Recover",
     image:
       "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=800",
     content: `<p>Converting a PNG image to SVG can mean two very different things: embedding the original bitmap inside an SVG file, or tracing the pixels to create editable vector paths. Only the second process produces true vector artwork. Understanding that distinction helps set realistic expectations before converting a logo, icon, drawing, or photograph.</p>
@@ -153,7 +153,7 @@ export const myArticles = [
   {
     id: 3,
     slug: "benefits-of-image-compression",
-    title: "Image Compression: How to Reduce File Size Without Guessing",,
+    title: "Image Compression: How to Reduce File Size Without Guessing",
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800",
     content: `<p>Image compression reduces the amount of data needed to store or deliver an image. It can make a website load more efficiently, reduce storage use, and make files easier to share. The challenge is to reduce unnecessary data without damaging details that matter, such as small text, product edges, or subtle gradients.</p>
@@ -182,7 +182,7 @@ export const myArticles = [
   {
     id: 6,
     slug: "vector-vs-raster",
-    title: "Vector vs. Raster Images: How to Choose for Logos, Photos, and Print",,
+    title: "Vector vs. Raster Images: How to Choose for Logos, Photos, and Print",
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800",
     content: `<p>Digital images are commonly created and stored as either raster graphics or vector graphics. The difference affects how an image scales, how it is edited, and which formats are suitable for a particular job. A photograph and a company logo may both appear as images on a screen, but they usually need different source formats.</p>
@@ -208,7 +208,7 @@ export const myArticles = [
   {
     id: 10,
     slug: "future-of-heic",
-    title: "HEIC and HEIF: What They Mean for Phone Photos and Sharing",,
+    title: "HEIC and HEIF: What They Mean for Phone Photos and Sharing",
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800",
     content: `<p>Many recent phones save photographs in HEIC or HEIF-based formats to reduce storage use while retaining good image quality. These files can be convenient in the device ecosystem that created them, but compatibility may vary when you share them with older computers, websites, editing software, or recipients using different operating systems.</p>
@@ -291,7 +291,7 @@ export const myArticles = [
   {
     id: 34,
     slug: "heic-to-jpg-apple-photo-compatibility-guide",
-    title: "HEIC to JPG: Making iPhone Photos Easier to Share",,
+    title: "HEIC to JPG: Making iPhone Photos Easier to Share",
     image:
       "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800",
     content:
@@ -320,7 +320,7 @@ export const myArticles = [
   {
     id: 4,
     slug: "video-format-guide",
-    title: "MP4, MOV, MKV, and WebM: Understanding Video Containers and Codecs",,
+    title: "MP4, MOV, MKV, and WebM: Understanding Video Containers and Codecs",
     image:
       "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=800",
     content: `<p>Choosing a video format can be confusing because a filename extension does not tell the whole story. MP4, MOV, MKV, and WebM are containers. Inside them are video and audio streams encoded with codecs. Compatibility depends on the combination of container, codec, profile, resolution, and the device or application that will play the file.</p>
@@ -349,7 +349,7 @@ export const myArticles = [
   {
     id: 5,
     slug: "what-are-gifs",
-    title: "Animated GIFs: How They Work and When to Use an Alternative",,
+    title: "Animated GIFs: How They Work and When to Use an Alternative",
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800",
     content: `<p>GIF is an image format that can store a sequence of frames, making it useful for short looping animations. It remains popular because many applications display animated GIFs without a separate video player. However, the format has technical limitations that matter when choosing it for a website, tutorial, or social post.</p>
@@ -380,7 +380,7 @@ export const myArticles = [
   {
     id: 7,
     slug: "raw-vs-jpeg-photography",
-    title: "RAW vs. JPEG: Choosing a Capture Format for Photography",,
+    title: "RAW vs. JPEG: Choosing a Capture Format for Photography",
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800",
     content: `<p>RAW and JPEG are two common ways to store photographs, but they serve different purposes. RAW files retain much of the image data captured by the camera sensor for later processing. JPEG files are processed in-camera or by software and compressed into a convenient image that is ready to view and share.</p>
@@ -407,7 +407,7 @@ export const myArticles = [
   {
     id: 8,
     slug: "audio-formats-lossless",
-    title: "MP3, AAC, WAV, and FLAC: Understanding Audio Formats",,
+    title: "MP3, AAC, WAV, and FLAC: Understanding Audio Formats",
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800",
     content: `<p>Audio formats differ in compression, sound quality, file size, metadata, and compatibility. The most important distinction is between lossless formats, which preserve the encoded audio samples, and lossy formats, which reduce file size by discarding some audio information. Choosing the right format depends on whether you are recording, editing, archiving, streaming, or sharing.</p>
@@ -435,7 +435,7 @@ export const myArticles = [
   {
     id: 11,
     slug: "mastering-image-resizing",
-    title: "Image Resizing Explained: Dimensions, Resampling, and Aspect Ratio",,
+    title: "Image Resizing Explained: Dimensions, Resampling, and Aspect Ratio",
     image:
       "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1200",
     content: `<p>Resizing an image changes its pixel dimensions. It is different from changing the physical print size or simply changing the file format. A good resizing workflow starts with the intended display or print dimensions, preserves the subject's proportions, and uses resampling settings that suit the image.</p>
@@ -491,7 +491,7 @@ export const myArticles = [
   {
     id: 12,
     slug: "ocr-technology-explained",
-    title: "OCR Explained: Turning Scanned Pages Into Searchable Text",,
+    title: "OCR Explained: Turning Scanned Pages Into Searchable Text",
     image:
       "https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=1200",
     content: `<p>Optical character recognition (OCR) is technology that analyzes an image of text and attempts to convert the visible characters into machine-readable text. It is commonly used with scanned documents, photographed receipts, archived books, and forms. OCR is different from ordinary text extraction: a PDF may already contain selectable text, or it may contain only page images that require recognition.</p>
@@ -766,7 +766,7 @@ export const myArticles = [
   {
     id: 24,
     slug: "webassembly-wasm-high-performance-conversion",
-    title: "WebAssembly in the Browser: What It Does and What It Does Not Guarantee",,
+    title: "WebAssembly in the Browser: What It Does and What It Does Not Guarantee",
     image:
       "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800",
     content:
@@ -819,7 +819,7 @@ export const myArticles = [
   {
     id: 28,
     slug: "secure-svg-to-ico-conversion-guide",
-    title: "SVG to ICO: Preparing a Vector Icon for Windows and Browsers",,
+    title: "SVG to ICO: Preparing a Vector Icon for Windows and Browsers",
     image:
       "https://images.unsplash.com/photo-1614812513172-567d2fe96a75?q=80&w=800",
     content: `<p>SVG is a vector format that can scale to different sizes, while ICO is an icon container commonly used by Windows applications and websites. Converting an SVG to ICO means rendering the vector artwork into one or more raster images and storing those images in an icon file. It is not simply a change of extension.</p>
@@ -845,7 +845,7 @@ export const myArticles = [
   {
     id: 29,
     slug: "jpeg-to-svg-high-quality-vectorization-guide",
-    title: "JPEG to SVG: Why Photographs Are Difficult to Vectorize",,
+    title: "JPEG to SVG: Why Photographs Are Difficult to Vectorize",
     image:
       "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800",
     content: `<p>A JPEG photograph is made from pixels and uses lossy compression. An SVG normally describes vector shapes and paths. Turning a JPEG into a useful SVG therefore requires tracing or illustration—not a lossless format conversion. This distinction is especially important when the source is a photograph, gradient, or detailed image.</p>
@@ -870,7 +870,7 @@ export const myArticles = [
   {
     id: 30,
     slug: "svg-to-ico-multi-resolution-favicon-guide",
-    title: "SVG to ICO: Icon Sizes, Transparency, and Browser Testing",,
+    title: "SVG to ICO: Icon Sizes, Transparency, and Browser Testing",
     image:
       "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800",
     content: `<p>SVG artwork is resolution-independent, but an ICO file stores raster icon images in a container. When you convert SVG to ICO, the design is rendered at selected pixel dimensions and those bitmap images are placed inside the icon file. The output quality therefore depends on both the source design and the sizes included in the ICO.</p>
@@ -897,7 +897,7 @@ export const myArticles = [
   {
     id: 31,
     slug: "png-to-svg-vectorization-for-logos-guide",
-    title: "PNG Logo to SVG: When to Trace, Redraw, or Find the Original",,
+    title: "PNG Logo to SVG: When to Trace, Redraw, or Find the Original",
     image:
       "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=800",
     content: `<p>A PNG logo can look sharp on a website and still become blurry when enlarged for a banner, sign, or printed package. SVG can solve that scaling problem when it contains real vector paths. But converting a PNG logo to SVG does not automatically recover the original design geometry. The best approach depends on the source quality and how accurately the logo must be reproduced.</p>
@@ -925,7 +925,7 @@ export const myArticles = [
   {
     id: 32,
     slug: "webp-to-png-conversion-guide-for-designers",
-    title: "WebP to PNG: Transparency, Quality, and What Conversion Cannot Restore",,
+    title: "WebP to PNG: Transparency, Quality, and What Conversion Cannot Restore",
     image:
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800",
     content: `<p>WebP is used for web images because it supports lossy and lossless compression, transparency, and animation. PNG remains useful when a design application, workflow, or recipient specifically needs a lossless raster file with an alpha channel. Converting WebP to PNG can improve compatibility, but it does not restore image information that was discarded when a lossy WebP was created.</p>
@@ -951,7 +951,7 @@ export const myArticles = [
   {
     id: 33,
     slug: "jpg-to-png-lossless-conversion-tutorial",
-    title: "JPG to PNG: What Happens to Quality and Transparency?",,
+    title: "JPG to PNG: What Happens to Quality and Transparency?",
     image:
       "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=800",
     content: `<p>JPEG and PNG solve different image problems. JPEG is commonly used for photographs because lossy compression can produce relatively small files. PNG stores raster pixels losslessly and supports transparency, which makes it useful for screenshots, diagrams, and interface graphics. Converting a JPEG to PNG changes how the decoded pixels are stored; it does not reverse JPEG compression.</p>
@@ -982,7 +982,7 @@ export const myArticles = [
   {
     id: 35,
     slug: "svg-to-png-rasterization-guide-for-developers",
-    title: "SVG to PNG: Choosing Raster Dimensions and Avoiding Blurry Exports",,
+    title: "SVG to PNG: Choosing Raster Dimensions and Avoiding Blurry Exports",
     image:
       "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800",
     content: `<p>SVG describes graphics using vector shapes, paths, and text. PNG stores a fixed grid of pixels. Converting SVG to PNG is therefore a process called rasterization: the vector artwork is rendered at a chosen pixel width and height. The most important decision is not only the output format, but also the dimensions at which the graphic will be displayed.</p>
@@ -1009,7 +1009,7 @@ export const myArticles = [
   {
     id: 36,
     slug: "gif-to-mp4-video-conversion-performance-guide",
-    title: "GIF to MP4: Choosing Between Animation, Video, and Web Formats",,
+    title: "GIF to MP4: Choosing Between Animation, Video, and Web Formats",
     image:
       "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800",
     content: `<p>Animated GIF is easy to share, but it has important limitations: it supports a palette of up to 256 colors per frame, does not provide modern video compression, and can become large when an animation contains many frames. MP4 can be a more efficient choice for longer or photographic animations, but it is not a universal replacement for GIF.</p>
@@ -1035,7 +1035,7 @@ export const myArticles = [
   {
     id: 37,
     slug: "png-to-webp-web-optimization-guide",
-    title: "PNG to WebP: When the Smaller File Is Worth It",,
+    title: "PNG to WebP: When the Smaller File Is Worth It",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800",
     content: `<p>PNG is lossless and supports transparency, making it useful for screenshots, diagrams, and graphics with sharp edges. WebP supports both lossy and lossless compression, transparency, and animation. Converting a PNG to WebP can reduce file size, but the result depends on the image content and whether lossy or lossless encoding is selected.</p>
@@ -1055,7 +1055,7 @@ export const myArticles = [
   {
     id: 38,
     slug: "ico-to-png-favicon-extraction-tutorial",
-    title: "ICO to PNG: Extracting the Right Icon Size From an ICO File",,
+    title: "ICO to PNG: Extracting the Right Icon Size From an ICO File",
     image:
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800",
     content: `<p>An ICO file is a container that can hold several icon images at different dimensions and color depths. This is useful because a desktop environment or browser may need a small icon for one context and a larger one for another. Converting ICO to PNG means selecting or rendering one of those entries as a standalone raster image.</p>
@@ -1081,7 +1081,7 @@ export const myArticles = [
   {
     id: 39,
     slug: "bmp-to-jpg-bitmap-compression-guide",
-    title: "BMP to JPEG: Reducing File Size Without Losing Sight of the Trade-offs",,
+    title: "BMP to JPEG: Reducing File Size Without Losing Sight of the Trade-offs",
     image:
       "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=800",
     content: `<p>BMP is a raster image format commonly associated with straightforward bitmap storage. Depending on the BMP variant, pixel data may be stored with little or no compression, which can make files large. JPEG uses lossy compression and is often more practical for photographs, but it is not suitable for every kind of bitmap image.</p>
@@ -1107,7 +1107,7 @@ export const myArticles = [
   {
     id: 40,
     slug: "tif-to-jpg-print-archival-conversion-guide",
-    title: "TIFF to JPEG: Making a Sharing Copy Without Replacing the Master",,
+    title: "TIFF to JPEG: Making a Sharing Copy Without Replacing the Master",
     image:
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800",
     content: `<p>TIFF is widely used in scanning, photography, publishing, and archival workflows because it can store high-quality raster images and support different compression methods, color spaces, and multiple pages or images. JPEG is more convenient for sharing many photographs, but converting TIFF to JPEG can discard information. Treat JPEG as a delivery copy when the TIFF is your archival or editing master.</p>
@@ -1134,7 +1134,7 @@ export const myArticles = [
   {
     id: 41,
     slug: "png-to-ico-favicon-creation-guide",
-    title: "PNG to ICO: Creating a Clear Favicon and Windows Icon",,
+    title: "PNG to ICO: Creating a Clear Favicon and Windows Icon",
     image:
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800",
     content: `<p>PNG is a convenient source for creating an ICO because it supports full-color raster artwork and transparency. ICO is a container designed for icons and can hold several image entries at different sizes. A good conversion therefore involves more than placing one PNG inside an ICO: the artwork should remain recognizable at the small dimensions where icons are commonly displayed.</p>
@@ -1160,7 +1160,7 @@ export const myArticles = [
   {
     id: 42,
     slug: "pdf-to-jpg-extracting-images-from-documents",
-    title: "PDF to JPG: Exporting Pages as Images Without Confusing It With Image Extraction",,
+    title: "PDF to JPG: Exporting Pages as Images Without Confusing It With Image Extraction",
     image:
       "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800",
     content: `<p>People often say “extract images from a PDF” when they mean one of two different tasks: export each page as a JPG image, or extract the original image objects embedded inside the PDF. These operations can produce different results. Knowing which one you need helps you choose the right workflow and avoid unnecessary loss of quality.</p>
@@ -1186,7 +1186,7 @@ export const myArticles = [
   {
     id: 43,
     slug: "dark-mode-icon-design-preparing-assets",
-    title: "Designing Icons for Light and Dark Interfaces",,
+    title: "Designing Icons for Light and Dark Interfaces",
     image:
       "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1200",
     content: `<p>An icon that looks clear on a white page may disappear on a dark interface. The problem is often not the file format but the contrast, stroke weight, and background assumptions built into the artwork. Preparing separate or adaptive assets for light and dark themes makes a brand or interface more consistent.</p>
@@ -1212,7 +1212,7 @@ export const myArticles = [
   {
     id: 44,
     slug: "understanding-color-depth-bit-depth-images",
-    title: "Image Bit Depth Explained: 8-bit, 10-bit, 16-bit, and More",,
+    title: "Image Bit Depth Explained: 8-bit, 10-bit, 16-bit, and More",
     image:
       "https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=800",
     content: `<p>Bit depth describes how much numeric information is available to represent image values. It affects the number of tonal steps a file can store and can matter when editing gradients, adjusting exposure, or working with high dynamic range content. The phrase “8-bit image” is sometimes used loosely, so it is important to distinguish bits per channel from total bits per pixel.</p>
@@ -1234,7 +1234,7 @@ export const myArticles = [
   {
     id: 45,
     slug: "responsive-images-srcset-sizes-modern-html",
-    title: "Responsive Images in HTML: How srcset, sizes, and picture Work",,
+    title: "Responsive Images in HTML: How srcset, sizes, and picture Work",
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
     content: `<p>A website that sends the same large image to every visitor may waste bandwidth on small screens. Responsive images let the browser choose a suitable source based on the layout and device characteristics. In HTML, the main tools are <code>srcset</code>, <code>sizes</code>, and the <code>picture</code> element.</p>
@@ -1264,7 +1264,7 @@ export const myArticles = [
   {
     id: 46,
     slug: "archiving-digital-photos-long-term-storage",
-    title: "Archiving Digital Photos: A Practical Plan for Long-Term Access",,
+    title: "Archiving Digital Photos: A Practical Plan for Long-Term Access",
     image:
       "https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?q=80&w=1200",
     content: `<p>Keeping digital photographs safe for years is not simply a matter of saving them to one external drive. Storage devices can fail, accounts can be lost, formats and software can change, and metadata can become separated from the image. A reliable photo archive combines multiple copies, clear organization, periodic checks, and preservation of the original files.</p>
@@ -1292,7 +1292,7 @@ export const myArticles = [
   {
     id: 47,
     slug: "choosing-file-formats-print-vs-web",
-    title: "Preparing Images for Print and Web: Color, Resolution, and Format",,
+    title: "Preparing Images for Print and Web: Color, Resolution, and Format",
     image:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800",
     content: `<p>An image prepared for a website is not automatically ready for a commercial print job. Screen displays produce color with light, while printers reproduce color with inks or other physical processes. The intended output also changes the requirements for dimensions, resolution, file format, and color profile. A reliable workflow creates separate deliverables for screen and print from a preserved master.</p>
