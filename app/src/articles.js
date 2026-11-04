@@ -31,7 +31,7 @@ export const myArticles = [
 </ol>
 <h2>Why One Converter Cannot Do Everything</h2>
 <p>Image, document, and media formats use different data structures and processing libraries. A browser-based image encoder cannot automatically preserve every feature of a layered design file, and extracting text from a scanned PDF requires OCR rather than ordinary text parsing. A trustworthy tool should state the formats and limitations it actually supports.</p>
-<p>The best conversion is the one that solves the specific compatibility problem while preserving the information your next step depends on. Choose deliberately, keep the source, and verify the result.</p>`,,
+<p>The best conversion is the one that solves the specific compatibility problem while preserving the information your next step depends on. Choose deliberately, keep the source, and verify the result.</p><p>Related tool: <a href="/pdf-to-docx">Explore document conversion</a>.</p>`,,
   },
 
   {
@@ -127,7 +127,7 @@ export const myArticles = [
     <h2>A Sensible Workflow for 2026</h2>
     <p>If you're serious about how your site or portfolio performs, here's a workflow worth adopting: shoot or export in a lossless or raw format for editing, polish the image to your liking, and then export the final version as <strong>WebP</strong> for the live site. Keep your JPEGs around for high-quality printing, and hang onto your PNG source files for logos and brand assets you'll need to edit again later.</p>
     <p>Get comfortable with the strengths and limits of JPEG, PNG, and WebP, and you're not just picking image formats anymore — you're actively shaping how fast, sharp, and accessible your site feels to the people using it.</p>
-    `,
+    <p>Related tool: <a href="/image-compressor">Open the image compressor</a>.</p>`,
   },
 
   {
@@ -153,7 +153,7 @@ export const myArticles = [
 </ol>
 <h2>What to Check Before Converting</h2>
 <p>Confirm whether the file contains selectable text or scanned pages, whether fonts are embedded, and whether the recipient needs editable content or a faithful page appearance. For sensitive business files, use a conversion workflow whose file handling and retention practices you understand.</p>
-<p>PDF and DOCX are complementary rather than competing formats. Use DOCX for authoring and revision, and PDF for a stable hand-off when the recipient mainly needs to view, review, or print the finished document.</p>`,,
+<p>PDF and DOCX are complementary rather than competing formats. Use DOCX for authoring and revision, and PDF for a stable hand-off when the recipient mainly needs to view, review, or print the finished document.</p><p>Related tool: <a href="/pdf-to-docx">Convert a PDF to DOCX</a>.</p>`,,
   },
 
   {
@@ -240,7 +240,7 @@ export const myArticles = [
     <h2>Finding the Sweet Spot Between Lossy and Lossless</h2>
     <p>The real skill is knowing how far to push it. Lossless compression strips out unnecessary metadata while keeping every pixel intact, which makes it the safer bet for logos and anything that needs to stay perfectly crisp. Lossy compression genuinely discards data — you get the smallest possible file, but push it too far and you'll start seeing <strong>artifacting</strong>: blocky distortions, muddy textures, the visual signature of an image compressed past its limit. A reasonable rule of thumb is aiming for a JPEG quality setting somewhere between 60 and 80 percent — usually the sweet spot where the compression is essentially invisible to a casual viewer.</p>
     
-    <p>All told, image compression might be the single easiest performance win available in web development. It's a small step in your workflow that pays off in speed, in hosting costs, and in whether visitors actually stick around. Don't let heavy, uncompressed photos be the reason people leave before they've even seen what you've built.</p>`,
+    <p>All told, image compression might be the single easiest performance win available in web development. It's a small step in your workflow that pays off in speed, in hosting costs, and in whether visitors actually stick around. Don't let heavy, uncompressed photos be the reason people leave before they've even seen what you've built.</p><p>Related tool: <a href="/image-compressor">Try the image compressor</a>.</p>`,
   },
 
   {
@@ -282,7 +282,7 @@ export const myArticles = [
     <h3>Is Compatibility Still an Issue?</h3>
     <p>There was a stretch, a few years back, when sending a HEIC photo to a Windows user meant they simply couldn't open it. That friction has mostly disappeared. As of 2026, Windows 11 and current versions of Android and macOS all support HEIC out of the box. And when you upload a HEIC image through something like Instagram or WhatsApp, your phone quietly converts it to JPEG behind the scenes before it ever reaches the recipient, so nobody on the other end even notices the format underneath.</p>
     
-    <p>HEIC is, at this point, the clear successor to an aging JPEG standard. It reflects what most of us actually want from our phones — better quality, richer data like Live Photos and depth information, and smaller files, all at the same time. It's become the practical default for the mobile-first era we're already living in.</p>`,
+    <p>HEIC is, at this point, the clear successor to an aging JPEG standard. It reflects what most of us actually want from our phones — better quality, richer data like Live Photos and depth information, and smaller files, all at the same time. It's become the practical default for the mobile-first era we're already living in.</p><p>Related tool: <a href="/jpg-to-png">Explore image format conversion</a>.</p>`,
   },
 
   {
@@ -372,7 +372,7 @@ export const myArticles = [
     <p>Then there's <strong>MKV (Matroska)</strong> — not really a "video format" in the traditional sense so much as an open-source container that can hold essentially unlimited video, audio, and subtitle tracks all bundled into a single file. That flexibility makes it the go-to choice for serious <strong>archival</strong> work. Want a movie file that carries five language tracks and three subtitle options simultaneously? MKV is really the only practical way to pull that off. Its one real weakness is playback support — some basic mobile browsers and native players still stumble on MKV without something like VLC installed.</p>
     
     <h2>Codecs Are Doing the Actual Work</h2>
-    <p>The container gets all the attention, but the <strong>codec</strong> is where the real engineering happens. H.264 remains the reliable classic, while <strong>HEVC (H.265)</strong> represents the next step forward, delivering comparable quality at roughly half the file size. For those specifically looking for a royalty-free option, <a href="https://aomedia.org/av1/" target="_blank">AV1</a> is steadily becoming the preferred choice among major streaming platforms like Netflix. Getting a handle on these distinctions is what separates video that looks great but never buffers from content that technically plays fine but never actually finds its audience.</p>`,
+    <p>The container gets all the attention, but the <strong>codec</strong> is where the real engineering happens. H.264 remains the reliable classic, while <strong>HEVC (H.265)</strong> represents the next step forward, delivering comparable quality at roughly half the file size. For those specifically looking for a royalty-free option, <a href="https://aomedia.org/av1/" target="_blank">AV1</a> is steadily becoming the preferred choice among major streaming platforms like Netflix. Getting a handle on these distinctions is what separates video that looks great but never buffers from content that technically plays fine but never actually finds its audience.</p><p>Related tool: <a href="/converters/video-converter">Open the video and audio converter</a>.</p>`,
   },
 
   {
@@ -397,7 +397,7 @@ export const myArticles = [
     <h2>The Modern Alternative for Longer Loops</h2>
     <p>By 2026 we've got better tools for anything longer than a quick reaction clip. Once an animation stretches past five seconds or so, a GIF starts becoming a genuine data hog — often heavier than an equivalent HD video. That's where <strong>looped MP4s or WebMs</strong> tend to step in. They look and behave like GIFs — no sound, seamless looping — but rely on modern video compression to stay lightweight. Platforms like Giphy actually convert your uploads into video formats behind the scenes for exactly this reason, quietly saving bandwidth on both ends.</p>
     
-    <p>The GIF was never really about fidelity — it's about <strong>culture and convenience</strong>. Lean on them to give your content a bit of personality, but keep them short and small, so they don't end up dragging your page performance down in the process.</p>`,
+    <p>The GIF was never really about fidelity — it's about <strong>culture and convenience</strong>. Lean on them to give your content a bit of personality, but keep them short and small, so they don't end up dragging your page performance down in the process.</p><p>Related tool: <a href="/converters/gif-maker">Open the GIF maker</a>.</p>`,
   },
 
   {
@@ -441,7 +441,7 @@ export const myArticles = [
     </ul>
     
     <h2>Where Streaming Is Heading</h2>
-    <p>High-quality audio used to be reserved almost entirely for physical media. But as internet speeds have climbed, services like <a href="https://www.tidal.com" target="_blank">Tidal</a> and Apple Music have started rolling out genuine "Lossless" and "Hi-Res" tiers. We're finally reaching a point where you don't have to choose between a large library and a genuinely good-sounding one. Whether you're a casual listener or someone who's spent real money on headphones, understanding what your audio format is actually doing for you is a solid first step toward getting more out of the music you already love.</p>`,
+    <p>High-quality audio used to be reserved almost entirely for physical media. But as internet speeds have climbed, services like <a href="https://www.tidal.com" target="_blank">Tidal</a> and Apple Music have started rolling out genuine "Lossless" and "Hi-Res" tiers. We're finally reaching a point where you don't have to choose between a large library and a genuinely good-sounding one. Whether you're a casual listener or someone who's spent real money on headphones, understanding what your audio format is actually doing for you is a solid first step toward getting more out of the music you already love.</p><p>Related tool: <a href="/converters/video-converter">Open the media converter</a>.</p>`,
   },
 
   {
@@ -462,7 +462,7 @@ export const myArticles = [
     
     <h2>Aspect Ratio: The Mistake That Ruins Everything Else</h2>
     <p>The single biggest resizing mistake is "stretching" — forcing a 4:3 photo into a 16:9 slot without cropping first. Do that and you'll distort faces and warp any straight architectural lines in the shot, sometimes badly enough that it's genuinely distracting. Always protect the <strong>aspect ratio</strong>. When the dimensions don't line up naturally, use a "cover" crop approach instead of a stretch — it keeps everything looking proportional and natural, which matters a lot more than most people expect until they see the alternative.</p>
-    `,
+    <p>Related tool: <a href="/image-resizer">Open the image resizer</a>.</p>`,
   },
 
   {
@@ -491,7 +491,7 @@ export const myArticles = [
 <h2>Protect the Largest Images on the Page</h2>
 <p>Large hero images and product photos can affect how quickly the main content appears. Set explicit width and height (or an aspect ratio) to reserve space, use an appropriately sized source, and avoid lazy-loading an image that is immediately visible at the top of the page. Images farther down the page are usually good candidates for lazy loading.</p>
 <h2>What Image Optimization Can—and Cannot—Do for SEO</h2>
-<p>Descriptive alt text, relevant placement, crawlable image URLs, and fast page experiences help make images more useful and accessible. No file format guarantees higher rankings, and converting an image to WebP or AVIF does not automatically improve search visibility. Measure the page before and after changes, check that image URLs remain crawlable, and prioritize improvements that make the page better for people.</p><h2>Further reading</h2><ul><li><a href="https://developers.google.com/search/docs/appearance/google-images" target="_blank" rel="noopener noreferrer">Google Search Central: Google Images SEO best practices</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture" target="_blank" rel="noopener noreferrer">MDN: The picture element</a></li></ul>`,
+<p>Descriptive alt text, relevant placement, crawlable image URLs, and fast page experiences help make images more useful and accessible. No file format guarantees higher rankings, and converting an image to WebP or AVIF does not automatically improve search visibility. Measure the page before and after changes, check that image URLs remain crawlable, and prioritize improvements that make the page better for people.</p><h2>Further reading</h2><ul><li><a href="https://developers.google.com/search/docs/appearance/google-images" target="_blank" rel="noopener noreferrer">Google Search Central: Google Images SEO best practices</a></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture" target="_blank" rel="noopener noreferrer">MDN: The picture element</a></li></ul><p>Related tool: <a href="/image-compressor">Try image compression</a>.</p>`,
   },
 
   {
@@ -658,7 +658,7 @@ export const myArticles = [
 <li>Check text, faces, and logos against the platform's interface overlays.</li>
 <li>Export at an appropriate pixel size and inspect the result on a mobile screen.</li>
 </ol>
-<p>Keep a high-quality master and create separate versions for different placements. One crop rarely works equally well for a landscape video, a square thumbnail, and a vertical story.</p>`,
+<p>Keep a high-quality master and create separate versions for different placements. One crop rarely works equally well for a landscape video, a square thumbnail, and a vertical story.</p><p>Related tool: <a href="/image-resizer">Open the image resizer</a>.</p>`,
   },
 
   {
@@ -689,7 +689,7 @@ export const myArticles = [
 <li>Reference the appropriate files in the page head.</li>
 <li>Test the icon in browser tabs, bookmarks, and a mobile home-screen shortcut.</li>
 </ol>
-<p>Converting an image to ICO changes the container and prepares icon-sized bitmap data; it does not automatically improve a complicated logo. The design itself must be simplified and checked at the sizes where people will actually see it.</p>`,
+<p>Converting an image to ICO changes the container and prepares icon-sized bitmap data; it does not automatically improve a complicated logo. The design itself must be simplified and checked at the sizes where people will actually see it.</p><p>Related tool: <a href="/png-to-ico">Create an ICO icon</a>.</p>`,
   },
 
   {
@@ -748,7 +748,7 @@ export const myArticles = [
 <li>Remove unnecessary hidden layers and metadata where appropriate.</li>
 <li>Sanitize externally supplied SVG before using it in a web page.</li>
 </ol>
-<p>SVG works best when the source is genuinely vector artwork. Used in the right place, it provides sharp, flexible graphics; used as a wrapper for a photograph or an unsafe upload, it adds complexity without delivering the expected benefit.</p>`,
+<p>SVG works best when the source is genuinely vector artwork. Used in the right place, it provides sharp, flexible graphics; used as a wrapper for a photograph or an unsafe upload, it adds complexity without delivering the expected benefit.</p><p>Related tool: <a href="/png-to-svg">Explore PNG to SVG conversion</a>.</p>`,
   },
 
   {
@@ -811,7 +811,7 @@ export const myArticles = [
 <li>Test the file as a Windows shortcut or application icon and in the target browser.</li>
 <li>Check that the packaged application actually points to the intended ICO path.</li>
 </ol>
-<p>For security, treat SVG files from untrusted sources as active structured content. Avoid injecting raw, untrusted SVG markup into a web page, and sanitize SVGs before embedding them inline. Converting an SVG to ICO can create a useful raster icon, but it does not remove the need to inspect the source and test the final file.</p>`,,
+<p>For security, treat SVG files from untrusted sources as active structured content. Avoid injecting raw, untrusted SVG markup into a web page, and sanitize SVGs before embedding them inline. Converting an SVG to ICO can create a useful raster icon, but it does not remove the need to inspect the source and test the final file.</p><p>Related tool: <a href="/svg-to-ico">Convert SVG to ICO</a>.</p>`,,
   },
 
   {
@@ -836,7 +836,7 @@ export const myArticles = [
 <p>Check the path count, edge smoothness, small holes, overlapping shapes, and color regions. A very large number of nodes can make the file difficult to edit and slow to render. Compare the SVG with the source at its intended size and at high zoom. Do not assume that an SVG extension means the result is a clean, scalable illustration.</p>
 <h2>Alternative: Keep the JPEG Inside an SVG</h2>
 <p>An SVG can reference or embed a raster image, but that does not convert the photograph into vector paths. It may be useful for a layout that requires an SVG container, but the embedded JPEG retains its original pixel dimensions and compression artifacts.</p>
-<p>For photographic content, a modern raster format is usually the correct destination. Use JPEG-to-SVG tracing only when the image consists of shapes that can reasonably be approximated as paths, and treat the output as artwork that needs review.</p>`,,
+<p>For photographic content, a modern raster format is usually the correct destination. Use JPEG-to-SVG tracing only when the image consists of shapes that can reasonably be approximated as paths, and treat the output as artwork that needs review.</p><p>Related tool: <a href="/jpeg-to-svg">Explore JPEG to SVG conversion</a>.</p>`,,
   },
 
   {
@@ -863,7 +863,7 @@ export const myArticles = [
 <li>Open the ICO in an icon viewer and confirm its embedded image entries.</li>
 <li>Test the icon after deploying or packaging the application.</li>
 </ol>
-<p>Converting SVG to ICO is a raster-export task inside an icon container. A reliable result comes from a simplified design, appropriate dimensions, and testing in the actual environment where the icon will appear.</p>`,,
+<p>Converting SVG to ICO is a raster-export task inside an icon container. A reliable result comes from a simplified design, appropriate dimensions, and testing in the actual environment where the icon will appear.</p><p>Related tool: <a href="/svg-to-ico">Convert SVG to ICO</a>.</p>`,,
   },
 
   {
@@ -891,7 +891,7 @@ export const myArticles = [
 <p>An SVG file can contain an embedded PNG. That makes the file an SVG container, but the logo remains raster-based and will still pixelate when enlarged. A true vector result contains paths, shapes, or other vector elements that describe the artwork.</p>
 <h2>Export a Small Set of Useful Assets</h2>
 <p>Keep the editable SVG master and export raster copies at the dimensions required by your website, presentation, or app. For a logo with transparency, inspect the exported PNG or WebP on multiple backgrounds. If the mark is a registered brand or must match exact specifications, use the official vector master or have it redrawn by a designer.</p>
-<p>PNG-to-SVG conversion is most useful when the source is simple enough to trace. For important logos, accuracy is more valuable than a quick conversion, so treat automatic tracing as a draft that must be checked.</p>`,,
+<p>PNG-to-SVG conversion is most useful when the source is simple enough to trace. For important logos, accuracy is more valuable than a quick conversion, so treat automatic tracing as a draft that must be checked.</p><p>Related tool: <a href="/png-to-svg">Explore PNG to SVG conversion</a>.</p>`,,
   },
 
   {
@@ -917,7 +917,7 @@ export const myArticles = [
 <li>Compare dimensions and inspect the output at its intended display size.</li>
 <li>Choose PNG for graphics and transparency, not automatically for every photograph.</li>
 </ul>
-<p>WebP-to-PNG conversion is mainly a compatibility and workflow choice. It can give you a widely supported raster file, but the best output format still depends on the image type and how it will be used.</p>`,,
+<p>WebP-to-PNG conversion is mainly a compatibility and workflow choice. It can give you a widely supported raster file, but the best output format still depends on the image type and how it will be used.</p><p>Related tool: <a href="/webp-to-png">Convert WebP to PNG</a>.</p>`,,
   },
 
   {
@@ -948,7 +948,7 @@ export const myArticles = [
 <li>Check image dimensions and color appearance after export.</li>
 <li>Use the PNG as an editing or graphics asset, and create an optimized delivery copy when publishing online.</li>
 </ol>
-<p>JPG-to-PNG is useful for compatibility and subsequent editing, not for restoring lost detail. Choose it when you need PNG's features, and do not expect the extension change alone to create transparency or improve the photograph.</p>`,,
+<p>JPG-to-PNG is useful for compatibility and subsequent editing, not for restoring lost detail. Choose it when you need PNG's features, and do not expect the extension change alone to create transparency or improve the photograph.</p><p>Related tool: <a href="/jpg-to-png">Convert JPG to PNG</a>.</p>`,,
   },
 
   {
@@ -976,7 +976,7 @@ export const myArticles = [
 <li>Choose a transparent or solid background intentionally.</li>
 <li>Inspect the PNG at its actual display size and at 100% zoom.</li>
 </ol>
-<p>A crisp SVG-to-PNG export is the result of choosing appropriate dimensions and verifying the rendering. The conversion cannot fix a poorly designed source or missing fonts, but a carefully sized PNG can make vector artwork usable in raster-only workflows.</p>`,,
+<p>A crisp SVG-to-PNG export is the result of choosing appropriate dimensions and verifying the rendering. The conversion cannot fix a poorly designed source or missing fonts, but a carefully sized PNG can make vector artwork usable in raster-only workflows.</p><p>Related tool: <a href="/svg-to-png">Convert SVG to PNG</a>.</p>`,,
   },
   {
     id: 36,
@@ -1001,7 +1001,7 @@ export const myArticles = [
 <p>Trim unnecessary frames, crop the frame to the actual content, and choose a suitable resolution. A small animation displayed at 400 pixels wide does not need a 4K export. If the source GIF has a low frame rate or a limited palette, converting it to MP4 will not recreate missing motion or colors.</p>
 <h2>Check the Result</h2>
 <p>Play the exported file from beginning to end. Look for missing frames, changed timing, audio issues, unexpected borders, and a loop that stops or jumps. Compare the file size at the same display dimensions and inspect the image quality rather than assuming MP4 is always smaller.</p>
-<p>Choose MP4 for video-like animations where broad playback control and efficient video compression matter. Keep GIF when its simplicity and compatibility are more important, or consider animated WebP when the target platform supports it.</p>`,,
+<p>Choose MP4 for video-like animations where broad playback control and efficient video compression matter. Keep GIF when its simplicity and compatibility are more important, or consider animated WebP when the target platform supports it.</p><p>Related tool: <a href="/converters/video-converter">Open the media converter</a>.</p>`,,
   },
 
   {
@@ -1021,7 +1021,7 @@ export const myArticles = [
 <p>Choose sensible image dimensions, use responsive sources where appropriate, and avoid loading oversized images for small display areas. Set width and height or an aspect ratio to reserve layout space. Lazy-load images that are below the fold, but do not lazy-load the main image that visitors see immediately. Measure the page before and after changing formats.</p>
 <h2>Keep a Master Copy</h2>
 <p>Do not replace the original PNG if it is your editable or lossless master. Save the WebP as a delivery asset and retain the source so you can export another format or quality level later. If the image contains text or sharp interface details, inspect it at 100% zoom before publishing.</p>
-<p>PNG-to-WebP is most useful when the output will be delivered to modern browsers and the chosen encoding preserves the visual details that matter. Test representative images rather than assuming every PNG should be converted.</p>`,,
+<p>PNG-to-WebP is most useful when the output will be delivered to modern browsers and the chosen encoding preserves the visual details that matter. Test representative images rather than assuming every PNG should be converted.</p><p>Related tool: <a href="/png-to-webp">Convert PNG to WebP</a>.</p>`,,
   },
 
   {
@@ -1047,7 +1047,7 @@ export const myArticles = [
 </ol>
 <h2>When Extraction Is Not Enough</h2>
 <p>If you need a larger or sharper logo than the ICO provides, look for the original SVG or high-resolution PNG. Upscaling a small icon may soften edges, and converting a bitmap entry to SVG does not automatically create editable vector paths. For a brand asset, the original design file is usually the best source.</p>
-<p>ICO-to-PNG is an extraction task, not an enhancement process. The quality of the PNG depends on the selected image entry and the quality of the icon that was embedded in the original file.</p>`,,
+<p>ICO-to-PNG is an extraction task, not an enhancement process. The quality of the PNG depends on the selected image entry and the quality of the icon that was embedded in the original file.</p><p>Related tool: <a href="/ico-to-png">Extract an ICO image as PNG</a>.</p>`,,
   },
 
   {
@@ -1126,7 +1126,7 @@ export const myArticles = [
 <li>Use the ICO in a Windows shortcut or application package and verify the displayed icon.</li>
 <li>For a website, declare the favicon assets in the page head and test after clearing browser cache.</li>
 </ol>
-<p>PNG-to-ICO conversion prepares icon data for a particular environment. It cannot make a complex logo readable at tiny sizes by itself, so simplify the design and test the generated file where it will actually be used.</p>`,,
+<p>PNG-to-ICO conversion prepares icon data for a particular environment. It cannot make a complex logo readable at tiny sizes by itself, so simplify the design and test the generated file where it will actually be used.</p><p>Related tool: <a href="/png-to-ico">Create an ICO icon</a>.</p>`,,
   },
 
   {
@@ -1152,7 +1152,7 @@ export const myArticles = [
 <p>Choose a resolution based on the final use. A small preview for a chat message does not need the same pixel dimensions as a page intended for detailed printing. JPEG uses lossy compression, so it may introduce artifacts around text and sharp edges. PNG can be preferable for pages with small text or diagrams, although the resulting file may be larger.</p>
 <h2>Check Multi-Page Documents</h2>
 <p>A PDF with several pages may produce one image per page. Confirm the page range, output naming, and order before exporting a large document. Review pages with tables, small labels, and rotated content to make sure the result remains legible.</p>
-<p>PDF-to-JPG is useful for previews and sharing page images. If your goal is to recover an original photograph embedded in a PDF, use an extraction workflow instead of rendering the entire page.</p>`,,
+<p>PDF-to-JPG is useful for previews and sharing page images. If your goal is to recover an original photograph embedded in a PDF, use an extraction workflow instead of rendering the entire page.</p><p>Related tool: <a href="/converters/pdf-to-jpg">Open the PDF to JPG converter</a>.</p>`,,
   },
 
   {
@@ -1184,7 +1184,7 @@ export const myArticles = [
     <h2>Testing Matters More Than People Expect</h2>
     <p>It's genuinely easy to design an icon that looks fine in your editor, on a white canvas, and only discover it falls apart once actually placed on a real dark background inside your app. Testing assets directly in both themes — not just eyeballing them in isolation — catches contrast problems well before they end up in front of actual users.</p>
  
-    <p>Dark mode isn't going away, and honestly it shouldn't — plenty of people genuinely prefer it, for eye strain or battery life or just taste. Treating it as a first-class part of your visual design, rather than an afterthought bolted on later, is what separates a brand that looks intentional from one that looks like it forgot dark mode existed.</p>`,
+    <p>Dark mode isn't going away, and honestly it shouldn't — plenty of people genuinely prefer it, for eye strain or battery life or just taste. Treating it as a first-class part of your visual design, rather than an afterthought bolted on later, is what separates a brand that looks intentional from one that looks like it forgot dark mode existed.</p><p>Related tool: <a href="/png-to-ico">Create an ICO icon</a>.</p>`,
   },
 
   {
@@ -1240,7 +1240,7 @@ export const myArticles = [
     <h3>A Small Real-World Example</h3>
     <p>A typical responsive image tag ends up looking something like this: multiple width-described sources in srcset, paired with a sizes attribute describing the layout at different breakpoints. It looks more complicated than a plain <code>&lt;img&gt;</code> tag, but the payoff is real — mobile visitors get an appropriately small file, desktop visitors get full detail, and nobody downloads more than they actually need.</p>
  
-    <p>It's a bit of extra setup for something that used to be a single attribute, but the tradeoff is genuinely worth it. Serving the right image size to the right device is one of the more reliable ways to shave real time off a page's load, and it costs nothing in visual quality to get there.</p>`,
+    <p>It's a bit of extra setup for something that used to be a single attribute, but the tradeoff is genuinely worth it. Serving the right image size to the right device is one of the more reliable ways to shave real time off a page's load, and it costs nothing in visual quality to get there.</p><p>Related tool: <a href="/image-resizer">Open the image resizer</a>.</p>`,
   },
 
   {
