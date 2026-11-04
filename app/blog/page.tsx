@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { myArticles } from "@/app/src/articles";
 import { siteLink } from "@/app/src/const";
 import {
@@ -55,11 +56,13 @@ export default function BlogPage() {
                   className="flex h-full flex-col"
                   aria-label={`Read: ${article.title}`}
                 >
-                  <img
+                  <Image
                     src={article.image}
                     alt=""
+                    width={800}
+                    height={450}
                     loading="lazy"
-                    decoding="async"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="aspect-[16/9] w-full bg-zinc-100 object-cover dark:bg-zinc-800"
                   />
                   <div className="flex flex-1 flex-col p-6">

@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { myArticles } from "@/app/src/articles";
 import { siteLink } from "@/app/src/const";
@@ -86,9 +86,11 @@ export default async function BlogArticlePage({ params }: Props) {
             <span aria-hidden="true">•</span>
             <span>File formats & digital workflows</span>
           </div>
-          <img
+          <Image
             src={article.image}
-            alt={article.title}
+            alt=""
+            width={1200}
+            height={675}
             fetchPriority="high"
             decoding="async"
             className="mt-8 aspect-[16/9] w-full rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
