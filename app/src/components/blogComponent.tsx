@@ -9,14 +9,92 @@ type BlogComponentProps = {
   currentSlug: string;
 };
 
+const stopWords = new Set([
+  "the",
+  "and",
+  "for",
+  "with",
+  "from",
+  "into",
+  "when",
+  "what",
+  "why",
+  "how",
+  "your",
+  "this",
+  "that",
+  "these",
+  "those",
+  "are",
+  "can",
+  "not",
+  "use",
+  "using",
+  "guide",
+  "guides",
+  "file",
+  "files",
+  "image",
+  "images",
+  "format",
+  "formats",
+  "conversion",
+  "converting",
+  "convert",
+  "converter",
+  "online",
+  "best",
+  "right",
+  "practical",
+  "explained",
+  "explained",
+  "basics",
+  "essential",
+  "ultimate",
+  "mastering",
+]);
+
+function getTopicTerms(value: string) {
+  return new Set(
+    value
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, " ")
+      .split(/\s+/)
+      .filter((term) => term.length > 1 && !stopWords.has(term)),
+  );
+}
+
 export function BlogComponent({ currentSlug }: BlogComponentProps) {
-  const currentIndex = myArticles.findIndex(
+  const currentArticle = myArticles.find(
     (article) => article.slug === currentSlug,
   );
-  const relatedArticles = Array.from({ length: Math.min(3, myArticles.length - 1) }, (_, offset) => {
-    const index = (currentIndex + offset + 1) % myArticles.length;
-    return myArticles[index];
-  }).filter(Boolean);
+
+  if (!currentArticle) return null;
+
+  const currentTerms = getTopicTerms(
+    `${currentArticle.slug} ${currentArticle.title}`,
+  );
+
+  const relatedArticles = myArticles
+    .filter((article) => article.slug !== currentSlug)
+    .map((article) => {
+      const articleTerms = getTopicTerms(
+        `${article.slug} ${article.title}`,
+      );
+      const sharedTerms = [...articleTerms].filter((term) =>
+        currentTerms.has(term),
+      );
+
+      return { article, relevance: sharedTerms.length };
+    })
+    .filter((item) => item.relevance > 0)
+    .sort(
+      (a, b) =>
+        b.relevance - a.relevance ||
+        a.article.title.localeCompare(b.article.title),
+    )
+    .slice(0, 3)
+    .map((item) => item.article);
 
   if (relatedArticles.length === 0) return null;
 
@@ -30,10 +108,11 @@ export function BlogComponent({ currentSlug }: BlogComponentProps) {
           id="more-guides-heading"
           className="text-2xl font-bold text-zinc-900 dark:text-zinc-50"
         >
-          More guides to explore
+          Related guides
         </h2>
         <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-          Continue learning with these additional file and image guides.
+          More articles selected by topic, so you can explore the same format
+          or workflow in greater detail.
         </p>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
