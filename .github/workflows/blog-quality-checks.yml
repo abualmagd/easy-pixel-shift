@@ -26,6 +26,7 @@ jobs:
           npx eslint
           app/blog/page.tsx
           "app/blog/[slug]/page.tsx"
+          "app/[slug]/page.tsx"
           app/src/articles.js
           app/src/blogUtils.ts
           app/src/components/blogComponent.tsx
