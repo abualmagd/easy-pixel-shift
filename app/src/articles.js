@@ -61,7 +61,7 @@ export const myArticles = [
 </table>
 <h2>Choose by Content and Destination</h2>
 <p>Start with the type of image and where it will be used. Keep a high-quality original, create a delivery copy for the target platform, and compare the result at its actual display size. For a website, also consider responsive dimensions and browser support rather than changing the format alone.</p>
-<p>For more detail, see the <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types" target="_blank" rel="noopener noreferrer">MDN guide to image file types</a>. The best format is the one that preserves the details your audience needs while remaining practical for the workflow.</p>`,
+<p>For more detail, see the <a href="https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Formats/Image_types" target="_blank" rel="noopener noreferrer">MDN guide to image file types</a>. The best format is the one that preserves the details your audience needs while remaining practical for the workflow.</p><p>Related tool: <a href="/image-compressor">Try the image compressor</a>.</p>`,
   },
 
   {
@@ -1206,7 +1206,7 @@ export const myArticles = [
 </ul>
 <h2>Favicons and Application Icons Need Extra Care</h2>
 <p>Browsers and operating systems may display icons at different sizes and in different contexts. A detailed logo may need a simplified symbol for a favicon. Windows application icons and browser favicons may also use different file declarations or size requirements. Test the actual packaged application or deployed website, not only the exported image in an editor.</p>
-<p>Keep the original design, create variants only when they solve a real contrast problem, and verify each export in the interface where people will see it. A technically valid PNG, SVG, or ICO can still be a poor icon if its silhouette is unclear.</p>`,
+<p>Keep the original design, create variants only when they solve a real contrast problem, and verify each export in the interface where people will see it. A technically valid PNG, SVG, or ICO can still be a poor icon if its silhouette is unclear.</p><p>Related tool: <a href="/png-to-ico">Create an ICO icon</a>.</p>`,
   },
 
   {
