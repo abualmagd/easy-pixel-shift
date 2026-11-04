@@ -6,7 +6,7 @@ import {
 } from "../blogUtils";
 
 type BlogComponentProps = {
-  currentSlug: string;
+  currentSlug?: string;
 };
 
 const stopWords = new Set([
@@ -47,7 +47,6 @@ const stopWords = new Set([
   "right",
   "practical",
   "explained",
-  "explained",
   "basics",
   "essential",
   "ultimate",
@@ -65,14 +64,15 @@ function getTopicTerms(value: string) {
 }
 
 export function BlogComponent({ currentSlug }: BlogComponentProps) {
+  if (!currentSlug) return null;
+
   const currentArticle = myArticles.find(
     (article) => article.slug === currentSlug,
   );
-
-  if (!currentArticle) return null;
-
   const currentTerms = getTopicTerms(
-    `${currentArticle.slug} ${currentArticle.title}`,
+    currentArticle
+      ? `${currentArticle.slug} ${currentArticle.title}`
+      : currentSlug,
   );
 
   const relatedArticles = myArticles

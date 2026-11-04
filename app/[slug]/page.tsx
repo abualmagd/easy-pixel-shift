@@ -59,7 +59,7 @@ export default async function Page({ params }: Props) {
           <DataSecure />
           <FormatDef from={from} to={to} />
           <ComparisonSection />
-          <BlogComponent />
+          <BlogComponent currentSlug={slug} />
         </GlobalMain>
       </div>
     );
